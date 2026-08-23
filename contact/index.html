@@ -307,7 +307,7 @@ footer .base{border-top:1px solid #163350;margin-top:48px;padding-top:22px;displ
 .drop a{display:block;padding:9px 22px;color:var(--ink-soft);font-size:.92rem;font-weight:500;white-space:nowrap}
 .drop a:hover{background:var(--offwhite);color:var(--navy)}
 @media (max-width:1024px){.nav-links{gap:14px}.nav-links a{font-size:.88rem}}
-.skip-link{position:absolute;left:-9999px;top:0;z-index:999;background:#021c36;color:#fff;padding:12px 18px;border-radius:0 0 6px 0;font-weight:700;text-decoration:none}.skip-link:focus{left:0}</style>
+.skip-link{position:absolute;left:-9999px;top:0;z-index:999;background:#021c36;color:#fff;padding:12px 18px;border-radius:0 0 6px 0;font-weight:700;text-decoration:none}.skip-link:focus{left:0}/* mega-menu hover bridge: the trigger is only ~20px tall inside a 78px header, while .mega opens at the header's bottom edge. That left a dead gap where :hover was lost on the way to the panel. Stretching the trigger to full header height makes its box meet the panel, with no invisible overlay covering other links. */.nav-links{align-self:stretch;align-items:center}.has-drop.mega-parent{align-self:stretch}.has-drop.mega-parent>a{display:flex;align-items:center;height:100%}/* JS hover-intent keeps the panel open across the diagonal journey to a menu item. The :hover rules above stay as the no-JS fallback. */.js-nav .has-drop:hover>.mega,.js-nav .has-drop:focus-within>.mega,.js-nav .has-drop:hover>.drop,.js-nav .has-drop:focus-within>.drop{display:none}.js-nav .has-drop.is-open>.mega,.js-nav .has-drop.is-open>.drop{display:block}</style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for B2B companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 950 - EUR 4500","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 </head>
@@ -706,5 +706,6 @@ footer .base{border-top:1px solid #163350;margin-top:48px;padding-top:22px;displ
 </script>
 
 <script src="/assets/form.js" defer></script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
