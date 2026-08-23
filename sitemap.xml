@@ -1,78 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://joharcreativ.com/about</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://joharcreativ.com/contact</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://joharcreativ.com/cookies</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://joharcreativ.com/google-ads</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://joharcreativ.com/impressum</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://joharcreativ.com/</loc>
     <lastmod>2026-08-23</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://joharcreativ.com/industries</loc>
+    <loc>https://joharcreativ.com/about/</loc>
     <lastmod>2026-08-23</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://joharcreativ.com/markets</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://joharcreativ.com/pricing</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://joharcreativ.com/privacy</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://joharcreativ.com/resources</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://joharcreativ.com/seo</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://joharcreativ.com/terms</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://joharcreativ.com/websites</loc>
-    <lastmod>2026-08-23</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://joharcreativ.com/work</loc>
+    <loc>https://joharcreativ.com/case-studies/</loc>
     <lastmod>2026-08-23</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/contact/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/cookie-policy/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/imprint/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/industries/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/markets/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/pricing/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/privacy-policy/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/resources/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/services/b2b-seo/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/services/google-ads-management/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/services/website-rebuild/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://joharcreativ.com/terms/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <priority>0.3</priority>
   </url>
 </urlset>
