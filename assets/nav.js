@@ -34,16 +34,24 @@
         timer = setTimeout(function () { g.classList.remove('is-open'); }, CLOSE_DELAY);
       }
 
-      g.addEventListener('mouseenter', open);
-      g.addEventListener('mouseleave', function () { close(false); });
-      g.addEventListener('focusin', open);
+      g.addEventListener('mouseenter', function () { if (window.innerWidth > 900) open(); });
+      g.addEventListener('mouseleave', function () { if (window.innerWidth > 900) close(false); });
+      // focusin fires BEFORE click. Below 900px that would mark the group open
+      // before the mobile tap handler runs, which then reads it as "already
+      // open" and lets the parent link navigate instead of revealing children.
+      g.addEventListener('focusin', function () { if (window.innerWidth > 900) open(); });
       g.addEventListener('focusout', function (e) {
+        if (window.innerWidth <= 900) return;
         if (!g.contains(e.relatedTarget)) close(true);
       });
 
       // Close AFTER the click resolves. Hiding the panel synchronously removes
       // the link from the render tree mid-dispatch and cancels the navigation.
+      // Below 900px the mobile menu owns this interaction: this handler is
+      // attached to .has-drop and so runs BEFORE the mobile handler on the
+      // container, and would close a submenu the moment it was tapped open.
       g.addEventListener('click', function (e) {
+        if (window.innerWidth <= 900) return;
         if (e.target.closest('a[href]')) setTimeout(function () { close(true); }, 0);
       });
     });
