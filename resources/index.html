@@ -430,6 +430,49 @@ img,svg,canvas,video{max-width:100%;height:auto}
   .nav-links .mcol a,.nav-links .drop a{display:flex;width:100%;min-height:48px}
   .nav-links .mcol{margin-bottom:6px}
 }
+
+/* ---------- article / long-form ---------- */
+.crumb{font-size:.86rem;color:#9db3c9;margin-bottom:16px}
+.crumb a{color:#c7d3e0;text-decoration:underline}
+.crumb a:hover{color:var(--amber)}
+.crumb span{margin:0 6px;color:#6f8299}
+.page-hero .meta{color:#9db3c9;font-size:.9rem;margin-top:18px}
+
+.prose{max-width:70ch}
+.prose h2{margin:44px 0 14px;font-size:1.6rem;color:var(--navy)}
+.prose h3{margin:0 0 8px;font-size:1.1rem;color:var(--navy)}
+.prose p{margin-bottom:16px;line-height:1.75;color:var(--ink)}
+.prose ul{margin:0 0 16px 20px}
+.prose li{margin-bottom:8px;line-height:1.7;color:var(--ink)}
+.prose a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+.prose a:hover{color:var(--amber-deep)}
+
+.tldr{background:var(--offwhite);border:1px solid var(--line);border-left:4px solid var(--amber);
+border-radius:8px;padding:22px 26px;margin:0 0 30px}
+.tldr p{margin-bottom:10px;color:var(--navy)}
+.tldr ul{margin-bottom:0}
+
+.inline-cta{border:1px solid var(--line);border-radius:8px;padding:16px 20px;margin:28px 0;
+background:#fff}
+.inline-cta p{margin:0;font-size:.95rem;color:var(--ink-soft)}
+.inline-cta a{color:var(--navy);font-weight:700;white-space:nowrap}
+
+.qa{border-top:1px solid var(--line);padding:24px 0}
+.qa:first-of-type{border-top:0}
+.qa p{margin-bottom:10px;font-size:.97rem}
+.qa p:last-child{margin-bottom:0}
+
+.tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;
+text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vertical-align:1px}
+.tag.good{background:#e7f2ea;color:#1a5c42}
+.tag.bad{background:#fdecec;color:#a02020}
+
+@media (max-width:820px){
+  .prose{max-width:100%}
+  .prose h2{font-size:1.35rem;margin-top:34px}
+  .tldr,.inline-cta{padding:16px 18px}
+  .inline-cta a{white-space:normal}
+}
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for B2B companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 950 - EUR 4500","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
@@ -518,9 +561,9 @@ img,svg,canvas,video{max-width:100%;height:auto}
     <div class="svc-grid">
       <div class="svc rv">
         <span class="icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
-        <h3>How to Choose an SEO Provider Without Getting Burned</h3>
+        <h3><a href="/resources/how-to-choose-seo-provider/">How to Choose an SEO Provider Without Getting Burned</a></h3>
         <p>The questions to ask before you sign anything, and the answers that should end the meeting on the spot. You will know how to spot a rank guarantee, a lock in contract and a report designed to confuse you.</p>
-        <span class="slot-note" style="margin-top:auto">Publishing soon.</span>
+        <a class="btn btn-navy btn-small" style="margin-top:auto" href="/resources/how-to-choose-seo-provider/">Read the guide</a>
       </div>
       <div class="svc rv d1">
         <span class="icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 11l2 2 4-4"/></svg></span>
