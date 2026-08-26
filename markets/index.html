@@ -473,9 +473,17 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
   .tldr,.inline-cta{padding:16px 18px}
   .inline-cta a{white-space:normal}
 }
-</style>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for B2B companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 950 - EUR 4500","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
+/* ---------- pricing ladder mobile corrections ---------- */
+@media (max-width:820px){
+  /* the founding-rate badge rendered at 11.2px, under the 13px floor */
+  body .tag{font-size:.82rem;padding:4px 9px}
+  /* links that sit alone on a line are CTAs, not inline prose links */
+  body .qa p > a:only-child{display:inline-flex;align-items:center;min-height:44px}
+}
+/* ---------- three-up price band ---------- */.priceband.ladder .wrap{grid-template-columns:1fr;gap:30px}.priceband.ladder h2.left{max-width:22ch}.priceband.ladder .pricebox-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:900px){.priceband.ladder .pricebox-row{grid-template-columns:1fr}}</style>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for B2B companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -669,9 +677,9 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
 <div class="band">
   <div class="wrap">
     <h2 class="rv">Find out what your website could be doing.</h2>
-    <p class="rv d1">Send your web address through the contact form and you get my written 15 point report back within two working days, free. Then talk it through with me on a call if you want to. Worst case, you get a useful second opinion.</p>
+    <p class="rv d1">Send your web address through the contact form and you get my written 15 point report back within two working days, free. Then talk it through with me on a call if you want to.</p>
     <a class="btn pulse rv d2" href="/contact/">Get my free site check</a>
-    <p class="micro">You get a reply from me, not an autoresponder, within one working day.</p>
+    <p class="micro">Every enquiry gets a reply within one working day.</p>
   </div>
 </div>
 
@@ -788,7 +796,7 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
       render();
     }
     function step(){page=(page+1)%pages();render();}
-    function restart(){if(timer){clearInterval(timer);}timer=setInterval(step,4500);}
+    function restart(){if(timer){clearInterval(timer);}timer=setInterval(step,2450);}
     var car=document.getElementById('carousel');
     car.addEventListener('mouseenter',function(){if(timer){clearInterval(timer);timer=null;}});
     car.addEventListener('mouseleave',restart);

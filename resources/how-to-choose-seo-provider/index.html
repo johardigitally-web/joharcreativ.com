@@ -473,9 +473,17 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
   .tldr,.inline-cta{padding:16px 18px}
   .inline-cta a{white-space:normal}
 }
-</style>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for B2B companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 950 - EUR 4500","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
+/* ---------- pricing ladder mobile corrections ---------- */
+@media (max-width:820px){
+  /* the founding-rate badge rendered at 11.2px, under the 13px floor */
+  body .tag{font-size:.82rem;padding:4px 9px}
+  /* links that sit alone on a line are CTAs, not inline prose links */
+  body .qa p > a:only-child{display:inline-flex;align-items:center;min-height:44px}
+}
+/* ---------- three-up price band ---------- */.priceband.ladder .wrap{grid-template-columns:1fr;gap:30px}.priceband.ladder h2.left{max-width:22ch}.priceband.ladder .pricebox-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:900px){.priceband.ladder .pricebox-row{grid-template-columns:1fr}}</style>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for B2B companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Choose an SEO Provider Without Getting Burned","description":"Twelve questions to ask an SEO provider before you sign, the answers you should hear, and the ones that should end the meeting. Written for B2B firms in Europe.","inLanguage":"en","datePublished":"2026-08-23","dateModified":"2026-08-23","author":{"@type":"Person","name":"Johar Rehman","url":"https://joharcreativ.com/about/"},"publisher":{"@type":"Organization","name":"Johar Creativ","logo":{"@type":"ImageObject","url":"https://joharcreativ.com/og-image.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://joharcreativ.com/resources/how-to-choose-seo-provider/"},"image":"https://joharcreativ.com/og-image.png"}</script>
 </head>
 <body>
@@ -797,7 +805,7 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
       render();
     }
     function step(){page=(page+1)%pages();render();}
-    function restart(){if(timer){clearInterval(timer);}timer=setInterval(step,4500);}
+    function restart(){if(timer){clearInterval(timer);}timer=setInterval(step,2450);}
     var car=document.getElementById('carousel');
     car.addEventListener('mouseenter',function(){if(timer){clearInterval(timer);timer=null;}});
     car.addEventListener('mouseleave',restart);

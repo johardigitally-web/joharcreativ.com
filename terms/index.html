@@ -473,9 +473,17 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
   .tldr,.inline-cta{padding:16px 18px}
   .inline-cta a{white-space:normal}
 }
-</style>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for B2B companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 950 - EUR 4500","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
+/* ---------- pricing ladder mobile corrections ---------- */
+@media (max-width:820px){
+  /* the founding-rate badge rendered at 11.2px, under the 13px floor */
+  body .tag{font-size:.82rem;padding:4px 9px}
+  /* links that sit alone on a line are CTAs, not inline prose links */
+  body .qa p > a:only-child{display:inline-flex;align-items:center;min-height:44px}
+}
+/* ---------- three-up price band ---------- */.priceband.ladder .wrap{grid-template-columns:1fr;gap:30px}.priceband.ladder h2.left{max-width:22ch}.priceband.ladder .pricebox-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:900px){.priceband.ladder .pricebox-row{grid-template-columns:1fr}}</style>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for B2B companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -562,7 +570,7 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
     <p>Every rebuild is governed by a one page scope agreement that you and I both sign before work starts. It lists the pages, the deliverables, the timeline and the price. If it is not in the scope agreement, it is not in the project, and anything added later is agreed in writing first. Extra pages beyond the eight included are €350 each, agreed before I build them. Every rebuild includes 30 days of fixes after launch.</p>
 
     <h2 style="margin-top:44px">Payment</h2>
-    <p>Prices are as published on the <a href="/pricing/">pricing page</a> and in your scope agreement, always ex VAT. A rebuild is €4,500 fixed: half up front before work starts, half at launch. Monthly search ranking work is from €950 a month, invoiced monthly. Invoices are due within 14 days.</p>
+    <p>Prices are as published on the <a href="/pricing/">pricing page</a> and in your scope agreement, always ex VAT. A rebuild is €1,450 for the five page starter or €2,450 for the full eight page build, fixed: half up front before work starts, half at launch. Monthly search ranking work is €490 or €950 a month, invoiced monthly. Invoices are due within 14 days.</p>
     <p style="margin-top:14px">For Google Ads management, the ad account is created in your name and stays yours. Ad spend is not included in my fee. You pay Google directly.</p>
 
     <h2 style="margin-top:44px">Ending monthly work</h2>
@@ -582,9 +590,9 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
 <div class="band">
   <div class="wrap">
     <h2 class="rv">Find out what your website could be doing.</h2>
-    <p class="rv d1">Send your web address through the contact form and you get my written 15 point report back within two working days, free. Then talk it through with me on a call if you want to. Worst case, you get a useful second opinion.</p>
+    <p class="rv d1">Send your web address through the contact form and you get my written 15 point report back within two working days, free. Then talk it through with me on a call if you want to.</p>
     <a class="btn pulse rv d2" href="/contact/">Get my free site check</a>
-    <p class="micro">You get a reply from me, not an autoresponder, within one working day.</p>
+    <p class="micro">Every enquiry gets a reply within one working day.</p>
   </div>
 </div>
 
@@ -701,7 +709,7 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
       render();
     }
     function step(){page=(page+1)%pages();render();}
-    function restart(){if(timer){clearInterval(timer);}timer=setInterval(step,4500);}
+    function restart(){if(timer){clearInterval(timer);}timer=setInterval(step,2450);}
     var car=document.getElementById('carousel');
     car.addEventListener('mouseenter',function(){if(timer){clearInterval(timer);timer=null;}});
     car.addEventListener('mouseleave',restart);

@@ -459,7 +459,15 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
   .tldr,.inline-cta{padding:16px 18px}
   .inline-cta a{white-space:normal}
 }
-</style>
+
+/* ---------- pricing ladder mobile corrections ---------- */
+@media (max-width:820px){
+  /* the founding-rate badge rendered at 11.2px, under the 13px floor */
+  body .tag{font-size:.82rem;padding:4px 9px}
+  /* links that sit alone on a line are CTAs, not inline prose links */
+  body .qa p > a:only-child{display:inline-flex;align-items:center;min-height:44px}
+}
+/* ---------- three-up price band ---------- */.priceband.ladder .wrap{grid-template-columns:1fr;gap:30px}.priceband.ladder h2.left{max-width:22ch}.priceband.ladder .pricebox-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:900px){.priceband.ladder .pricebox-row{grid-template-columns:1fr}}</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
