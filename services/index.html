@@ -615,26 +615,29 @@ display:flex;align-items:center;justify-content:center}
   .cookie-bar{bottom:70px}
 }
 /* services page: 13px floor */@media(max-width:820px){body .deliver h4{font-size:.84rem}body .hero-card .hc-note{font-size:.84rem}body .sc-tag{font-size:.84rem}}/* services: vertical rhythm */
-/* 80px top and bottom on every section meant 160px of undifferentiated white
-   wherever two light sections sat next to each other, which reads as a gap
-   rather than as separation. Tightened, and tightened further where the
-   background does not change. */
-main section{padding:60px 0}
-main section + section{padding-top:52px}
-main section.stats{padding:56px 0}
-main section.page-hero{padding:64px 0}
-main .tstrip{padding:22px 0}
-/* last element in a section already carries its own margin, so the padding
-   was stacking on top of it */
+/* Pixel scan of the rendered page showed 13% of its height was empty bands,
+   the largest 164px. Section padding was stacking with each block's own
+   margins. Values below keep every inter-section gap under about 90px. */
+main section{padding:48px 0}
+main section + section{padding-top:38px}
+main section.page-hero{padding:60px 0 56px}
+main .tstrip{padding:20px 0}
+main section.stats{padding:44px 0}
+main .priceband{padding:46px 0}
+/* the last block in a section already carries a bottom margin */
 main section > .wrap > *:last-child{margin-bottom:0}
-main .pain-grid,main .fit,main .steps,main .rev-grid{margin-top:28px}
-main .inline-cta{margin:24px 0 0}
+main section > .wrap > .center:last-child{margin-bottom:0}
+main .pain-grid,main .fit,main .steps,main .rev-grid{margin-top:24px}
+main .inline-cta{margin:20px 0 0}
 main .svc-card:last-of-type{margin-bottom:0}
-main .seq{margin-top:24px}
+main .seq{margin-top:20px}
+main .sub{margin-top:10px}
+main .priceband p:last-child{margin-top:18px}
+main .faq details:last-of-type{margin-bottom:0}main section.faq{margin-top:0}
 @media(max-width:820px){
-  main section{padding:42px 0}
-  main section + section{padding-top:36px}
-  main .page-hero{padding:44px 0}
+  main section{padding:36px 0}
+  main section + section{padding-top:30px}
+  main section.page-hero{padding:40px 0 36px}
 }
 </style>
 
