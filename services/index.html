@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Digital Marketing Services for B2B in Europe | Johar Creativ</title>
-<meta name="description" content="Website rebuilds, search rankings and paid ads for B2B companies and online stores in Europe and the UK. Prices published, one person does the work, accounts stay yours.">
+<title>Digital Marketing Services in Europe | Johar Creativ</title>
+<meta name="description" content="Website rebuilds, search rankings and paid ads for companies and online stores in Europe and the UK. Prices published, one person does the work, accounts stay yours.">
 <link rel="canonical" href="https://joharcreativ.com/services/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Johar Creativ">
 <meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://joharcreativ.com/services/">
 <meta property="og:title" content="Digital marketing services judged on enquiries, not impressions">
-<meta property="og:description" content="Website rebuilds, search rankings and paid ads for B2B companies and online stores in Europe and the UK. Prices published, one person does the work, accounts stay yours.">
+<meta property="og:description" content="Website rebuilds, search rankings and paid ads for companies and online stores in Europe and the UK. Prices published, one person does the work, accounts stay yours.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Digital marketing services judged on enquiries, not impressions">
-<meta name="twitter:description" content="Website rebuilds, search rankings and paid ads for B2B companies and online stores in Europe and the UK. Prices published, one person does the work, accounts stay yours.">
+<meta name="twitter:description" content="Website rebuilds, search rankings and paid ads for companies and online stores in Europe and the UK. Prices published, one person does the work, accounts stay yours.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -482,7 +482,58 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
   body .qa p > a:only-child{display:inline-flex;align-items:center;min-height:44px}
 }
 /* ---------- three-up price band ---------- */.priceband.ladder .wrap{grid-template-columns:1fr;gap:30px}.priceband.ladder h2.left{max-width:22ch}.priceband.ladder .pricebox-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:900px){.priceband.ladder .pricebox-row{grid-template-columns:1fr}}/* ---------- footer + dot tap areas ---------- */@media (max-width:820px){body footer .cols li{margin:0}body footer .cols li>a{display:flex;align-items:center;width:100%;min-height:44px}body footer ul{list-style:none;padding:0;margin:0}}/* ---------- breadcrumb + heading link tap areas ---------- */@media (max-width:820px){body .crumb{display:flex;flex-wrap:wrap;align-items:center;gap:0 4px}body .crumb a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 4px}body h1>a,body h2>a,body h3>a{display:flex;align-items:center;min-height:44px}}
-/* ---------- services page ---------- */.page-hero .hero-2col{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}.hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:28px 30px}.hero-card h2{color:#fff;font-size:1.2rem;margin:0 0 4px}.hero-card .hc-sub{color:var(--amber);font-size:.86rem;margin:0 0 18px}.hero-card ul{list-style:none;margin:0;padding:0}.hero-card li{padding:12px 0;border-top:1px solid rgba(255,255,255,.12)}.hero-card li:first-child{border-top:0;padding-top:0}.hero-card li b{display:block;color:#fff;font-size:.95rem;margin-bottom:2px}.hero-card li span{display:block;color:#a9bdd2;font-size:.86rem;line-height:1.5}.hero-card .hc-note{margin:18px 0 0;font-size:.8rem;color:#8fa6bd;line-height:1.55}@media(max-width:900px){.page-hero .hero-2col{grid-template-columns:1fr;gap:34px}.hero-card{order:2}}.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px;text-align:left}@media(max-width:900px){.rev-grid{grid-template-columns:1fr}}
+/* ---------- services page ---------- */
+/* services: chooser + cards */
+.chooser{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:34px 0 46px}
+.choose{display:flex;flex-direction:column;gap:6px;background:var(--white);
+border:1px solid var(--line);border-radius:10px;padding:20px 22px;text-decoration:none}
+.choose:hover{border-color:var(--navy);transform:translateY(-3px);
+box-shadow:0 14px 32px rgba(2,28,54,.1)}
+.choose .ci{width:38px;height:38px;border-radius:9px;background:var(--navy);display:flex;
+align-items:center;justify-content:center;margin-bottom:4px}
+.choose .ci svg{stroke:#fff}
+.choose:nth-child(2) .ci{background:var(--amber)}
+.choose:nth-child(2) .ci svg{stroke:var(--navy-deep)}
+.choose:nth-child(3) .ci{background:#1a5c42}
+.choose .cn{font-family:'Roboto Slab',serif;font-weight:700;color:var(--navy);font-size:1.05rem}
+.choose .cb{font-size:.88rem;color:var(--ink-soft);line-height:1.5}
+.choose .cp{margin-top:auto;padding-top:8px;font-size:.82rem;font-weight:700;color:var(--amber-deep)}
+
+.svc-card{background:var(--white);border:1px solid var(--line);border-radius:14px;
+box-shadow:0 12px 34px rgba(2,28,54,.07);overflow:hidden;margin-bottom:30px;scroll-margin-top:90px}
+.svc-card .sc-head{display:flex;gap:18px;align-items:center;padding:26px 30px 20px;
+border-bottom:1px solid var(--line)}
+.sc-icon{flex:none;width:52px;height:52px;border-radius:12px;background:var(--navy);
+display:flex;align-items:center;justify-content:center}
+.sc-icon svg{stroke:#fff}
+#seo .sc-icon{background:var(--amber)} #seo .sc-icon svg{stroke:var(--navy-deep)}
+#ads .sc-icon{background:#1a5c42}
+.sc-num{font-family:'Roboto Slab',serif;font-size:.72rem;letter-spacing:.14em;color:var(--ink-soft)}
+.svc-card h3{color:var(--navy);font-size:1.45rem;margin:2px 0 2px}
+.sc-price{margin:0;font-size:.9rem;font-weight:700;color:var(--amber-deep)}
+.sc-body{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;padding:26px 30px}
+.sc-tag{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.05em;
+text-transform:uppercase;color:var(--navy);background:var(--offwhite);
+border:1px solid var(--line);border-radius:20px;padding:5px 13px;margin:0 0 14px}
+.sc-solves{color:var(--ink-soft)}
+.sc-foot{display:flex;align-items:center;justify-content:space-between;gap:24px;
+padding:20px 30px;background:var(--offwhite);border-top:1px solid var(--line)}
+.sc-outcome{margin:0;font-family:'Roboto Slab',serif;color:var(--navy);font-size:1rem;line-height:1.5}
+.svc-card .deliver{box-shadow:none}
+
+@media (max-width:900px){
+  .chooser{grid-template-columns:1fr;gap:12px;margin:26px 0 34px}
+  .choose{flex-direction:row;align-items:center;flex-wrap:wrap;gap:4px 14px}
+  .choose .ci{margin-bottom:0}
+  .choose .cn{flex:1 1 auto}
+  .choose .cp{margin:0;padding:0;flex:0 0 auto}
+  .choose .cb{flex:1 1 100%}
+  .sc-body{grid-template-columns:1fr;gap:22px;padding:22px}
+  .svc-card .sc-head{padding:20px 22px 16px;gap:14px}
+  .sc-foot{flex-direction:column;align-items:flex-start;padding:18px 22px}
+  .svc-card h3{font-size:1.25rem}
+}
+.page-hero .hero-2col{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}.hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:28px 30px}.hero-card h2{color:#fff;font-size:1.2rem;margin:0 0 4px}.hero-card .hc-sub{color:var(--amber);font-size:.86rem;margin:0 0 18px}.hero-card ul{list-style:none;margin:0;padding:0}.hero-card li{padding:12px 0;border-top:1px solid rgba(255,255,255,.12)}.hero-card li:first-child{border-top:0;padding-top:0}.hero-card li b{display:block;color:#fff;font-size:.95rem;margin-bottom:2px}.hero-card li span{display:block;color:#a9bdd2;font-size:.86rem;line-height:1.5}.hero-card .hc-note{margin:18px 0 0;font-size:.8rem;color:#8fa6bd;line-height:1.55}@media(max-width:900px){.page-hero .hero-2col{grid-template-columns:1fr;gap:34px}.hero-card{order:2}}.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px;text-align:left}@media(max-width:900px){.rev-grid{grid-template-columns:1fr}}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
 .btn-wa{background:#25D366;color:#04301a;border-color:#25D366}
 .btn-wa:hover{background:#1eb457;color:#04301a}
@@ -500,12 +551,12 @@ border-radius:8px;padding:24px 26px}
 .pain h3{color:var(--navy);font-size:1.05rem;margin-bottom:8px}
 .pain p{font-size:.94rem;color:var(--ink-soft);margin:0}
 
-.svc-block{border-top:1px solid var(--line);padding:44px 0}
-.svc-block:first-of-type{border-top:0}
-.svc-block .inner{display:grid;grid-template-columns:1.15fr 1fr;gap:52px;align-items:start}
-.svc-block h3{color:var(--navy);font-size:1.5rem;margin-bottom:6px}
-.svc-block .price-line{color:var(--amber-deep);font-weight:700;font-size:.95rem;margin-bottom:16px}
-.svc-block .solves{font-size:.95rem;color:var(--ink-soft);margin-bottom:18px}
+
+
+
+
+
+
 .deliver{background:var(--offwhite);border:1px solid var(--line);border-radius:10px;padding:22px 24px}
 .deliver h4{font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);
 margin-bottom:12px}
@@ -545,7 +596,7 @@ display:flex;align-items:center;justify-content:center}
 .mobile-cta{display:none}
 
 @media (max-width:900px){
-  .svc-block .inner{grid-template-columns:1fr;gap:26px}
+  
   .steps{grid-template-columns:1fr}
   .tstrip .row{grid-template-columns:1fr 1fr;gap:18px}
 }
@@ -558,21 +609,21 @@ display:flex;align-items:center;justify-content:center}
     padding:10px 12px calc(10px + env(safe-area-inset-bottom));
     background:rgba(255,255,255,.97);border-top:1px solid var(--line);
     box-shadow:0 -6px 20px rgba(2,28,54,.12)}
-  .mobile-cta.one .btn{flex:1}.mobile-cta .btn{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;
+  .mobile-cta .btn{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;
     font-size:.9rem;padding:0 10px}
   body{padding-bottom:78px}
   .cookie-bar{bottom:70px}
 }
-/* services page: 13px floor */@media(max-width:820px){body .deliver h4{font-size:.84rem}body .hero-card .hc-note{font-size:.84rem}}</style>
+/* services page: 13px floor */@media(max-width:820px){body .deliver h4{font-size:.84rem}body .hero-card .hc-note{font-size:.84rem}body .sc-tag{font-size:.84rem}}</style>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for B2B companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long before I see results?","acceptedAnswer":{"@type":"Answer","text":"Paid ads produce enquiries in the first weeks. Search rankings move in three to four months on an established site, six to nine on a new domain. A website rebuild is live in three weeks."}},{"@type":"Question","name":"Can I buy just one service?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each is sold separately and works on its own. If one service is the wrong spend for your situation, I will say so before you buy it."}},{"@type":"Question","name":"Do I have to sign a long contract?","acceptedAnswer":{"@type":"Answer","text":"No. Rebuilds are fixed price and finish. Monthly work runs three months to start, then rolling monthly with thirty days notice."}},{"@type":"Question","name":"Who owns the accounts and the work?","acceptedAnswer":{"@type":"Answer","text":"You do, in writing. Analytics, Search Console and any ad accounts are created under your email and stay yours if we stop working together."}},{"@type":"Question","name":"Do you work with small companies?","acceptedAnswer":{"@type":"Answer","text":"Most clients are teams of five to fifty. Below about ten thousand euro of annual marketing budget, paid ads rarely make sense and I will tell you that."}},{"@type":"Question","name":"What happens after I contact you?","acceptedAnswer":{"@type":"Answer","text":"You get a written fifteen point check on your site within two working days, free, with no call required. If it makes sense to go further, you get a one page scope with a fixed price before anything starts."}}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="topbar">
   <div class="wrap">
-    <span>Websites and Google rankings for B2B companies. <b>Two client slots open.</b></span>
+    <span>Websites and Google rankings for growing companies. <b>Two client slots open.</b></span>
     <span>hello@joharcreativ.com, replies within one working day</span>
   </div>
 </div>
@@ -589,9 +640,9 @@ display:flex;align-items:center;justify-content:center}
           <div class="mega-grid">
             <div class="mcol">
               <h5>SEO</h5>
-              <a href="/services/b2b-seo/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Search rankings</a>
-              <a href="/services/b2b-seo/#content-that-ranks"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>Content that ranks</a>
-              <a href="/services/b2b-seo/#technical-fixes"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Speed and technical fixes</a>
+              <a href="/services/seo/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Search rankings</a>
+              <a href="/services/seo/#content-that-ranks"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>Content that ranks</a>
+              <a href="/services/seo/#technical-fixes"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Speed and technical fixes</a>
             </div>
             <div class="mcol">
               <h5>ADS</h5>
@@ -622,7 +673,7 @@ display:flex;align-items:center;justify-content:center}
           <a href="/industries/#engineering">Engineering and manufacturing</a>
           <a href="/industries/#logistics">Logistics and fulfilment</a>
           <a href="/industries/#consultancies">Consultancies</a>
-          <a href="/industries/#b2b-saas">B2B SaaS</a>
+          <a href="/industries/#saas">SaaS companies</a>
           <a href="/industries/#specialist-trades">Specialist trades</a>
         </div>
       </div>
@@ -641,11 +692,12 @@ display:flex;align-items:center;justify-content:center}
     <div>
     <span class="kicker">Digital marketing services</span>
     <h1>Marketing judged on enquiries, not impressions.</h1>
-    <p class="lead">Website rebuilds, search rankings and paid advertising for B2B companies and
+    <p class="lead">Website rebuilds, search rankings and paid advertising for companies and
     online stores across Europe and the UK. One person does the work, both prices are published,
     and every account stays in your name.</p>
     <div class="hero-cta">
       <a class="btn" href="mailto:hello@joharcreativ.com?subject=Marketing%20enquiry&body=Hi%20Johar%2C%0A%0AMy%20website%3A%20%0AWhat%20I%20need%3A%20%0A">Email me</a>
+      <a class="btn btn-wa" href="https://wa.me/923320423783" target="_blank" rel="noopener">WhatsApp me</a>
     </div>
     <p class="hero-note">Every enquiry gets a reply within one working day. Start with the free
     15 point site check if you would rather see the work before talking.</p>
@@ -706,57 +758,91 @@ display:flex;align-items:center;justify-content:center}
     times that means the cheaper one or nothing at all.</p>
   </div>
 </section>
-<section><div class="wrap"><h2>The three services</h2><p class="lead" style="max-width:66ch">What each one is for, what actually gets done, and what you are left holding at the end.</p>
+<section><div class="wrap">
+<h2>The three services</h2>
+<p class="lead" style="max-width:64ch">Sold separately, each works on its own. Pick the one that matches your bottleneck, or read all three.</p>
+<div class="chooser">
+<a class="choose" href="#rebuild"><span class="ci"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span><span class="cn">Website rebuilds</span><span class="cb">Start here if the site itself is the bottleneck</span><span class="cp">From 1,450 euro fixed</span></a>
+<a class="choose" href="#seo"><span class="ci"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><span class="cn">Search rankings</span><span class="cb">Start here if you are invisible for the things you sell</span><span class="cp">From 490 euro a month</span></a>
+<a class="choose" href="#ads"><span class="ci"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 20V10M10 20V4M17 20v-8"/><path d="M21 20H3"/></svg></span><span class="cn">Google and Meta ads</span><span class="cb">Start here if you need enquiries this month, not next year</span><span class="cp">Managed, budget agreed in writing</span></a>
+</div>
 
-<article class="svc-block" id="rebuild">
-  <div class="inner">
+<article class="svc-card" id="rebuild">
+  <header class="sc-head">
+    <span class="sc-icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span>
     <div>
+      <span class="sc-num">01</span>
       <h3>Website rebuilds</h3>
-      <p class="price-line">From 1,450 euro fixed, ex VAT</p>
-      <p class="solves">For when the site is the bottleneck. Sending more traffic to a page that does not sell is the most expensive mistake in this business, because it looks like progress while it drains budget.</p>
-      <p>I interview you, write the copy from what you actually say to buyers, then design and build around the decision a visitor has to make. Five pages on a proven layout, or eight designed for your business.</p>
-      <p class="outcome">Outcome: a site you send without hesitating, that turns the traffic you already have into enquiries.</p>
-      <p style="margin-top:18px"><a class="btn btn-line btn-small" href="/services/website-rebuild/">See what a rebuild includes</a></p>
+      <p class="sc-price">From 1,450 euro fixed</p>
+    </div>
+  </header>
+  <div class="sc-body">
+    <div>
+      <p class="sc-tag">Best when the site itself is the bottleneck</p>
+      <p class="sc-solves">Sending more traffic to a page that does not sell is the most expensive mistake in this business, because it looks like progress while it drains the budget.</p>
+      <p>I interview you, write the copy from what you actually say to buyers, then design and build around the one decision a visitor has to make. Five pages on a proven layout, or eight designed from scratch for your business.</p>
     </div>
     <div class="deliver">
       <h4>What you get</h4>
-      <ul><li>Copy written from interviews, not a template</li><li>Built on WordPress, WooCommerce or Shopify</li><li>Pages mapped to what buyers actually search</li><li>GDPR consent and an Impressum where you trade</li><li>Loads in under two seconds on a phone</li><li>Every login handed over, yours to keep</li></ul>
+      <ul><li>Copy written from interviews, not a template</li><li>WordPress, WooCommerce or Shopify</li><li>Pages mapped to what people actually search</li><li>GDPR consent and an Impressum where you trade</li><li>Under two seconds to load on a phone</li><li>Every login handed over, yours to keep</li></ul>
     </div>
   </div>
+  <footer class="sc-foot">
+    <p class="sc-outcome">A site you send without hesitating, that converts the traffic you already have.</p>
+    <a class="btn btn-line btn-small" href="/services/website-rebuild/">See what a rebuild includes</a>
+  </footer>
 </article>
 
-<article class="svc-block" id="seo">
-  <div class="inner">
+<article class="svc-card" id="seo">
+  <header class="sc-head">
+    <span class="sc-icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
     <div>
+      <span class="sc-num">02</span>
       <h3>Search rankings</h3>
-      <p class="price-line">From 490 euro a month, ex VAT</p>
-      <p class="solves">For when you are invisible for the things you sell, and paying for every click you get. Search is the slowest channel and the only one that stops charging you per visitor once it works.</p>
-      <p>Technical faults fixed first, then content written for the searches your buyers actually type when they are ready to buy, then links earned rather than bought. A plain English note every week so you know what moved.</p>
-      <p class="outcome">Outcome: enquiries that arrive without a click charge attached, and keep arriving after the invoice stops.</p>
-      <p style="margin-top:18px"><a class="btn btn-line btn-small" href="/services/b2b-seo/">How the monthly work runs</a></p>
+      <p class="sc-price">From 490 euro a month</p>
+    </div>
+  </header>
+  <div class="sc-body">
+    <div>
+      <p class="sc-tag">Best when you are invisible for the things you sell</p>
+      <p class="sc-solves">Every enquiry currently arrives with a click charge attached. Search is the slowest channel and the only one that stops charging you per visitor once it works.</p>
+      <p>Technical faults fixed first, then content written for what buyers type when they are ready to buy, then links earned rather than bought. A plain English note every week so you can see what moved and what did not.</p>
     </div>
     <div class="deliver">
       <h4>What you get</h4>
-      <ul><li>Technical audit and fixes, done not just listed</li><li>Content aimed at buying intent, not traffic volume</li><li>Links from places that would exist anyway</li><li>Search Console and analytics in your name</li><li>Weekly notes, quarterly review of what it returned</li><li>No bought links, no rank guarantees, no lock in</li></ul>
+      <ul><li>Technical audit and the fixes actually made</li><li>Content aimed at buying intent, not traffic</li><li>Links from places that would exist anyway</li><li>Search Console and analytics in your name</li><li>Weekly notes, quarterly review of the return</li><li>No bought links, no rank guarantees, no lock in</li></ul>
     </div>
   </div>
+  <footer class="sc-foot">
+    <p class="sc-outcome">Enquiries without a click charge, still arriving after the invoices stop.</p>
+    <a class="btn btn-line btn-small" href="/services/seo/">How the monthly work runs</a>
+  </footer>
 </article>
 
-<article class="svc-block" id="ads">
-  <div class="inner">
+<article class="svc-card" id="ads">
+  <header class="sc-head">
+    <span class="sc-icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 20V10M10 20V4M17 20v-8"/><path d="M21 20H3"/></svg></span>
     <div>
+      <span class="sc-num">03</span>
       <h3>Google and Meta ads</h3>
-      <p class="price-line">Managed, budget agreed in writing</p>
-      <p class="solves">For when you need enquiries this month rather than next year. Ads are the only channel that can answer a question in two weeks: does this offer, in this market, at this price, actually sell.</p>
-      <p>Google catches people already searching. Meta reaches them before they search. I read the actual search terms weekly, maintain negatives, and fix the landing page before increasing spend, because the page is usually the problem.</p>
-      <p class="outcome">Outcome: a cost per enquiry you can actually quote, and the ability to turn it up or off deliberately.</p>
-      <p style="margin-top:18px"><a class="btn btn-line btn-small" href="/services/google-ads-management/">How I run accounts</a></p>
+      <p class="sc-price">Managed, budget agreed in writing</p>
+    </div>
+  </header>
+  <div class="sc-body">
+    <div>
+      <p class="sc-tag">Best when you need enquiries this month, not next year</p>
+      <p class="sc-solves">Ads are the only channel that answers a question in two weeks: does this offer, in this market, at this price, actually sell.</p>
+      <p>Google catches people already searching. Meta reaches them before they search. I read the real search terms weekly, maintain negatives, and fix the landing page before raising spend, because the page is usually the problem.</p>
     </div>
     <div class="deliver">
       <h4>What you get</h4>
-      <ul><li>Accounts created and kept in your name</li><li>Exact search terms read weekly, negatives maintained</li><li>Landing page fixed before budget is raised</li><li>Budget agreed in writing, no silent increases</li><li>Creative tested on a rota, not set and forgotten</li><li>A pause call when the numbers stop adding up</li></ul>
+      <ul><li>Accounts created and kept in your name</li><li>Search terms read weekly, negatives maintained</li><li>Landing page fixed before budget goes up</li><li>Budget agreed in writing, no silent increases</li><li>Creative tested on a rota, not set and forgotten</li><li>A pause call when the numbers stop adding up</li></ul>
     </div>
   </div>
+  <footer class="sc-foot">
+    <p class="sc-outcome">A cost per enquiry you can quote, and a tap you can turn up or off.</p>
+    <a class="btn btn-line btn-small" href="/services/google-ads-management/">How I run accounts</a>
+  </footer>
 </article>
 </div></section>
 
@@ -792,7 +878,7 @@ display:flex;align-items:center;justify-content:center}
     <div class="col yes">
       <h3>A good fit</h3>
       <ul>
-        <li>B2B companies and online stores, roughly five to fifty people</li>
+        <li>companies and online stores, roughly five to fifty people</li>
         <li>One good enquiry is worth thousands, or the store lives on margin per order</li>
         <li>You want to talk to the person doing the work</li>
         <li>You would rather see a price than book a call to hear one</li>
@@ -853,14 +939,16 @@ display:flex;align-items:center;justify-content:center}
     like, including one that is not me.</p>
     <div class="hero-cta" style="justify-content:center">
       <a class="btn" href="mailto:hello@joharcreativ.com?subject=Marketing%20enquiry&body=Hi%20Johar%2C%0A%0AMy%20website%3A%20%0AWhat%20I%20need%3A%20%0A">Email me</a>
+      <a class="btn btn-wa" href="https://wa.me/923320423783" target="_blank" rel="noopener">WhatsApp me</a>
     </div>
     <p style="margin-top:18px;font-size:.88rem;color:#9db3c9">Reply within one working day.
     Two client slots open.</p>
   </div>
 </section>
 
-<div class="mobile-cta one">
+<div class="mobile-cta">
   <a class="btn" href="mailto:hello@joharcreativ.com?subject=Marketing%20enquiry&body=Hi%20Johar%2C%0A%0AMy%20website%3A%20%0AWhat%20I%20need%3A%20%0A">Email me</a>
+      <a class="btn btn-wa" href="https://wa.me/923320423783" target="_blank" rel="noopener">WhatsApp me</a>
 </div>
 
 </main>
@@ -881,7 +969,7 @@ display:flex;align-items:center;justify-content:center}
         <h4>Services</h4>
         <ul>
           <li><a href="/services/website-rebuild/">Website rebuilds</a></li>
-          <li><a href="/services/b2b-seo/">Search rankings</a></li>
+          <li><a href="/services/seo/">Search rankings</a></li>
           <li><a href="/services/google-ads-management/">Google Ads</a></li>
           <li><a href="/resources/">Resources</a></li>
         </ul>
