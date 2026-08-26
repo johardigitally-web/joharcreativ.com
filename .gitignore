@@ -1,2 +1,25 @@
 .DS_Store
 Thumbs.db
+
+# Safety net. This repo is PUBLIC (free GitHub Pages requires it).
+# Nothing below should ever be published, so it is ignored even if an
+# outreach or automation file is dropped in here by mistake.
+.env
+.env.*
+*.env
+credentials*
+*secret*
+*token*
+*.key
+*.pem
+*.pfx
+service-account*.json
+# prospect and client data is personal data under the GDPR
+prospects*
+leads*
+contacts*
+outreach*
+*.csv
+*.xlsx
+*.sqlite
+*.db
