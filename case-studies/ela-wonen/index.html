@@ -639,7 +639,104 @@ main .faq details:last-of-type{margin-bottom:0}main section.faq{margin-top:0}mai
   main section + section{padding-top:30px}
   main section.page-hero{padding:40px 0 36px}
 }
-.rcard .rname,.rcard .rsub{display:block}/* case study */.tabs{margin-top:26px}.tablist{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:0;margin-bottom:0}.tablist button{appearance:none;background:none;border:0;border-bottom:3px solid transparent;font-family:'Roboto Slab',serif;font-weight:700;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);padding:14px 18px;min-height:48px;cursor:pointer;transition:color .18s ease,border-color .18s ease}.tablist button:hover{color:var(--navy)}.tablist button[aria-selected="true"]{color:var(--navy);border-bottom-color:var(--amber)}.tablist button:focus-visible{outline:2px solid var(--navy);outline-offset:-2px}.tabpanel{background:var(--white);border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;padding:26px 28px}.tabpanel h3{position:absolute;left:-9999px}.tabpanel ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 30px}.tabpanel li{position:relative;padding:9px 0 9px 26px;font-size:.96rem;color:var(--ink);line-height:1.55}.tabpanel li::before{content:"¹3";position:absolute;left:0;top:9px;color:#1a7a4f;font-weight:700}.js-anim .tabpanel{animation:fadeUp .28s ease}@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.wstep{border:1px solid var(--line);border-radius:10px;background:var(--white);margin-bottom:14px;overflow:hidden;transition:box-shadow .2s ease}.wstep[open]{box-shadow:0 12px 30px rgba(2,28,54,.08)}.wstep summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:46px 1fr 34px;gap:16px;align-items:start;padding:22px 24px}.wstep summary::-webkit-details-marker{display:none}.wstep summary:hover{background:var(--offwhite)}.wstep summary:focus-visible{outline:2px solid var(--navy);outline-offset:-2px}.w-n{font-family:'Roboto Slab',serif;font-weight:700;font-size:1.3rem;color:var(--amber-deep);line-height:1.4}.w-title{display:block;font-family:'Roboto Slab',serif;font-weight:700;color:var(--navy);font-size:1.12rem;line-height:1.4;margin-bottom:8px}.w-win{display:block;color:var(--ink);font-size:.98rem;line-height:1.6;border-left:3px solid var(--amber);padding-left:14px}.w-more{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);position:relative;justify-self:end;transition:background .2s ease,transform .25s ease}.w-more::before,.w-more::after{content:"";position:absolute;left:50%;top:50%;background:var(--navy);transform:translate(-50%,-50%)}.w-more::before{width:12px;height:2px}.w-more::after{width:2px;height:12px;transition:opacity .2s ease}.wstep[open] .w-more{background:var(--amber);transform:rotate(180deg)}.wstep[open] .w-more::after{opacity:0}.w-detail{padding:0 24px 24px 86px}.w-detail p{margin:0;line-height:1.8;color:var(--ink-soft);max-width:74ch}.stats .val{font-family:'Roboto Slab',serif;font-weight:700;font-size:2rem;color:var(--amber)}.stats .cap{font-size:.86rem;color:#c7d3e0;margin-top:6px;line-height:1.5}@media(max-width:900px){.tabpanel ul{grid-template-columns:1fr}}@media(max-width:640px){.wstep summary{grid-template-columns:34px 1fr;gap:12px;padding:18px}.w-more{display:none}.w-detail{padding:0 18px 20px 18px}.tablist button{flex:1 1 auto;padding:12px 12px;font-size:.8rem}}@media(max-width:820px){body .tabpanel li{font-size:.95rem}}/* band + tab 13px floor */@media(max-width:820px){body .fcase .fc-tag{font-size:.84rem}body .tablist button{font-size:.84rem}}</style>
+.rcard .rname,.rcard .rsub{display:block}/* ---------- case study ---------- */
+.cs-meta{display:flex;flex-wrap:wrap;gap:0 40px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16)}
+.cs-meta div{padding:8px 0}
+.cs-meta dt{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:5px}
+.cs-meta dd{margin:0;font-size:.95rem;color:#dbe4ef;line-height:1.5}
+.stats .val{font-family:'Roboto Slab',serif;font-weight:700;font-size:2.05rem;color:var(--amber);line-height:1.1}
+.stats .cap{font-size:.86rem;color:#c7d3e0;margin-top:7px;line-height:1.5}
+
+/* before and after */
+.ba{margin-top:30px;border:1px solid var(--line);border-radius:12px;background:var(--white);overflow:hidden}
+.ba-row{display:grid;grid-template-columns:1fr 52px 1fr;align-items:stretch;border-bottom:1px solid var(--line)}
+.ba-row:last-child{border-bottom:0}
+.ba-row.ba-head{background:var(--navy)}
+.ba-head span{padding:13px 24px;font-family:'Roboto Slab',serif;font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;display:flex;align-items:center}
+.ba-head .ba-h-a{color:var(--amber)}
+.ba-b,.ba-a{padding:17px 24px;font-size:.95rem;line-height:1.6}
+.ba-b{color:var(--ink-soft);background:#fbfaf8}
+.ba-a{color:var(--ink);font-weight:600}
+.ba-x{display:flex;align-items:center;justify-content:center;background:#fbfaf8;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.ba-x svg{width:17px;height:17px;color:var(--amber-deep)}
+.ba-row:not(.ba-head):hover .ba-a{background:#fffaf0}
+
+/* everything delivered */
+.jump{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 4px}
+.jump a{display:inline-flex;align-items:center;min-height:38px;padding:0 15px;border:1px solid var(--line);border-radius:999px;background:var(--white);font-size:.86rem;font-weight:600;color:var(--ink-soft);text-decoration:none;transition:.18s ease}
+.jump a:hover,.jump a:focus-visible{border-color:var(--amber);color:var(--navy);background:#fffaf0}
+.jump a b{color:var(--amber-deep);margin-left:7px;font-size:.8rem}
+.scope{display:grid;grid-template-columns:repeat(auto-fit,minmax(325px,1fr));gap:20px;margin-top:26px;align-items:start}
+.sc{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--amber);border-radius:12px;padding:24px 26px 22px;scroll-margin-top:100px;transition:box-shadow .22s ease,transform .22s ease}
+.sc:hover{box-shadow:0 16px 40px rgba(2,28,54,.09);transform:translateY(-2px)}
+.sc-h{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+.sc-ico{width:40px;height:40px;flex:none;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center}
+.sc-ico svg{width:19px;height:19px;color:var(--amber)}
+.sc-h h3{margin:0;font-size:1.06rem;color:var(--navy);line-height:1.3}
+.sc ul{list-style:none;margin:0;padding:0}
+.sc li{position:relative;padding:7px 0 7px 25px;font-size:.93rem;line-height:1.55;color:var(--ink)}
+.sc li::before{content:"\2713";position:absolute;left:0;top:7px;color:#1a7a4f;font-weight:700;font-size:.9rem}
+.sc li b{color:var(--navy)}
+
+/* the work */
+.wcard{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px 30px;margin-bottom:18px;display:grid;grid-template-columns:58px 1fr;gap:20px;transition:box-shadow .22s ease}
+.wcard:hover{box-shadow:0 16px 40px rgba(2,28,54,.08)}
+.w-n{font-family:'Roboto Slab',serif;font-weight:700;font-size:1.7rem;color:var(--amber);line-height:1.1}
+.w-title{margin:0 0 12px;font-size:1.18rem;color:var(--navy);line-height:1.35}
+.w-win{margin:0 0 14px;padding:12px 18px;background:#fffaf0;border-left:3px solid var(--amber);border-radius:0 8px 8px 0;font-size:1rem;line-height:1.6;color:var(--ink);font-weight:600}
+.w-detail{margin:0;line-height:1.8;color:var(--ink-soft);font-size:.96rem;max-width:76ch}
+
+/* timeline */
+.tl{position:relative;margin-top:30px;padding-left:34px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--amber),rgba(2,28,54,.12))}
+.tl-item{position:relative;padding:0 0 26px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-30px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--amber);border:2px solid var(--white);box-shadow:0 0 0 2px var(--amber)}
+.tl-date{display:block;font-family:'Roboto Slab',serif;font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:5px}
+.tl-body{font-size:.97rem;line-height:1.65;color:var(--ink)}
+
+/* ropo flow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 6px}
+.flow div{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:17px 16px;text-align:center;position:relative}
+.flow div span{display:block;font-family:'Roboto Slab',serif;font-weight:700;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:7px}
+.flow div p{margin:0;font-size:.89rem;line-height:1.5;color:var(--ink)}
+.flow div:not(:last-child)::after{content:"";position:absolute;right:-11px;top:50%;width:10px;height:2px;background:var(--line)}
+.flow .flow-on{border-color:var(--amber);background:#fffaf0}
+
+/* stack + notes */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{display:inline-flex;align-items:center;min-height:32px;padding:0 13px;border-radius:6px;background:var(--offwhite);border:1px solid var(--line);font-size:.85rem;color:var(--ink-soft);font-weight:600}
+.notes{margin-top:34px;padding:24px 26px;border:1px solid var(--line);border-left:3px solid #b9c4d1;border-radius:0 10px 10px 0;background:var(--offwhite)}
+.notes h3{margin:0 0 12px;font-size:1rem;color:var(--ink-soft)}
+.notes p{margin:0 0 12px;font-size:.93rem;line-height:1.75;color:var(--ink-soft)}
+.notes p:last-child{margin-bottom:0}
+
+@media(max-width:900px){
+  .flow{grid-template-columns:1fr 1fr}
+  .flow div:not(:last-child)::after{display:none}
+}
+@media(max-width:760px){
+  .cs-meta{gap:0 28px}
+  .ba-row{grid-template-columns:1fr}
+  .ba-head{display:none}
+  .ba-b,.ba-a{padding:14px 18px}
+  .ba-b::before{content:"Before";display:block;font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:#a0442e;margin-bottom:5px}
+  .ba-a::before{content:"After";display:block;font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:#1a7a4f;margin-bottom:5px}
+  .ba-x{display:none}
+  .ba-row:not(.ba-head){border-bottom:2px solid var(--line)}
+  .wcard{grid-template-columns:1fr;gap:6px;padding:24px 22px}
+  .scope{grid-template-columns:1fr}
+  .sc{padding:22px 20px 18px}
+}
+@media(max-width:820px){
+  body .sc li,body .tl-body,body .flow div p{font-size:.93rem}
+  body .chips span{font-size:.84rem}
+  body .jump a{font-size:.86rem;min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){
+  .sc,.wcard{transition:none}
+}
+</style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Three storefronts, three ad accounts and a CRM built from scratch","description":"Three Shopify storefronts, three Merchant Center accounts, Google and Meta ads, and a custom CRM with order tracking and QR invoices, for a Dutch furniture retailer.","inLanguage":"en","datePublished":"2026-08-26","dateModified":"2026-08-26","author":{"@type":"Person","name":"Johar Rehman","url":"https://joharcreativ.com/about/"},"publisher":{"@type":"Organization","name":"Johar Creativ"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://joharcreativ.com/case-studies/ela-wonen/"},"about":{"@type":"Organization","name":"Ela Wonen & Slapen"},"image":"https://joharcreativ.com/og-image.png"}</script>
@@ -723,149 +820,155 @@ main .faq details:last-of-type{margin-bottom:0}main section.faq{margin-top:0}mai
     <h1>Three storefronts, three ad accounts and a CRM built from scratch.</h1>
     <p class="lead">Ela Wonen &amp; Slapen is a Dutch furniture and bedding retailer with a
     Rotterdam showroom, and the official Netherlands dealer for Enza Home and Yatas Bedding. I run
-    the online side of all three: the storefronts, the product feeds, the advertising, the CRM the
-    team works in every day, and the automation around a ten week delivery cycle.</p>
+    the online side of all three: the storefronts, the product feeds, the advertising, the email
+    flows, the CRM the team works in every day, and the automation around a ten week delivery
+    cycle.</p>
+    <dl class="cs-meta">
+      <div><dt>Client</dt><dd>Ela Wonen &amp; Slapen</dd></div>
+      <div><dt>Sector</dt><dd>Furniture and bedding retail</dd></div>
+      <div><dt>Market</dt><dd>Netherlands, Rotterdam showroom</dd></div>
+      <div><dt>Brands</dt><dd>Ela Wonen, Enza Home, Yatas Bedding</dd></div>
+      <div><dt>Role</dt><dd>Everything online, one person</dd></div>
+    </dl>
     <p class="meta">Published with the client's permission, 26 August 2026</p>
   </div>
 </section>
+
 <section class="stats"><div class="wrap"><div class="grid">
-<div class="stat rv"><div class="val"><span class="tick" data-to="3" data-suffix="">3</span></div><div class="cap">brands, storefronts and ad accounts</div></div>
-<div class="stat rv"><div class="val"><span class="tick" data-to="373" data-suffix="">373</span></div><div class="cap">products live, 835 variants</div></div>
-<div class="stat rv"><div class="val"><span class="tick" data-to="822" data-suffix="">822</span></div><div class="cap">feed offers, zero errors</div></div>
+<div class="stat rv"><div class="val"><span class="tick" data-to="3">3</span></div><div class="cap">brands, storefronts and ad accounts</div></div>
+<div class="stat rv"><div class="val"><span class="tick" data-to="373">373</span></div><div class="cap">products live, 835 variants</div></div>
+<div class="stat rv"><div class="val"><span class="tick" data-to="822">822</span></div><div class="cap">feed offers, zero errors</div></div>
 <div class="stat rv"><div class="val"><span class="tick" data-to="5.7" data-suffix="%">5.7%</span></div><div class="cap">conversion rate, all campaigns</div></div>
-</div></div></section>
-<section><div class="wrap"><h2>What was delivered</h2><p class="lead" style="max-width:66ch">One person, five areas, all of it still running. Pick an area.</p><div class="tabs" data-tabs><div class="tablist" role="tablist" aria-label="Areas of work">
-<button role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true" tabindex="0">Storefronts</button>
-<button role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false" tabindex="-1">Product feeds</button>
-<button role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Advertising</button>
-<button role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Software</button>
-<button role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">Automation</button>
-</div>
-<div class="tabpanel" role="tabpanel" id="panel-0" aria-labelledby="tab-0"><h3>Storefronts</h3><ul><li>Two Shopify stores built from scratch</li><li>One WooCommerce store migrated onto the same domain</li><li>739 redirects mapped, so no existing link breaks</li><li>68 collections rebuilt, 373 products, 835 variants</li></ul></div>
-<div class="tabpanel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" hidden><h3>Product feeds</h3><ul><li>Three Merchant Center accounts fixed and connected</li><li>Custom feed written against the Content API</li><li>822 offers live with zero errors</li><li>Real brand data set across 361 products</li></ul></div>
-<div class="tabpanel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden><h3>Advertising</h3><ul><li>Google Ads rebuilt, converting at 5.7%</li><li>Meta rebuilt with pixel and Conversions API</li><li>Showroom visits tracked as conversions, not ignored</li><li>Seasonal budget plan built on Dutch buying patterns</li></ul></div>
-<div class="tabpanel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden><h3>Software</h3><ul><li>A CRM built from scratch in Django</li><li>Old customer and order data migrated across</li><li>Order warning dashboard for the sales team</li><li>Point of sale screen used in the showroom</li></ul></div>
-<div class="tabpanel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden><h3>Automation</h3><ul><li>Customer facing order tracking page</li><li>Invoices with a QR code opening the right order</li><li>WhatsApp and email updates, previously typed by hand</li><li>Abandoned cart and browse abandonment flows</li></ul></div>
+<div class="stat rv"><div class="val"><span class="tick" data-to="34">34</span></div><div class="cap">certification findings fixed</div></div>
 </div></div></section>
 
-<section style="background:var(--offwhite);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap prose" style="max-width:76ch">
+<section style="background:var(--offwhite);border-bottom:1px solid var(--line)">
+  <div class="wrap">
     <h2>Where it started</h2>
-    <p>A furniture retailer selling three brands, with a showroom in Rotterdam and an online store
-    on WooCommerce that had grown over years. Product data was inconsistent, the advertising had
-    been set up by someone else and left running, and nobody could say which part of it was
-    working, because the tracking was reporting the wrong thing.</p>
-    <p>Furniture makes all of this harder than it sounds. Orders run between roughly 750 and 2,500
-    euro, custom pieces take ten to twelve weeks, and a customer researches for weeks before
-    buying once. Any measurement that only looks at this month is measuring the wrong window.</p>
+    <p class="lead" style="max-width:70ch">A furniture retailer selling three brands, with a
+    showroom in Rotterdam and an online store that had grown over years. Product data was
+    inconsistent, the advertising had been set up by someone else and left running, the CRM
+    belonged to somebody else, and nobody could say which part was working, because the tracking
+    was reporting the wrong thing.</p>
+    <p style="max-width:70ch">Furniture makes all of this harder than it sounds. Orders run
+    between roughly 750 and 2,500 euro, custom pieces take ten to twelve weeks, and a customer
+    researches for weeks before buying once. Any measurement that only looks at this month is
+    measuring the wrong window.</p>
+    <div class="ba rv"><div class="ba-row ba-head"><span class="ba-h-b">Before</span><span aria-hidden="true"></span><span class="ba-h-a">After</span></div><div class="ba-row"><div class="ba-b">A WooCommerce store on a server that was being switched off</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">Three Shopify storefronts, one of them on the same domain</div></div><div class="ba-row"><div class="ba-b">The official Google app could not build a working feed</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">822 offers live in Merchant Center, zero errors</div></div><div class="ba-row"><div class="ba-b">A Meta pixel recording add to carts and not one purchase</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">Pixel and Conversions API recording what actually happens</div></div><div class="ba-row"><div class="ba-b">Advertising judged on online checkouts alone, in a showroom business</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">Showroom actions counted, 5.7% conversion rate across all campaigns</div></div><div class="ba-row"><div class="ba-b">No email flows at all, on traffic the ads had already paid for</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">Cart, browse and re-permission flows live in Dutch</div></div><div class="ba-row"><div class="ba-b">An open Thuiswinkel certification review</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">34 findings fixed and verified on the live store</div></div><div class="ba-row"><div class="ba-b">Locked out of their own CRM by the party who held it</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">A Django CRM they own, ten years of history archived inside it</div></div><div class="ba-row"><div class="ba-b">Order updates typed out by hand, one customer at a time</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">A tracking page and QR invoices customers use themselves</div></div></div>
   </div>
 </section>
-<section><div class="wrap"><h2>The work, in five parts</h2><p class="lead" style="max-width:64ch">The result first. Open any one to read how it was done.</p>
-<details class="wstep" open><summary><span class="w-n">01</span><span class="w-head"><span class="w-title">Three storefronts, one migrated with its rankings intact</span><span class="w-win">Two Shopify stores built from scratch, and a third moved off WooCommerce onto the same domain without losing its search position.</span></span><span class="w-more" aria-hidden="true"></span></summary><div class="w-detail"><p>The group sells three brands: its own, plus Enza Home and Yatas Bedding as the official Netherlands dealer. Replatforming usually costs a month of traffic, because every product URL changes shape. Here the domain stayed, 373 products and 835 variants were rebuilt, 68 collections remapped, and 739 redirects put in place so every old address still lands on the right page. Live on 10 July 2026.</p></div></details>
-<details class="wstep"><summary><span class="w-n">02</span><span class="w-head"><span class="w-title">A product feed the official Google app could not build</span><span class="w-win">822 offers pushed live with zero errors, after proving the tool everyone is told to use was broken for this store.</span></span><span class="w-more" aria-hidden="true"></span></summary><div class="w-detail"><p>Shopify has an official Google app for connecting a store to Merchant Center. On this store it silently refused, reporting a domain verification error that was false. Rather than keep retrying, I queried Merchant Center directly and proved nothing was wrong at Google: domain claimed, no account issues, 869 products already approved. The app itself was the fault. So I bypassed it and wrote a feed pushing straight to the Content API, then retired the stale legacy feeds so they stopped competing with it.</p></div></details>
-<details class="wstep"><summary><span class="w-n">03</span><span class="w-head"><span class="w-title">Advertising rebuilt around what actually gets measured</span><span class="w-win">A 5.7% conversion rate across all campaigns, counting the showroom actions that a furniture buyer actually takes rather than only online checkouts.</span></span><span class="w-more" aria-hidden="true"></span></summary><div class="w-detail"><p>The inherited setup was optimising toward a page view counted as a conversion, so the system was obeying a wrong instruction perfectly. The Meta pixel recorded thousands of add to cart events and not one purchase. Tracking was rebuilt first, then two focused campaigns replaced a thin spread across many. The account now converts at 5.7%, where a conversion means a WhatsApp message, a call, a route request or an online order, which is what buying furniture actually looks like. A seasonal budget plan sits on top, built on Dutch buying patterns: salaries land between the 23rd and 25th, buying peaks between 20:00 and 23:00, and October is the national furniture month.</p></div></details>
-<details class="wstep"><summary><span class="w-n">04</span><span class="w-head"><span class="w-title">A CRM built from scratch, because they were locked out of their own</span><span class="w-win">A working Django application with its own data model, admin, sales screen and order warning dashboard, with the old data migrated in.</span></span><span class="w-more" aria-hidden="true"></span></summary><div class="w-detail"><p>The business ran on a CRM they did not control and could not get into. Their entire customer and order history sat inside a system belonging to someone else. The replacement models customers, products, variants, orders, payments and suppliers, gives showroom staff a sales screen that writes straight to the database, and flags any order needing attention: past its promised delivery date, missing an address, or deposit not received.</p></div></details>
-<details class="wstep"><summary><span class="w-n">05</span><span class="w-head"><span class="w-title">Automation built around a ten week wait</span><span class="w-win">Order tracking customers can check themselves, QR invoices, and the update messages that used to be typed by hand.</span></span><span class="w-more" aria-hidden="true"></span></summary><div class="w-detail"><p>Custom furniture takes ten to twelve weeks to arrive. That is a long silence for someone who has just spent two thousand euro, and a long stream of "where is my order" messages for the staff. Now there is a customer facing tracking page, invoices carry a QR code that opens the right order directly, and WhatsApp and email updates go out automatically, alongside abandoned cart and browse abandonment flows on the store.</p></div></details>
-</div></section>
+
+<section>
+  <div class="wrap">
+    <h2>Everything that was delivered</h2>
+    <p class="lead" style="max-width:68ch">40 things, six areas, one person, all of it
+    still running.</p>
+    <nav class="jump" aria-label="Jump to an area"><a href="#sc-storefronts">Storefronts and theme<b>7</b></a><a href="#sc-feeds">Product data and pricing<b>6</b></a><a href="#sc-ads">Advertising<b>7</b></a><a href="#sc-email">Email and retention<b>6</b></a><a href="#sc-compliance">Compliance and trust<b>7</b></a><a href="#sc-software">Software and automation<b>7</b></a></nav>
+    <div class="scope"><div class="sc rv" id="sc-storefronts"><div class="sc-h"><span class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/></svg></span><h3>Storefronts and theme</h3></div><ul><li>Two <b>Shopify stores built from scratch</b> for Enza Home and Yatas Bedding</li><li>elawonen.nl <b>migrated off WooCommerce</b> onto the same domain</li><li><b>373 products, 835 variants</b> rebuilt</li><li><b>68 collections</b> remapped with hero, feature and FAQ content</li><li><b>739 redirects</b> mapped, so no existing link breaks</li><li>Custom theme work: load more, filters, badges, spec accordions, comparison slider</li><li>Around <b>40 custom snippets</b> rebuilt from the old WooCommerce store</li></ul></div><div class="sc rv" id="sc-feeds"><div class="sc-h"><span class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1.6"/></svg></span><h3>Product data and pricing</h3></div><ul><li><b>822 offers</b> live in Merchant Center with <b>zero errors</b></li><li>Issues fixed across <b>three Merchant Center accounts</b></li><li>Feed written against the Content API after the official app could not build one</li><li>Catalogue reconciled against the supplier list: sold, archived, or never listed</li><li>Price rule audit against the dealer agreement, violations reported</li><li>New price proposal built for August 2026 from the Yatas price list</li></ul></div><div class="sc rv" id="sc-ads"><div class="sc-h"><span class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v3h4l5 4V7l-5 4H3z"/><path d="M17 8a5 5 0 010 8"/></svg></span><h3>Advertising</h3></div><ul><li>Google Ads relaunched: Standard Shopping plus a tight Search set</li><li>Meta rebuilt after <b>thousands of add to carts and no recorded purchases</b></li><li>Pixel and Conversions API set up properly, domain verified</li><li><b>5.7% conversion rate</b> across all campaigns</li><li>Showroom actions counted: WhatsApp, calls and route requests</li><li>Products under 250 euro kept out of Shopping, big ticket only</li><li>Batch only changes, so Smart Bidding is not restarted every week</li></ul></div><div class="sc rv" id="sc-email"><div class="sc-h"><span class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><h3>Email and retention</h3></div><ul><li><b>Klaviyo</b> connected to Shopify and the data flow verified</li><li><b>Three step abandoned cart</b> sequence, written in Dutch</li><li><b>Two step browse abandonment</b> sequence</li><li>Opt in re-permission campaign to make the existing list mailable</li><li>Copy written for a ten week order cycle, showroom first, discount last</li><li>Monitoring script that catches flows left sitting in draft</li></ul></div><div class="sc rv" id="sc-compliance"><div class="sc-h"><span class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Compliance and trust</h3></div><ul><li><b>Thuiswinkel Waarborg</b> certification review worked through end to end</li><li><b>34 numbered findings</b> fixed and verified on the live store</li><li>Checkout button label corrected through a market level translation override</li><li>Payments page trimmed to the methods actually accepted</li><li>Withdrawal form and identity clauses added to the terms</li><li>Duplicate headings removed across around twenty pages</li><li>Cookie consent position and newsletter consent line fixed</li></ul></div><div class="sc rv" id="sc-software"><div class="sc-h"><span class="sc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l-6-6 6-6"/><path d="M15 6l6 6-6 6"/></svg></span><h3>Software and automation</h3></div><ul><li><b>Django CRM built from scratch</b>, because they were locked out of their own</li><li><b>Ten years of history</b> migrated in as a read only archive</li><li>Sales screen, order warning dashboard and admin for showroom staff</li><li>Order tracking page customers check themselves</li><li><b>QR invoices</b> that open the right order page</li><li><b>WhatsApp Business Cloud API</b> webhook receiving customer messages</li><li>Order update messages that used to be typed by hand</li></ul></div></div>
+  </div>
+</section>
+
+<section style="background:var(--offwhite);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2>The work, in six parts</h2>
+    <p class="lead" style="max-width:64ch">The result first, then how it was done.</p>
+    <div class="wcard rv"><div class="w-n">01</div><div><h3 class="w-title">Three storefronts, one migrated with its rankings intact</h3><p class="w-win">Two Shopify stores built from scratch, and a third moved off WooCommerce onto the same domain without losing its search position.</p><p class="w-detail">The group sells three brands: its own, plus Enza Home and Yatas Bedding as the official Netherlands dealer. Replatforming usually costs a month of traffic, because every product URL changes shape. Here the domain stayed, 373 products and 835 variants were rebuilt, 68 collections remapped, and 739 redirects put in place so every old address still lands on the right page. Live on 10 July 2026. The old store carried around forty custom PHP snippets, and the behaviour worth keeping was rebuilt in Liquid rather than dropped in the move.</p></div></div><div class="wcard rv"><div class="w-n">02</div><div><h3 class="w-title">A product feed the official Google app could not build</h3><p class="w-win">822 offers pushed live with zero errors, after proving the tool everyone is told to use was broken for this store.</p><p class="w-detail">The Shopify Google app kept failing to produce a usable feed. Two days went into that before I accepted it was not going to be fixed and wrote the feed against the Content API directly instead. 822 offers, zero errors, across three Merchant Center accounts. The catalogue itself was reconciled against the supplier list on 11 August 2026: what is still sold, what should be archived, and what had never been in the CRM in the first place. A separate pass checked live prices against the dealer price agreement and listed every rule violation.</p></div></div><div class="wcard rv"><div class="w-n">03</div><div><h3 class="w-title">Advertising rebuilt around what actually gets measured</h3><p class="w-win">A 5.7% conversion rate across all campaigns, counting the showroom actions a furniture buyer actually takes rather than online checkouts alone.</p><p class="w-detail">Google Ads relaunched in mid July 2026 as two campaigns, Standard Shopping plus a tight Search set, with products under 250 euro kept out of Shopping because this is a big ticket business. Meta was rebuilt on 3 August 2026: the account had thousands of add to cart events and not one recorded purchase, because the pixel and the Conversions API had never been set up properly. Changes go in as one consolidated batch rather than daily edits, so Smart Bidding is not sent back into learning every time something is adjusted.</p></div></div><div class="wcard rv"><div class="w-n">04</div><div><h3 class="w-title">Email flows, because the traffic was already paid for</h3><p class="w-win">Cart, browse and re-permission flows live in Dutch, working the visitors the ads had already brought in.</p><p class="w-detail">Klaviyo was connected to Shopify, then six emails were written and built: a three step abandoned cart sequence, a two step browse abandonment sequence, and an opt in campaign to make the existing list mailable again. The copy is written around a ten to twelve week custom order cycle, so the second email invites people into the Rotterdam showroom instead of reaching for a discount, and the discount only appears at the end. A monitoring script checks the account, because the most common failure in Klaviyo is a flow that looks finished and is still sitting in draft.</p></div></div><div class="wcard rv"><div class="w-n">05</div><div><h3 class="w-title">A certification review, worked through finding by finding</h3><p class="w-win">34 findings from the Thuiswinkel Waarborg review fixed and verified on the live store.</p><p class="w-detail">Thuiswinkel Waarborg is the trust mark Dutch shoppers look for before they buy from a store they do not know. The review produced a long list: a checkout button label that could only be changed through a market level translation override rather than the theme, a payments page listing methods the store does not accept, missing withdrawal form and identity clauses in the terms, duplicate headings across around twenty pages, consent banner position, a newsletter consent line. Each fix was scripted so it can be re-run and re-verified against the live store rather than done once by hand and forgotten.</p></div></div><div class="wcard rv"><div class="w-n">06</div><div><h3 class="w-title">Software they own, instead of software they rent</h3><p class="w-win">A Django CRM, an order tracking page, QR invoices and a WhatsApp integration, all built from scratch.</p><p class="w-detail">The client was locked out of their own CRM by the party who held it, on a server that was being switched off. The rescue came first, so the deadline stopped driving the decision, and the replacement second: a Django application with its own data model, admin, sales screen and order warning dashboard, with ten years of history migrated in as a read only archive rather than replayed into a new accounting engine. On top of it sits an order tracking page customers check themselves, QR invoices that open the right order, and a WhatsApp Business Cloud API webhook so the update messages that used to be typed by hand arrive on their own.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How it ran</h2>
+    <p class="lead" style="max-width:64ch">The record, with the dates the changes actually went
+    live.</p>
+    <div class="tl"><div class="tl-item rv"><span class="tl-date">July 2026</span><div class="tl-body">The old store is rescued off a server that is being switched off, which turns a deadline back into a decision.</div></div><div class="tl-item rv"><span class="tl-date">10 July 2026</span><div class="tl-body">elawonen.nl goes live on Shopify. Same domain, 373 products, 739 redirects.</div></div><div class="tl-item rv"><span class="tl-date">Mid July 2026</span><div class="tl-body">Google Ads relaunched: Standard Shopping and a tight Search set.</div></div><div class="tl-item rv"><span class="tl-date">15 July 2026</span><div class="tl-body">First set of Thuiswinkel certification fixes applied and verified live.</div></div><div class="tl-item rv"><span class="tl-date">16 July 2026</span><div class="tl-body">Further findings from the certification document worked through.</div></div><div class="tl-item rv"><span class="tl-date">24 July 2026</span><div class="tl-body">A full snapshot of live prices taken before the pricing project starts.</div></div><div class="tl-item rv"><span class="tl-date">3 August 2026</span><div class="tl-body">Meta rebuilt and relaunched with the pixel and Conversions API fixed.</div></div><div class="tl-item rv"><span class="tl-date">3 August 2026</span><div class="tl-body">Price rule violations reported against the dealer price agreement.</div></div><div class="tl-item rv"><span class="tl-date">11 August 2026</span><div class="tl-body">Catalogue reconciled against the supplier list.</div></div><div class="tl-item rv"><span class="tl-date">August 2026</span><div class="tl-body">New price proposal delivered. Klaviyo flows, the CRM, order tracking and the WhatsApp integration continue alongside.</div></div></div>
+  </div>
+</section>
 
 <section style="background:var(--offwhite);border-top:1px solid var(--line)">
-  <div class="wrap prose" style="max-width:76ch">
+  <div class="wrap">
     <h2>The insight that changed how this account is judged</h2>
-    <p>Furniture is not bought the way analytics assumes. Around 85 per cent of Dutch furniture
-    revenue still closes offline. Nobody spends two thousand euro on a sofa from a photograph:
-    they search, they read, they shortlist, then they drive to Rotterdam to sit on it.</p>
-    <p>So the sale happens in the showroom and Google Ads never sees it. Judge that account on
-    online conversions alone and it looks like a failure while the shop floor is busy. This is the
-    single most common reason a business with a physical location concludes that advertising does
-    not work for them.</p>
-    <p>The answer is to measure the step you can actually see. WhatsApp clicks, phone calls and
-    route requests are treated as conversions, mirrored across Google and Meta, so the bidding
-    optimises toward people who turn up rather than people who check out online. The ten to twelve
-    week order cycle sits on top of that, which means any reporting window shorter than a quarter
-    is reading noise.</p>
+    <p style="max-width:72ch">Furniture is not bought the way analytics assumes. Around 85 per
+    cent of Dutch furniture revenue still closes offline. Nobody spends two thousand euro on a
+    sofa from a photograph: they search, they read, they shortlist, then they drive to Rotterdam
+    to sit on it.</p>
+    <div class="flow">
+      <div class="flow-on"><span>Step 1</span><p>Searches online and finds the product page</p></div>
+      <div class="flow-on"><span>Step 2</span><p>Sends a WhatsApp, calls, or asks for the route</p></div>
+      <div><span>Step 3</span><p>Visits the Rotterdam showroom and sits on it</p></div>
+      <div><span>Step 4</span><p>Buys in store, ten to twelve weeks before delivery</p></div>
+    </div>
+    <p style="max-width:72ch;margin-top:22px">Only the first two steps are visible to Google and
+    Meta. Judge the account on online checkouts alone and it looks like a failure while the shop
+    floor is busy. That is the single most common reason a business with a physical location
+    concludes that advertising does not work for them.</p>
+    <p style="max-width:72ch">So the measurable step is the one that gets measured. WhatsApp
+    clicks, phone calls and route requests are treated as conversions and mirrored across Google
+    and Meta, which points the bidding at people who turn up rather than people who check out
+    online. The ten to twelve week order cycle sits on top of that, which means any reporting
+    window shorter than a quarter is reading noise.</p>
 
-    <h2>Honest notes</h2>
-    <p>Two days went into fighting the broken Google app before I accepted it could not be fixed
-    and went around it. I should have reached that decision sooner. iDEAL also turned out not to
-    be a simple toggle on Shopify, which is a migration risk worth knowing before you move rather
-    than after.</p>
-    <p>The rebuilt campaigns launched recently, so there is no twelve month revenue chart here
-    yet. When there is one it goes on this page, including the months that disappoint. The
-    client's store address is not published at their request.</p>
+    <h3 style="margin-top:40px">Built with</h3>
+    <div class="chips"><span>Shopify</span><span>Liquid</span><span>Shopify Admin API</span><span>WooCommerce</span><span>PHP</span><span>Django</span><span>Python</span><span>SQLite</span><span>Google Ads API</span><span>Merchant Center Content API</span><span>Meta Marketing API</span><span>Conversions API</span><span>Klaviyo API</span><span>WhatsApp Business Cloud API</span><span>Cloudflare Workers</span><span>Google Sheets API</span><span>PowerShell</span></div>
+
+    <div class="notes">
+      <h3>Honest notes</h3>
+      <p>Two days went into fighting the broken Google app before I accepted it could not be
+      fixed and went around it. I should have reached that decision sooner. iDEAL also turned out
+      not to be a simple toggle on Shopify, which is a migration risk worth knowing about before
+      you move rather than after.</p>
+      <p>The rebuilt campaigns launched recently, so there is no twelve month revenue chart here
+      yet. When there is one it goes on this page, including the months that disappoint. The
+      client's store address is not published here at their request.</p>
+    </div>
   </div>
 </section>
 
 <section class="center" style="background:linear-gradient(135deg,#01152a 0%,#0d3357 85%);color:#fff">
   <div class="wrap">
-    <h2 style="color:#fff">Want this level of attention on your store?<span class="bar"></span></h2>
-    <p class="sub" style="color:#c7d3e0;max-width:64ch">Start with the free 15 point check.
+    <h2 style="color:#fff">Want this level of attention on your store?</h2>
+    <p style="max-width:60ch;margin:0 auto 26px;color:#dbe4ef">Start with the free 15 point check.
     Written, two working days, no call required, and it tells you what is actually holding the
     site back before anyone quotes you for anything.</p>
-    <div class="hero-cta" style="justify-content:center">
-      <a class="btn" href="mailto:hello@joharcreativ.com?subject=Project%20enquiry&body=Hi%20Johar%2C%0A%0AMy%20website%3A%20%0AWhat%20I%20need%3A%20%0A">Email me</a>
-      <a class="btn btn-wa" href="https://wa.me/923320423783" target="_blank" rel="noopener">WhatsApp me</a>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn" href="mailto:hello@joharcreativ.com?subject=Free%2015%20point%20site%20check&amp;body=My%20website%3A%20%0A%0AWhat%20I%20need%3A%20%0A%0A">Email me</a>
+      <a class="btn btn-wa" href="https://wa.me/923320423783?text=Hi%20Johar%2C%20I%20would%20like%20the%20free%2015%20point%20site%20check.">WhatsApp me</a>
     </div>
   </div>
 </section>
 
-<div class="mobile-cta">
-  <a class="btn" href="mailto:hello@joharcreativ.com?subject=Project%20enquiry&body=Hi%20Johar%2C%0A%0AMy%20website%3A%20%0AWhat%20I%20need%3A%20%0A">Email me</a>
-  <a class="btn btn-wa" href="https://wa.me/923320423783" target="_blank" rel="noopener">WhatsApp</a>
-</div>
-
 <script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* tabs: real buttons, arrow keys, and every panel visible if this never runs */
-  document.querySelectorAll('[data-tabs]').forEach(function(w){
-    var tabs = [].slice.call(w.querySelectorAll('[role="tab"]'));
-    var panels = [].slice.call(w.querySelectorAll('[role="tabpanel"]'));
-    function select(i){
-      tabs.forEach(function(t,n){
-        t.setAttribute('aria-selected', n===i ? 'true':'false');
-        t.tabIndex = n===i ? 0 : -1;
-      });
-      panels.forEach(function(p,n){ p.hidden = n!==i; });
-    }
-    tabs.forEach(function(t,i){
-      t.addEventListener('click', function(){ select(i); });
-      t.addEventListener('keydown', function(e){
-        var d = e.key==='ArrowRight' ? 1 : e.key==='ArrowLeft' ? -1 : 0;
-        if(!d) return;
-        e.preventDefault();
-        var n = (i + d + tabs.length) % tabs.length;
-        tabs[n].focus(); select(n);
-      });
-    });
-  });
-
-  /* counters: decimal aware, fires once when the band is on screen */
-  if (reduce || !('IntersectionObserver' in window)) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(!e.isIntersecting) return;
+(function () {
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (rm || !('IntersectionObserver' in window)) return;
+  var ticks = document.querySelectorAll('.tick');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
       io.unobserve(e.target);
       var el = e.target,
-          to = parseFloat(el.getAttribute('data-to')),
+          raw = el.getAttribute('data-to'),
+          to = parseFloat(raw),
           suf = el.getAttribute('data-suffix') || '',
-          dec = (el.getAttribute('data-to').split('.')[1] || '').length,
+          dec = (raw.split('.')[1] || '').length,
           t0 = null;
-      function tick(ts){
-        if(!t0) t0 = ts;
-        var p = Math.min((ts - t0) / 1100, 1);
-        p = 1 - Math.pow(1 - p, 3);
-        var v = to * p;
-        el.textContent = (dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-GB')) + suf;
-        if(p < 1) requestAnimationFrame(tick);
+      function step(t) {
+        if (t0 === null) t0 = t;
+        var p = Math.min((t - t0) / 900, 1),
+            v = to * (1 - Math.pow(1 - p, 3));
+        el.textContent = v.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + suf;
+        if (p < 1) requestAnimationFrame(step);
       }
-      el.textContent = (dec ? '0.0' : '0') + suf;
-      requestAnimationFrame(tick);
+      el.textContent = '0' + suf;
+      requestAnimationFrame(step);
     });
-  }, {threshold: .4});
-  document.querySelectorAll('.tick').forEach(function(el){ io.observe(el); });
-})();
-</script></main>
+  }, { threshold: 0.4 });
+  for (var i = 0; i < ticks.length; i++) io.observe(ticks[i]);
+}());
+</script>
+
+<div class="mobile-cta"><a class="btn" href="mailto:hello@joharcreativ.com?subject=Free%2015%20point%20site%20check&amp;body=Hi%20Johar%2C%0A%0AMy%20website%3A%20%0AWhat%20I%20need%3A%20%0A">Email me</a><a class="btn btn-wa" href="https://wa.me/923320423783?text=Hi%20Johar%2C%20I%20would%20like%20the%20free%2015%20point%20site%20check." target="_blank" rel="noopener">WhatsApp</a></div>
+</main>
 
 <footer>
   <div class="wrap">
