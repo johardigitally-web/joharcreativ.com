@@ -215,26 +215,12 @@ footer li{margin-bottom:9px}
 footer a{color:#c7d3e0}
 footer a:hover{color:var(--amber)}
 footer .base{border-top:1px solid #163350;margin-top:48px;padding-top:22px;display:flex;flex-wrap:wrap;gap:8px 24px;color:#7f93a8;font-size:.8rem}
-
-/* call booking */
-.call-sec{background:var(--white)}
-.call-card{display:grid;grid-template-columns:1fr 1fr;max-width:940px;margin:44px auto 0;border-radius:12px;overflow:hidden;box-shadow:0 24px 60px rgba(2,28,54,.25);text-align:left;border:1px solid var(--line)}
-.call-left{background:linear-gradient(135deg,#0d3357,#021c36);color:#fff;padding:38px}
-.call-left h3{color:#fff;font-size:1.35rem;margin-bottom:10px}
-.call-left>p{color:#c7d3e0;font-size:.95rem}
-.call-left ul{list-style:none;margin-top:20px}
-.call-left li{padding:9px 0 9px 32px;position:relative;font-size:.93rem;color:#dbe5ee}
-.call-left li::before{content:"\2713";position:absolute;left:0;top:10px;width:19px;height:19px;border-radius:50%;background:var(--amber);color:#021c36;font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center}
-.call-right{background:var(--white);padding:38px;display:flex;flex-direction:column}
-.call-right h3{color:var(--navy);font-size:1.05rem}
 .slotweek{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0 4px}
 .slotday{text-align:center;font-size:.72rem;font-weight:700;color:var(--ink-soft)}
 .slot{border:1.5px solid var(--line);border-radius:6px;padding:8px 0;text-align:center;font-size:.8rem;color:var(--ink);background:var(--offwhite)}
 .slot:hover{border-color:var(--navy)}
 .slot.hot{background:var(--navy);color:#fff;border-color:var(--navy)}
 .slot.off{opacity:.35}
-.call-right .btn{margin-top:22px;width:100%}
-.call-note{font-size:.76rem;color:#9aa7b5;margin-top:10px}
 
 [hidden]{display:none!important}
 
@@ -355,7 +341,7 @@ body.nav-locked{overflow:hidden}
   footer a,.drop a,.mcol a{display:inline-flex;align-items:center;min-height:44px}
   footer .cols a{min-height:44px}
   input,select,textarea{min-height:48px;font-size:16px}   /* 16px stops iOS zooming on focus */
-  .micro,.consent,.slot-note,.call-note{font-size:.82rem;line-height:1.6}
+  .micro,.consent,.slot-note{font-size:.82rem;line-height:1.6}
   .kicker{font-size:.78rem;letter-spacing:.08em}
 }
 
@@ -408,7 +394,7 @@ img,svg,canvas,video{max-width:100%;height:auto}
   body label{font-size:.85rem}
   body figcaption{font-size:.85rem}
   body footer .base span{font-size:.85rem}
-  body .micro,body .slot-note,body .call-note{font-size:.85rem}
+  body .micro,body .slot-note{font-size:.85rem}
 }
 
 /* ---------- final legibility overrides ---------- */
@@ -677,7 +663,7 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
         <h4>Legal</h4>
         <ul>
           <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/cookie-policy/">Cookie Policy</a></li><li><a href="#call" data-consent-reopen>Cookie settings</a></li>
+          <li><a href="/cookie-policy/">Cookie Policy</a></li><li><a href="#" data-consent-reopen>Cookie settings</a></li>
           <li><a href="/imprint/">Impressum</a></li>
           <li><a href="/terms/">Terms of Service</a></li>
         </ul>

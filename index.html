@@ -216,25 +216,8 @@ footer a{color:#c7d3e0}
 footer a:hover{color:var(--amber)}
 footer .base{border-top:1px solid #163350;margin-top:48px;padding-top:22px;display:flex;flex-wrap:wrap;gap:8px 24px;color:#7f93a8;font-size:.8rem}
 
-/* call booking */
-.call-sec{background:var(--white)}
-.call-card{display:grid;grid-template-columns:1fr 1fr;max-width:940px;margin:44px auto 0;border-radius:12px;overflow:hidden;box-shadow:0 24px 60px rgba(2,28,54,.25);text-align:left;border:1px solid var(--line)}
-.call-left{background:linear-gradient(135deg,#0d3357,#021c36);color:#fff;padding:38px}
-.call-left h3{color:#fff;font-size:1.35rem;margin-bottom:10px}
-.call-left>p{color:#c7d3e0;font-size:.95rem}
-.call-left ul{list-style:none;margin-top:20px}
-.call-left li{padding:9px 0 9px 32px;position:relative;font-size:.93rem;color:#dbe5ee}
-.call-left li::before{content:"\2713";position:absolute;left:0;top:10px;width:19px;height:19px;border-radius:50%;background:var(--amber);color:#021c36;font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center}
-.call-right{background:var(--white);padding:38px;display:flex;flex-direction:column}
-.call-right h3{color:var(--navy);font-size:1.05rem}
-
-
 
 .slot:hover{border-color:var(--navy)}
-
-
-.call-right .btn{margin-top:22px;width:100%}
-.call-note{font-size:.76rem;color:#9aa7b5;margin-top:10px}
 
 [hidden]{display:none!important}
 
@@ -355,7 +338,7 @@ body.nav-locked{overflow:hidden}
   footer a,.drop a,.mcol a{display:inline-flex;align-items:center;min-height:44px}
   footer .cols a{min-height:44px}
   input,select,textarea{min-height:48px;font-size:16px}   /* 16px stops iOS zooming on focus */
-  .micro,.consent,.slot-note,.call-note{font-size:.82rem;line-height:1.6}
+  .micro,.consent,.slot-note{font-size:.82rem;line-height:1.6}
   .kicker{font-size:.78rem;letter-spacing:.08em}
 }
 
@@ -408,7 +391,7 @@ img,svg,canvas,video{max-width:100%;height:auto}
   body label{font-size:.85rem}
   body figcaption{font-size:.85rem}
   body footer .base span{font-size:.85rem}
-  body .micro,body .slot-note,body .call-note{font-size:.85rem}
+  body .micro,body .slot-note{font-size:.85rem}
 }
 
 /* ---------- final legibility overrides ---------- */
@@ -490,7 +473,7 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
     font-size:.9rem;padding:0 10px}
   body{padding-bottom:78px}
   .cookie-bar{bottom:70px}
-}.avail{margin:18px 0 20px;border-top:1px solid var(--line)}.avail p{display:flex;gap:14px;align-items:baseline;justify-content:space-between;margin:0;padding:11px 0;border-bottom:1px solid var(--line);font-size:.9rem;line-height:1.5;text-align:left}.avail b{color:var(--navy);white-space:nowrap}.avail span{color:var(--ink-soft);text-align:right}.call-cta{display:flex;gap:10px;flex-wrap:wrap}.call-cta .btn{flex:1 1 auto;text-align:center}@media(max-width:520px){.avail p{flex-direction:column;gap:2px}.avail span{text-align:left}}</style>
+}</style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://joharcreativ.com/#org","logo":"https://joharcreativ.com/apple-touch-icon.png","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://joharcreativ.com/#website","name":"Johar Creativ","url":"https://joharcreativ.com/","inLanguage":"en-GB","publisher":{"@id":"https://joharcreativ.com/#org"}}</script>
@@ -600,7 +583,6 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
 </section>
 
 
-
 <section class="priceband" id="pricing">
   <div class="wrap">
     <div class="rv">
@@ -673,39 +655,6 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
       <div class="stat rv d2"><div class="val"><span class="count" data-target="3">0</span><span class="unit">wks</span></div><div class="cap">from first call to a live website</div></div>
       <div class="stat rv d3"><div class="val"><span class="count" data-target="2">0</span><span class="unit">s</span></div><div class="cap">maximum load time on every page I ship</div></div>
     </div>
-  </div>
-</section>
-
-<section class="call-sec center">
-  <div class="wrap">
-    <h2 class="rv">Prefer to talk it through?<span class="bar"></span></h2>
-    <p class="sub rv d1">Twenty minutes on a call or video meeting. No pitch deck, no pressure, and you leave with something useful either way.</p>
-    <div class="call-card rv d2">
-      <div class="call-left">
-        <h3>What the call covers</h3>
-        <p>Bring your website and your biggest frustration with it. In twenty minutes you get:</p>
-        <ul>
-          <li>The three things on your site costing you the most enquiries, in order</li>
-          <li>An honest answer on whether SEO, ads or a rebuild is the right first move</li>
-          <li>What it would cost and what a realistic timeline looks like</li>
-          <li>A straight "I'm not the right fit" if that is the truth</li>
-        </ul>
-      </div>
-      <div class="call-right">
-          <h3>How to book one</h3>
-          <div class="avail">
-            <p><b>Weekdays</b><span>09:00 to 18:00, Central European Time</span></p>
-            <p><b>Answered</b><span>Within one working day</span></p>
-            <p><b>On</b><span>Phone or a meeting link, your choice</span></p>
-          </div>
-          <div class="call-cta">
-            <a class="btn" href="mailto:hello@joharcreativ.com?subject=20%20minute%20call&amp;body=Hi%20Johar%2C%0A%0AMy%20website%3A%20%0ATimes%20that%20suit%20me%20%28with%20your%20timezone%29%3A%20%0A%0A">Email me two or three times</a>
-            <a class="btn btn-wa" href="https://wa.me/923320423783?text=Hi%20Johar%2C%20I%20would%20like%20to%20book%20the%2020%20minute%20call." target="_blank" rel="noopener">WhatsApp me</a>
-          </div>
-          <p class="call-note">Send a couple of times that suit you and I will confirm one of
-          them, or offer the nearest slot I have. No account to create and no form to fill in.</p>
-        </div>
-      </div>
   </div>
 </section>
 
@@ -799,7 +748,6 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
   </div>
 </div>
 
-
 <div class="mobile-cta"><a class="btn" href="mailto:hello@joharcreativ.com?subject=Free%2015%20point%20site%20check&amp;body=Hi%20Johar%2C%0A%0AMy%20website%3A%20%0AWhat%20I%20need%3A%20%0A">Email me</a><a class="btn btn-wa" href="https://wa.me/923320423783?text=Hi%20Johar%2C%20I%20would%20like%20the%20free%2015%20point%20site%20check%2E" target="_blank" rel="noopener">WhatsApp</a></div>
 </main>
 
@@ -838,7 +786,7 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
         <h4>Legal</h4>
         <ul>
           <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/cookie-policy/">Cookie Policy</a></li><li><a href="#call" data-consent-reopen>Cookie settings</a></li>
+          <li><a href="/cookie-policy/">Cookie Policy</a></li><li><a href="#" data-consent-reopen>Cookie settings</a></li>
           <li><a href="/imprint/">Impressum</a></li>
           <li><a href="/terms/">Terms of Service</a></li>
         </ul>
