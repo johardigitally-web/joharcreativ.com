@@ -6,7 +6,11 @@
 (function () {
   'use strict';
 
-  var CLOSE_DELAY = 260;
+  // 260 was inside the time a deliberate pointer takes to cross the header and
+  // reach a menu item, and once the panel hides mid-journey it cannot recover:
+  // the panel is display:none, so the pointer lands on page content and no
+  // mouseenter fires to cancel the close. 400 still reads as instant.
+  var CLOSE_DELAY = 400;
 
   function ready(fn) {
     if (document.readyState !== 'loading') fn();
