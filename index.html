@@ -227,12 +227,12 @@ footer .base{border-top:1px solid #163350;margin-top:48px;padding-top:22px;displ
 .call-left li::before{content:"\2713";position:absolute;left:0;top:10px;width:19px;height:19px;border-radius:50%;background:var(--amber);color:#021c36;font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center}
 .call-right{background:var(--white);padding:38px;display:flex;flex-direction:column}
 .call-right h3{color:var(--navy);font-size:1.05rem}
-.slotweek{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0 4px}
-.slotday{text-align:center;font-size:.72rem;font-weight:700;color:var(--ink-soft)}
-.slot{border:1.5px solid var(--line);border-radius:6px;padding:8px 0;text-align:center;font-size:.8rem;color:var(--ink);background:var(--offwhite)}
+
+
+
 .slot:hover{border-color:var(--navy)}
-.slot.hot{background:var(--navy);color:#fff;border-color:var(--navy)}
-.slot.off{opacity:.35}
+
+
 .call-right .btn{margin-top:22px;width:100%}
 .call-note{font-size:.76rem;color:#9aa7b5;margin-top:10px}
 
@@ -364,7 +364,7 @@ html,body{max-width:100%;overflow-x:hidden}
 img,svg,canvas,video{max-width:100%;height:auto}
 @media (max-width:820px){
   .wrap{padding:0 18px}
-  .call-right,.slotweek{max-width:100%;overflow-wrap:anywhere}
+  .call-right,
   .avatar{flex:none}
   table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
   pre,code{overflow-x:auto;max-width:100%}
@@ -490,7 +490,7 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
     font-size:.9rem;padding:0 10px}
   body{padding-bottom:78px}
   .cookie-bar{bottom:70px}
-}</style>
+}.avail{margin:18px 0 20px;border-top:1px solid var(--line)}.avail p{display:flex;gap:14px;align-items:baseline;justify-content:space-between;margin:0;padding:11px 0;border-bottom:1px solid var(--line);font-size:.9rem;line-height:1.5;text-align:left}.avail b{color:var(--navy);white-space:nowrap}.avail span{color:var(--ink-soft);text-align:right}.call-cta{display:flex;gap:10px;flex-wrap:wrap}.call-cta .btn{flex:1 1 auto;text-align:center}@media(max-width:520px){.avail p{flex-direction:column;gap:2px}.avail span{text-align:left}}</style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://joharcreativ.com/#org","logo":"https://joharcreativ.com/apple-touch-icon.png","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://joharcreativ.com/#website","name":"Johar Creativ","url":"https://joharcreativ.com/","inLanguage":"en-GB","publisher":{"@id":"https://joharcreativ.com/#org"}}</script>
@@ -692,16 +692,20 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
         </ul>
       </div>
       <div class="call-right">
-        <h3>Pick a time that suits you</h3>
-        <div class="slotweek">
-          <span class="slotday">Mon</span><span class="slotday">Tue</span><span class="slotday">Wed</span><span class="slotday">Thu</span><span class="slotday">Fri</span>
-          <span class="slot">09:30</span><span class="slot">09:00</span><span class="slot off">&ndash;</span><span class="slot">10:00</span><span class="slot">09:30</span>
-          <span class="slot hot">14:00</span><span class="slot">15:30</span><span class="slot">11:00</span><span class="slot off">&ndash;</span><span class="slot">13:00</span>
+          <h3>How to book one</h3>
+          <div class="avail">
+            <p><b>Weekdays</b><span>09:00 to 18:00, Central European Time</span></p>
+            <p><b>Answered</b><span>Within one working day</span></p>
+            <p><b>On</b><span>Phone or a meeting link, your choice</span></p>
+          </div>
+          <div class="call-cta">
+            <a class="btn" href="mailto:hello@joharcreativ.com?subject=20%20minute%20call&amp;body=Hi%20Johar%2C%0A%0AMy%20website%3A%20%0ATimes%20that%20suit%20me%20%28with%20your%20timezone%29%3A%20%0A%0A">Email me two or three times</a>
+            <a class="btn btn-wa" href="https://wa.me/923320423783?text=Hi%20Johar%2C%20I%20would%20like%20to%20book%20the%2020%20minute%20call." target="_blank" rel="noopener">WhatsApp me</a>
+          </div>
+          <p class="call-note">Send a couple of times that suit you and I will confirm one of
+          them, or offer the nearest slot I have. No account to create and no form to fill in.</p>
         </div>
-        <a class="btn pulse" href="#check">Book a 20 minute call</a>
-        <p class="call-note">The live calendar runs on a free booking tool at launch. You pick a slot, it lands in both calendars, and the call happens on the phone or a meeting link, your choice.</p>
       </div>
-    </div>
   </div>
 </section>
 
