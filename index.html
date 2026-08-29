@@ -103,14 +103,14 @@ h2.left .bar{margin-left:0}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 
 /* hero form card */
-.form-card{background:var(--white);border-radius:10px;box-shadow:0 24px 60px rgba(2,28,54,.45);padding:32px;color:var(--ink)}
-.form-card h3{color:var(--navy);margin-bottom:6px}
-.form-card .fnote{font-size:.86rem;color:var(--ink-soft);margin-bottom:18px}
-.form-card label{display:block;font-size:.8rem;font-weight:700;margin:14px 0 6px;color:var(--ink)}
+.form-card{background:var(--white);border-radius:10px;box-shadow:0 24px 60px rgba(2,28,54,.45);padding:26px 26px 22px;color:var(--ink)}.form-card .f-row{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}@media(max-width:420px){.form-card .f-row{grid-template-columns:1fr}}
+.form-card h3{color:var(--navy);margin-bottom:5px;font-size:1.16rem;line-height:1.3}
+.form-card .fnote{font-size:.86rem;color:var(--ink-soft);margin-bottom:10px;line-height:1.5}
+.form-card label{display:block;font-size:.82rem;font-weight:700;margin:11px 0 5px;color:var(--ink)}
 .form-card input,.form-card select{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:6px;font-size:.95rem;font-family:inherit;background:var(--offwhite)}
 .form-card input:hover,.form-card select:hover{border-color:var(--navy)}
 .form-card .btn{width:100%;margin-top:20px}
-.form-card .consent{font-size:.75rem;color:var(--ink-soft);margin-top:12px}
+.form-card .consent{font-size:.82rem;color:var(--ink-soft);margin-top:10px;line-height:1.45}
 
 /* badge + press strip */
 .badges{background:var(--offwhite);border-bottom:1px solid var(--line);padding:34px 0}
@@ -474,7 +474,7 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
     font-size:.9rem;padding:0 10px}
   body{padding-bottom:78px}
   .cookie-bar{bottom:70px}
-}/* mid page CTA */.midcta{display:flex;align-items:center;justify-content:space-between;gap:20px 28px;flex-wrap:wrap;background:var(--white);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:10px;padding:20px 26px;box-shadow:0 8px 24px rgba(2,28,54,.05)}.midcta p{margin:0;font-size:1rem;line-height:1.55;color:var(--ink);max-width:60ch}.midcta p b{color:var(--navy)}.midcta .mc-btns{display:flex;gap:10px;flex-wrap:wrap;flex:none}.midcta .btn{min-height:44px;display:inline-flex;align-items:center;padding:0 20px}@media(max-width:760px){.midcta{padding:18px 20px}.midcta .mc-btns{width:100%}.midcta .btn{flex:1;justify-content:center}}</style>
+}/* mid page CTA */.midcta{display:flex;align-items:center;justify-content:space-between;gap:20px 28px;flex-wrap:wrap;background:var(--white);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:10px;padding:20px 26px;box-shadow:0 8px 24px rgba(2,28,54,.05)}.midcta p{margin:0;font-size:1rem;line-height:1.55;color:var(--ink);max-width:60ch}.midcta p b{color:var(--navy)}.midcta .mc-btns{display:flex;gap:10px;flex-wrap:wrap;flex:none}.midcta .btn{min-height:44px;display:inline-flex;align-items:center;padding:0 20px}@media(max-width:760px){.midcta{padding:18px 20px}.midcta .mc-btns{width:100%}.midcta .btn{flex:1;justify-content:center}}.form-card button.btn{margin-top:14px;width:100%;justify-content:center}</style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://joharcreativ.com/#org","logo":"https://joharcreativ.com/apple-touch-icon.png","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://joharcreativ.com/#website","name":"Johar Creativ","url":"https://joharcreativ.com/","inLanguage":"en-GB","publisher":{"@id":"https://joharcreativ.com/#org"}}</script>
@@ -563,11 +563,13 @@ text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-right:8px;vert
     </div>
     <form class="form-card" id="check">
       <h3>Get your free 15 point site check</h3>
-      <p class="fnote">A written report on your site against my 15 point list, built from <a href="/resources/1000-websites-audited/" style="color:inherit">1,137 real site audits</a>, fixes ranked by what they're worth. In your inbox within two working days.</p>
-      <label for="f1">First name</label>
-      <input id="f1" type="text" placeholder="First name" autocomplete="given-name" required>
-      <label for="f2">Work email</label>
-      <input id="f2" type="email" placeholder="you@company.eu" autocomplete="email" required>
+      <p class="fnote">Checked against my 15 point list, built from <a href="/resources/1000-websites-audited/" style="color:inherit">1,137 real audits</a>. In your inbox within two working days.</p>
+      <div class="f-row">
+        <div><label for="f1">First name</label>
+        <input id="f1" type="text" placeholder="First name" autocomplete="given-name" required></div>
+        <div><label for="f2">Work email</label>
+        <input id="f2" type="email" placeholder="you@company.eu" autocomplete="email" required></div>
+      </div>
       <label for="f3">Your website</label>
       <input id="f3" type="url" placeholder="https://" required>
       <label for="f4">Biggest growth blocker</label>
