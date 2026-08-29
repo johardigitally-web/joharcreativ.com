@@ -1,35 +1,29 @@
-/* Site-check form handler.
+/* Site check form.
 
-   Composes a mailto: so the form works with no third-party processor.
+   Posts the enquiry to a backend that stores it in a Google Sheet and emails a
+   copy. No mailto, so it does not matter whether the visitor's machine has a
+   mail client: the previous version depended on one, and on any machine whose
+   mailto handler is a browser the click did nothing at all and the enquiry was
+   lost silently.
 
-   The important part is what happens when that fails. A mailto only opens
-   something if the visitor's machine has a mail client registered for the
-   protocol. Plenty do not: on Windows the handler is often set to a browser,
-   which then has nowhere to send it, and the click does nothing at all. The
-   browser reports no error, so the page cannot detect it.
-
-   The old version said "your email app should now be open" and left it there,
-   which meant a visitor who filled the form in good faith got silence, and the
-   enquiry was lost without either side knowing. So the fallback is now always
-   shown: the composed message in full, a button to copy it, and a WhatsApp
-   link carrying the same details. Whatever the mail client does, there is a
-   working way through. */
+   ENDPOINT is the Apps Script web app URL. While it is empty the form falls
+   back to opening a mail client, which is worse but is better than a button
+   that does nothing. See memory/tools/form_backend.gs for the deploy steps. */
 (function () {
   'use strict';
 
+  var ENDPOINT = '';                       // <-- Apps Script /exec URL goes here
   var TO = 'hello@joharcreativ.com';
   var WA = '923320423783';
 
   var MAPS = {
-    f: [['f1', 'First name'], ['f2', 'Work email'], ['f3', 'Website'],
-        ['f4', 'Biggest growth blocker']],
-    c: [['c1', 'First name'], ['c2', 'Work email'], ['c3', 'Website'],
-        ['c4', 'Preferred start'], ['c5', 'Biggest growth blocker']]
+    f: { name: 'f1', email: 'f2', website: 'f3', blocker: 'f4' },
+    c: { name: 'c1', email: 'c2', website: 'c3', start: 'c4', blocker: 'c5' }
   };
 
   function val(id) {
-    var el = document.getElementById(id);
-    return el ? (el.value || '').trim() : null;
+    var el = id && document.getElementById(id);
+    return el ? (el.value || '').trim() : '';
   }
 
   function ready(fn) {
@@ -42,112 +36,113 @@
     if (!form) return;
 
     var prefix = document.getElementById('c1') ? 'c' : 'f';
-    var fields = MAPS[prefix];
+    var map = MAPS[prefix];
+    var button = form.querySelector('button[type="submit"], button:not([type])');
+
+    // honeypot: bots fill everything, people never see it
+    var pot = document.createElement('input');
+    pot.type = 'text';
+    pot.name = 'company';
+    pot.tabIndex = -1;
+    pot.autocomplete = 'off';
+    pot.setAttribute('aria-hidden', 'true');
+    // display:none rather than off screen: an off screen input still takes part in
+    // layout and was being counted as an undersized tap target by the audit.
+    pot.style.cssText = 'display:none';
+    form.appendChild(pot);
 
     var note = document.createElement('div');
     note.setAttribute('role', 'status');
     note.setAttribute('aria-live', 'polite');
-    note.style.cssText = 'margin-top:16px;line-height:1.55;display:none;font-size:.92rem';
+    note.style.cssText = 'margin-top:16px;line-height:1.55;display:none;font-size:.94rem';
     form.appendChild(note);
 
-    function err(msg) {
-      note.innerHTML = '';
-      var p = document.createElement('p');
-      p.style.cssText = 'margin:0;color:#b91c1c';
-      p.textContent = msg;
-      note.appendChild(p);
+    function say(html, colour) {
+      note.innerHTML = html;
+      note.style.color = colour || 'inherit';
       note.style.display = 'block';
+      try {
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        note.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      } catch (ignore) { note.scrollIntoView(false); }
+    }
+
+    function busy(on) {
+      if (!button) return;
+      button.disabled = on;
+      button.textContent = on ? 'Sending...' : button.getAttribute('data-label')
+        || 'Send me the site check';
+    }
+    if (button) button.setAttribute('data-label', button.textContent);
+
+    function mailtoFallback(payload) {
+      var lines = [];
+      for (var k in map) {
+        if (payload[k]) lines.push(k.charAt(0).toUpperCase() + k.slice(1) + ': ' + payload[k]);
+      }
+      var body = lines.join('\n') + '\n\nSent from joharcreativ.com';
+      var subject = 'Free site check request - ' + payload.website;
+      try {
+        window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(body);
+      } catch (ignore) { /* unhandled protocol */ }
+      say('<p style="margin:0 0 10px;font-weight:700;color:var(--navy)">Your mail app should have '
+        + 'opened.</p><p style="margin:0 0 12px;color:var(--ink-soft)">If it did not, send this to '
+        + '<strong>' + TO + '</strong> or message me on '
+        + '<a href="https://wa.me/' + WA + '?text=' + encodeURIComponent(subject + '\n\n' + body)
+        + '" target="_blank" rel="noopener">WhatsApp</a>. Reply within one working day.</p>');
     }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      var name = val(prefix + '1'), email = val(prefix + '2'), site = val(prefix + '3');
+      var payload = {};
+      for (var k in map) payload[k] = val(map[k]);
+      payload.company = pot.value;
+      payload.page = location.pathname;
+      payload.referrer = document.referrer || '';
+      payload.ua = navigator.userAgent;
 
-      if (!name || !email || !site) {
-        err('Please fill in your name, work email and website address.');
+      if (!payload.name || !payload.email || !payload.website) {
+        say('Please fill in your name, work email and website address.', '#b91c1c');
         return;
       }
-      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-        err('That email address does not look right. Please check it.');
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(payload.email)) {
+        say('That email address does not look right. Please check it.', '#b91c1c');
         return;
       }
 
-      var lines = [];
-      for (var i = 0; i < fields.length; i++) {
-        var v = val(fields[i][0]);
-        if (v) lines.push(fields[i][1] + ': ' + v);
-      }
-      var body = lines.join('\n') + '\n\nSent from joharcreativ.com';
-      var subject = 'Free site check request - ' + site;
+      if (!ENDPOINT) { mailtoFallback(payload); return; }
 
-      // try the mail client, but never rely on it
-      try {
-        window.location.href = 'mailto:' + TO + '?subject=' +
-          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      } catch (ignore) { /* some browsers throw on an unhandled protocol */ }
+      busy(true);
+      say('Sending your details...', 'inherit');
 
-      note.innerHTML = '';
-      note.style.display = 'block';
-
-      var head = document.createElement('p');
-      head.style.cssText = 'margin:0 0 10px;font-weight:700;color:var(--navy)';
-      head.textContent = 'Almost there. Your mail app should have opened.';
-      note.appendChild(head);
-
-      var sub = document.createElement('p');
-      sub.style.cssText = 'margin:0 0 12px;color:var(--ink-soft)';
-      sub.textContent = 'If nothing opened, your browser has no mail app set up. '
-        + 'Use either of these instead, the details are already filled in.';
-      note.appendChild(sub);
-
-      var row = document.createElement('div');
-      row.style.cssText = 'display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px';
-
-      var wa = document.createElement('a');
-      wa.className = 'btn btn-wa';
-      wa.style.cssText = 'min-height:44px;display:inline-flex;align-items:center;padding:0 18px';
-      wa.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(subject + '\n\n' + body);
-      wa.target = '_blank';
-      wa.rel = 'noopener';
-      wa.textContent = 'Send on WhatsApp';
-      row.appendChild(wa);
-
-      var copy = document.createElement('button');
-      copy.type = 'button';
-      copy.className = 'btn btn-line';
-      copy.style.cssText = 'min-height:44px;padding:0 18px';
-      copy.textContent = 'Copy the message';
-      copy.addEventListener('click', function () {
-        var text = 'To: ' + TO + '\nSubject: ' + subject + '\n\n' + body;
-        function done() {
-          copy.textContent = 'Copied. Now paste it into an email to ' + TO;
-        }
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(done, function () { show(text); });
-        } else {
-          show(text);
-        }
+      // text/plain avoids a CORS preflight, which Apps Script does not answer
+      fetch(ENDPOINT, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' }
+      }).then(function (r) {
+        return r.json().catch(function () { return { ok: r.ok }; });
+      }).then(function (res) {
+        busy(false);
+        if (!res || res.ok === false) throw new Error(res && res.error);
+        form.reset();
+        pot.value = '';
+        say('<p style="margin:0 0 8px;font-weight:700;color:var(--navy)">Sent. Thank you.</p>'
+          + '<p style="margin:0;color:var(--ink-soft)">Your written 15 point check comes back '
+          + 'within two working days, to the address you gave. If you would rather talk sooner, '
+          + '<a href="https://wa.me/' + WA + '" target="_blank" rel="noopener">message me on '
+          + 'WhatsApp</a>.</p>');
+      }).catch(function () {
+        busy(false);
+        say('<p style="margin:0 0 8px;font-weight:700;color:#b91c1c">That did not send.</p>'
+          + '<p style="margin:0;color:var(--ink-soft)">Something blocked the request, which is '
+          + 'usually a network or extension issue rather than anything you did. Email '
+          + '<strong>' + TO + '</strong> or message me on '
+          + '<a href="https://wa.me/' + WA + '" target="_blank" rel="noopener">WhatsApp</a> and '
+          + 'you will get the same reply within one working day.</p>');
       });
-      row.appendChild(copy);
-      note.appendChild(row);
-
-      function show(text) {
-        var ta = document.createElement('textarea');
-        ta.readOnly = true;
-        ta.value = text;
-        ta.rows = 7;
-        ta.style.cssText = 'width:100%;margin-top:8px;font:inherit;font-size:.86rem;'
-          + 'padding:10px;border:1px solid var(--line);border-radius:8px';
-        note.appendChild(ta);
-        ta.select();
-      }
-
-      var addr = document.createElement('p');
-      addr.style.cssText = 'margin:0;color:var(--ink-soft)';
-      addr.innerHTML = 'Or email <strong>' + TO + '</strong> directly. '
-        + 'Either way you get a reply within one working day.';
-      note.appendChild(addr);
     });
   });
 })();
