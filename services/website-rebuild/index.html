@@ -20,10 +20,10 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/roboto.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/roboto-slab.woff2" as="font" type="font/woff2" crossorigin>
-<meta property="og:image" content="https://joharcreativ.com/og-image.png">
+<meta property="og:image" content="https://joharcreativ.com/og/services-website-rebuild.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://joharcreativ.com/og-image.png">
+<meta name="twitter:image" content="https://joharcreativ.com/og/services-website-rebuild.png">
 <meta name="application-name" content="Johar Creativ">
 <meta name="theme-color" content="#021c36">
 <style>
@@ -630,7 +630,7 @@ letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-botto
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://joharcreativ.com/#org","logo":"https://joharcreativ.com/apple-touch-icon.png","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why a fixed price when everyone else quotes hourly?","acceptedAnswer":{"@type":"Answer","text":"Because you should know the cost before you commit, not discover it invoice by invoice. The scope is one page long, we both sign it, and that number is what you pay. Extra pages beyond the package are 350 euro each, agreed in advance."}},{"@type":"Question","name":"What platform do you build on?","acceptedAnswer":{"@type":"Answer","text":"WordPress, WooCommerce or Shopify, whichever fits your business. Those are the platforms I build and fix daily, so nothing on your site will be a mystery to me or to any competent developer who comes after me."}},{"@type":"Question","name":"Can you keep our existing text?","acceptedAnswer":{"@type":"Answer","text":"I read all of it, and anything that earns its place stays. In most rebuilds the text is a big part of the problem, which is why new copy written from interviews is included in the price."}},{"@type":"Question","name":"What is the difference between the two prices?","acceptedAnswer":{"@type":"Answer","text":"The 1,450 euro starter is five pages on a proven layout, with your existing words tightened. The 2,450 euro build is up to eight pages designed for your business, with copy written from interviews. Same build quality, same speed, same handover."}},{"@type":"Question","name":"What happens after launch?","acceptedAnswer":{"@type":"Answer","text":"Thirty days of fixes included, a handover call, a short manual and every login in your name. From there you can run the site yourself and owe me nothing, or I keep working on your rankings from 490 euro a month."}},{"@type":"Question","name":"How much of my time does it take?","acceptedAnswer":{"@type":"Answer","text":"About three hours in total: a planning call, one interview, and two rounds of review. Everything else happens without you, and you can watch it take shape on a live link the whole way."}},{"@type":"Question","name":"What if I do not like the design?","acceptedAnswer":{"@type":"Answer","text":"You see it on a live link from week two, not as a reveal at the end, so changes happen while they are cheap. Two rounds of revisions are included at each stage."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://joharcreativ.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://joharcreativ.com/services/"},{"@type":"ListItem","position":3,"name":"Website rebuilds"}]}</script>
-</head>
+<!-- og:056b83edec --></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="topbar">
@@ -865,7 +865,20 @@ letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-botto
 <script>
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce){return;}
+if(reduce){
+  /* Do not animate, but the values must still be correct. Counters ship with a
+     placeholder of 0, so returning early left a reader with reduced motion looking
+     at "0 products migrated", which is worse than no animation: it is wrong. */
+  document.querySelectorAll('.count').forEach(function(el){
+    var t=el.getAttribute('data-target'); if(t!==null){el.textContent=t;}
+  });
+  document.querySelectorAll('.tick').forEach(function(el){
+    var t=el.getAttribute('data-to');
+    if(t!==null){el.textContent=t+(el.getAttribute('data-suffix')||'');}
+  });
+  document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
+  return;
+}
   document.documentElement.classList.add('js-anim');
 
   /* scroll reveals: works in every browser */

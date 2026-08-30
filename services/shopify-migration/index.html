@@ -20,10 +20,10 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/roboto.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/roboto-slab.woff2" as="font" type="font/woff2" crossorigin>
-<meta property="og:image" content="https://joharcreativ.com/og-image.png">
+<meta property="og:image" content="https://joharcreativ.com/og/services-shopify-migration.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://joharcreativ.com/og-image.png">
+<meta name="twitter:image" content="https://joharcreativ.com/og/services-shopify-migration.png">
 <meta name="application-name" content="Johar Creativ">
 <meta name="theme-color" content="#021c36">
 <style>
@@ -614,7 +614,7 @@ main .faq details:last-of-type{margin-bottom:0}main section.faq{margin-top:0}mai
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://joharcreativ.com/#org","logo":"https://joharcreativ.com/apple-touch-icon.png","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will I lose my Google rankings when the store moves?", "acceptedAnswer": {"@type": "Answer", "text": "That is the risk, and it is an engineering problem rather than a gamble. Rankings are lost when old URLs stop resolving, so every old address gets mapped to its new one before anything goes live. On the last store I moved that meant 739 redirects across 373 products and 68 collections, on the same domain, and the search position held."}}, {"@type": "Question", "name": "What does 895 euro a month actually include?", "acceptedAnswer": {"@type": "Answer", "text": "The migration itself with no separate build fee, the product data rebuilt, the product feed and Merchant Center kept free of errors, and the store looked after every month after that: fixes, changes, new products, and a plain English note every week."}}, {"@type": "Question", "name": "How long does the move take?", "acceptedAnswer": {"@type": "Answer", "text": "Three to four weeks for a store of a few hundred products, most of which is product data and redirect mapping rather than design. You keep selling on the old store the whole time. The switch itself is one day."}}, {"@type": "Question", "name": "What happens to my old product URLs?", "acceptedAnswer": {"@type": "Answer", "text": "Every one of them is redirected to its new page. Links other sites have pointed at you, bookmarks, old ads, printed material, all of it still lands somewhere correct rather than on a 404. This is the single step most migrations get wrong."}}, {"@type": "Question", "name": "Why is there no build fee?", "acceptedAnswer": {"@type": "Answer", "text": "Because the store is worth more to both of us running than it is delivered. The migration is included and you commit to three months, which is long enough for the move to be worth doing at this price. After that it is month to month with thirty days notice."}}, {"@type": "Question", "name": "What if I am already on Shopify?", "acceptedAnswer": {"@type": "Answer", "text": "Then you skip the move and the same 895 a month runs the store: product data, feeds, Merchant Center, ongoing fixes and improvements. Plenty of stores are on the right platform and still have a feed nobody has looked at in a year."}}, {"@type": "Question", "name": "Who owns the store and the accounts?", "acceptedAnswer": {"@type": "Answer", "text": "You do, from day one. The Shopify store, the Merchant Center account, the analytics, all of it created under your own email with me added as a user. If you stop, you remove me and nothing goes with me."}}, {"@type": "Question", "name": "My product feed keeps getting rejected. Can you fix that without a migration?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes, and it is worth checking before you move anything. Send me the store and I will tell you in the free check whether the feed problems are the platform or the data."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://joharcreativ.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://joharcreativ.com/services/"},{"@type":"ListItem","position":3,"name":"Store migration"}]}</script>
-</head>
+<!-- og:bfff8b4ef6 --></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="topbar">
@@ -839,7 +839,20 @@ main .faq details:last-of-type{margin-bottom:0}main section.faq{margin-top:0}mai
 <script>
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce){return;}
+if(reduce){
+  /* Do not animate, but the values must still be correct. Counters ship with a
+     placeholder of 0, so returning early left a reader with reduced motion looking
+     at "0 products migrated", which is worse than no animation: it is wrong. */
+  document.querySelectorAll('.count').forEach(function(el){
+    var t=el.getAttribute('data-target'); if(t!==null){el.textContent=t;}
+  });
+  document.querySelectorAll('.tick').forEach(function(el){
+    var t=el.getAttribute('data-to');
+    if(t!==null){el.textContent=t+(el.getAttribute('data-suffix')||'');}
+  });
+  document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
+  return;
+}
   document.documentElement.classList.add('js-anim');
 
   /* scroll reveals: works in every browser */
