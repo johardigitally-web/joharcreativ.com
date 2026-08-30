@@ -703,322 +703,68 @@ main .faq details:last-of-type{margin-bottom:0}main section.faq{margin-top:0}mai
 @media(prefers-reduced-motion:reduce){
   .sc,.wcard{transition:none}
 }
-/* wcag 1.4.1: prose links must not rely on colour alone */main p a:not(.btn),main li a:not(.btn),.notes a,.gsc a{text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}main p a:not(.btn):hover,main li a:not(.btn):hover{text-decoration-thickness:2px}/* featured case study band */.fcase{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:12px;padding:30px 34px;box-shadow:0 12px 34px rgba(2,28,54,.07);display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center;text-align:left}.fcase .fc-tag{display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}.fcase h3{color:var(--navy);font-size:1.3rem;margin:0 0 10px;line-height:1.35}.fcase p{color:var(--ink-soft);font-size:.96rem;margin:0 0 14px;max-width:62ch;line-height:1.65}.fc-nums{display:flex;gap:26px;flex-wrap:wrap}.fc-nums span{font-size:.86rem;color:var(--ink-soft)}.fc-nums b{display:block;font-family:'Roboto Slab',serif;font-size:1.35rem;color:var(--navy)}@media(max-width:820px){.fcase{grid-template-columns:1fr;gap:20px;padding:24px 22px}body .fcase h3{font-size:1.12rem}</style>
+/* wcag 1.4.1: prose links must not rely on colour alone */main p a:not(.btn),main li a:not(.btn),.notes a,.gsc a{text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}main p a:not(.btn):hover,main li a:not(.btn):hover{text-decoration-thickness:2px}/* featured case study band */
+.fcase{position:relative;overflow:hidden;background:var(--white);
+  border:1px solid var(--line);border-radius:16px;padding:0;
+  box-shadow:0 10px 30px rgba(2,28,54,.07);text-align:left;
+  transition:box-shadow .32s cubic-bezier(.2,.7,.3,1),transform .32s cubic-bezier(.2,.7,.3,1),
+    border-color .32s ease}
+.fcase::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:linear-gradient(180deg,var(--amber),#e0851a);transition:width .32s ease}
+.fcase::after{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;
+  border-radius:50%;background:radial-gradient(circle,rgba(245,166,35,.10),transparent 68%);
+  opacity:0;transition:opacity .45s ease;pointer-events:none}
+/* .rv carries its own transform at equal specificity, so the hover lift needs one
+   class more to win rather than depending on stylesheet order */
+.fcase.rv:hover,.fcase:hover{transform:translateY(-3px);border-color:#cfd8e2;
+  box-shadow:0 20px 46px rgba(2,28,54,.13)}
+.fcase:hover::before{width:7px}
+.fcase:hover::after{opacity:1}
+.fcase:focus-within{border-color:var(--amber)}
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://joharcreativ.com/#org","logo":"https://joharcreativ.com/apple-touch-icon.png","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website rebuilds, SEO and paid ads for companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2450","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Three storefronts, three ad accounts and a CRM built from scratch","description":"Three Shopify storefronts, three Merchant Center accounts, Google and Meta ads, and a custom CRM with order tracking and QR invoices, for a Dutch furniture retailer.","inLanguage":"en","datePublished":"2026-08-26","dateModified":"2026-08-26","author":{"@type":"Person","name":"Johar Rehman","url":"https://joharcreativ.com/about/"},"publisher":{"@type":"Organization","name":"Johar Creativ"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://joharcreativ.com/case-studies/ela-wonen-crm/"},"about":{"@type":"Organization","name":"Ela Wonen & Slapen"},"image":"https://joharcreativ.com/og-image.png"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://joharcreativ.com/"}, {"@type": "ListItem", "position": 2, "name": "Case studies", "item": "https://joharcreativ.com/case-studies/"}, {"@type": "ListItem", "position": 3, "name": "The CRM build"}]}</script>
-<!-- og:dfdbd4f002 --></head>
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
-<div class="topbar">
-  <div class="wrap">
-    <span>Websites and Google rankings for growing companies. <b>Taking on new clients now.</b></span>
-    <span>hello@joharcreativ.com, replies within one working day</span>
-  </div>
-</div>
+.fc-body{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;
+  padding:30px 34px 24px}
+.fcase .fc-tag{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;
+  font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);
+  margin-bottom:9px}
+.fcase .fc-tag::before{content:"";width:7px;height:7px;border-radius:50%;
+  background:var(--amber);flex:none;box-shadow:0 0 0 0 rgba(245,166,35,.55);
+  animation:fcPulse 2.6s ease-out infinite}
+@keyframes fcPulse{0%{box-shadow:0 0 0 0 rgba(245,166,35,.55)}
+  70%{box-shadow:0 0 0 9px rgba(245,166,35,0)}100%{box-shadow:0 0 0 0 rgba(245,166,35,0)}}
+.fcase h3{color:var(--navy);font-size:1.34rem;margin:0 0 10px;line-height:1.34;
+  letter-spacing:-.01em}
+.fcase p{color:var(--ink-soft);font-size:.96rem;margin:0;max-width:62ch;line-height:1.65}
+.fcase .btn{white-space:nowrap;display:inline-flex;align-items:center;gap:9px;
+  min-height:46px;transition:gap .25s ease,transform .25s ease}
+.fcase .btn svg{width:15px;height:15px;transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.fcase:hover .btn svg{transform:translateX(4px)}
 
-<header class="nav">
-  <div class="wrap">
-    <a class="logo" href="/">Johar Creativ<span class="dot">.</span></a>
-    <nav class="nav-links" aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/about/">About</a>
-      <div class="has-drop mega-parent">
-        <a href="/services/" aria-haspopup="true">Services<span class="caret"></span></a>
-        <div class="mega">
-          <div class="mega-grid">
-            <div class="mcol">
-              <h5>SEO</h5>
-              <a href="/services/seo/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Search rankings</a>
-              <a href="/services/seo-content/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>Content that ranks</a>
-              <a href="/services/technical-seo/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Speed and technical fixes</a>
-            </div>
-            <div class="mcol">
-              <h5>ADS</h5>
-              <a href="/services/google-ads-management/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 20V10M10 20V4M17 20v-8"/><path d="M21 20H3"/></svg>Google Ads management</a>
-              <a href="/services/meta-ads-management/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>Meta Ads management</a>
-              <a href="/services/landing-pages/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Landing pages that convert</a>
-            </div>
-            <div class="mcol">
-              <h5>WEBSITES</h5>
-              <a href="/services/website-rebuild/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>Website rebuilds</a>
-<a href="/services/shopify-migration/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M14 20v-6h-4v6"/></svg>Store migration</a>
-<a href="/services/custom-systems/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Custom CRM and systems</a>
-              <a href="/services/gdpr-consent/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>GDPR and consent setup</a>
-              <a href="/services/shopify-migration/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="21" r="1.5"/><circle cx="18" cy="21" r="1.5"/><path d="M2 3h3l2.6 12.5a2 2 0 002 1.5h8.8a2 2 0 002-1.6L22 8H6"/></svg>Shopify and WooCommerce stores</a>
-            </div>
-            <div class="mcol">
-              <h5>FREE</h5>
-              <a href="/contact/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>15 point site check</a>
-              <a href="/contact/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92V21a1 1 0 01-1.1 1A19 19 0 012 3.1 1 1 0 013 2h4.1a1 1 0 011 .75l1 3.5a1 1 0 01-.29 1L7 9a16 16 0 008 8l1.75-1.8a1 1 0 011-.3l3.5 1a1 1 0 01.75 1z"/></svg>20 minute call</a>
-            </div>
-          </div>
-          <a class="mega-cta" href="/contact/">Get your free site check <span aria-hidden="true">&#10148;</span></a>
-        </div>
-      </div>
-      <a href="/case-studies/">Work</a>
-      <div class="has-drop">
-        <a href="/industries/" aria-haspopup="true">Industries<span class="caret"></span></a>
-        <div class="drop">
-          <a href="/industries/it-managed-services/">IT and managed services</a>
-          <a href="/industries/engineering-manufacturing/">Engineering and manufacturing</a>
-          <a href="/industries/logistics-fulfilment/">Logistics and fulfilment</a>
-          <a href="/industries/consultancies/">Consultancies</a>
-          <a href="/industries/saas/">SaaS companies</a>
-          <a href="/industries/specialist-trades/">Specialist trades</a>
-        </div>
-      </div>
-      <a href="/markets/">Markets</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/resources/">Resources</a>
-    </nav>
-    <a class="btn btn-small" href="/contact/">Free site check &#10148;</a>
-  </div>
-</header>
+.fc-nums{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;
+  border-top:1px solid var(--line);background:linear-gradient(180deg,#fbfcfd,var(--white))}
+.fc-nums span{display:block;padding:17px 22px 18px;font-size:.86rem;color:var(--ink-soft);
+  line-height:1.45;border-left:1px solid var(--line);transition:background .25s ease}
+.fc-nums span:first-child{border-left:0;padding-left:34px}
+.fc-nums span:hover{background:#fffaf0}
+.fc-nums b{display:block;font-family:'Roboto Slab',serif;font-size:1.62rem;color:var(--navy);
+  line-height:1.15;margin-bottom:3px;font-variant-numeric:tabular-nums;letter-spacing:-.015em}
 
-<main id="main">
-<section class="page-hero">
-  <div class="wrap">
-    <nav class="crumb" aria-label="Breadcrumb">
-      <a href="/">Home</a> <span aria-hidden="true">&rsaquo;</span>
-      <a href="/case-studies/">Case studies</a> <span aria-hidden="true">&rsaquo;</span>
-      <span>The CRM build</span>
-    </nav>
-    <span class="kicker">Case study, custom software</span>
-    <h1>The CRM a furniture retailer runs on, built from scratch.</h1>
-    <p class="lead">Ela Wonen &amp; Slapen were locked out of their own CRM by the party who
-    held it, on a server that was being switched off. This is what replaced it: an application
-    they own outright, carrying ten years of their history, that the showroom and the office
-    both work in every day.</p>
-    <dl class="cs-meta">
-      <div><dt>Client</dt><dd>Ela Wonen &amp; Slapen</dd></div>
-      <div><dt>Built in</dt><dd>Python and Django</dd></div>
-      <div><dt>Replaces</dt><dd>A system they did not control</dd></div>
-      <div><dt>Owned by</dt><dd>The client, from day one</dd></div>
-    </dl>
-    <p class="meta">Published with the client's permission. Counts taken from the project
-    itself, vendor code excluded.</p>
-  </div>
-</section>
-
-<section class="stats"><div class="wrap"><div class="grid">
-<div class="stat rv"><div class="val"><span class="tick" data-to="22">22</span></div><div class="cap">data models describing the business</div></div>
-<div class="stat rv"><div class="val"><span class="tick" data-to="28">28</span></div><div class="cap">test suites, 11,756 lines</div></div>
-<div class="stat rv"><div class="val"><span class="tick" data-to="10">10</span></div><div class="cap">years of history migrated in</div></div>
-<div class="stat rv"><div class="val"><span class="tick" data-to="1117">1,117</span></div><div class="cap">scripts written across the engagement</div></div>
-</div></div></section>
-
-<section style="background:var(--offwhite);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <h2>Where it started</h2>
-    <p class="lead" style="max-width:70ch">The urgent problem was not that the CRM was old. It
-    was that it belonged to somebody else and was about to be switched off. Those are different
-    problems, and treating them as one is how a business ends up buying a rushed rebuild under a
-    deadline it did not set.</p>
-    <p style="max-width:70ch">So the old system was rescued and rehosted first. That alone
-    removed the deadline and kept a working fallback alive, which turned an emergency back into
-    a decision: buy something off the shelf, build, or keep what exists. Building won because of
-    what furniture retail actually looks like in a data model, and because they wanted to stop
-    renting the thing their business runs on.</p>
-    <div class="ba rv"><div class="ba-row ba-head"><span class="ba-h-b">Before</span><span aria-hidden="true"></span><span class="ba-h-a">After</span></div><div class="ba-row"><div class="ba-b">A CRM held by somebody else, on a server being switched off</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">An application they own outright, on hosting in their name</div></div><div class="ba-row"><div class="ba-b">Ten years of orders reachable only through the old system</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">Ten years migrated in as a read only archive, still queryable</div></div><div class="ba-row"><div class="ba-b">Order updates typed out by hand, one customer at a time</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">Sent automatically, with replies landing where the team can see them</div></div><div class="ba-row"><div class="ba-b">Bookkeeping entries retyped into the accounting system</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">Pushed across directly from the sale that created them</div></div><div class="ba-row"><div class="ba-b">Late custom orders discovered when the customer rang</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">Flagged by the system before the customer notices</div></div><div class="ba-row"><div class="ba-b">Customer email in a separate inbox, disconnected from the sale</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">Read and answered inside the CRM, attached to the order</div></div><div class="ba-row"><div class="ba-b">Stock and prices maintained twice, in the shop and the store</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">One source, synced, so the two cannot drift apart</div></div><div class="ba-row"><div class="ba-b">No tests, because there was no code they controlled</div><div class="ba-x" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div><div class="ba-a">11,756 lines of tests that run before anything changes</div></div></div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Everything it does</h2>
-    <p class="lead" style="max-width:68ch">Three views of the same system: what the business
-    runs on it, what stopped being done by hand, and what had to be built underneath.</p>
-    <nav class="jump" aria-label="Jump to an area"><a href="#sc-runs">What the business runs on it<b>7</b></a><a href="#sc-auto">What stopped being done by hand<b>7</b></a><a href="#sc-build">What was built to make that possible<b>7</b></a></nav>
-    <div class="scope"><div class="sc rv" id="sc-runs"><div class="sc-h"><h3>What the business runs on it</h3></div><ul><li><b>Sales</b> from first enquiry through to delivered and paid</li><li><b>Purchase orders</b> to suppliers, with supplier codes reconciled</li><li><b>Deliveries</b> planned onto trucks, with a printable load list</li><li><b>Payments</b> recorded and matched against each sale</li><li><b>Products, variants and fabric colours</b>, the real shape of furniture stock</li><li><b>Customers</b> with nationality and language, because the showroom serves both</li><li><b>Notes and replies</b> against every sale, so context is not in someone's head</li></ul></div><div class="sc rv" id="sc-auto"><div class="sc-h"><h3>What stopped being done by hand</h3></div><ul><li>Order update messages, now sent automatically over WhatsApp</li><li>Customer emails, read and replied to from inside the CRM rather than a separate inbox</li><li>Bookkeeping entries, pushed to their Dutch accounting system instead of retyped</li><li>Payment links, generated and reconciled automatically</li><li>Order status warnings, raised by the system before a customer has to ring</li><li>Delivery paperwork, generated rather than assembled</li><li>Product and price sync with the online store, instead of two lists drifting apart</li></ul></div><div class="sc rv" id="sc-build"><div class="sc-h"><h3>What was built to make that possible</h3></div><ul><li><b>22 data models</b> describing how this business actually works</li><li><b>28 test suites, 11,756 lines</b> covering bookkeeping, payments, purchasing and sync</li><li><b>6,157 lines</b> of application logic behind the screens staff use</li><li>An admin for the office and a separate sales screen for the showroom floor</li><li>Permissions and invites, so staff see what they should and nothing else</li><li>Dutch and English throughout, because half the customers are not Dutch</li><li><b>1,117 scripts</b> written across the whole engagement, excluding vendor code</li></ul></div></div>
-  </div>
-</section>
-
-<section style="background:var(--offwhite);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <h2>The build, in six parts</h2>
-    <p class="lead" style="max-width:64ch">The decision first, then how it was made.</p>
-    <div class="wcard rv"><div class="w-n">01</div><div><h3 class="w-title">The rescue came before the rebuild</h3><p class="w-win">The deadline was removed first, so the decision could be made calmly rather than under it.</p><p class="w-detail">The client's system was held by another party, on a server being switched off. The urgent problem was not that the CRM was old, it was that it was about to disappear. Those are different problems with different fixes, and fusing them is how businesses end up paying for a rushed rebuild. The old application was rescued and rehosted first. That removed the deadline, kept a working fallback alive, and only then was there a real choice between buying something off the shelf, building, and simply keeping what existed.</p></div></div><div class="wcard rv"><div class="w-n">02</div><div><h3 class="w-title">A data model that matches furniture, not software</h3><p class="w-win">22 models, because a sofa in three fabrics with a ten week lead time is not a line item.</p><p class="w-detail">Products have variants, variants have fabric colours, and a supplier code that does not match the one in the shop. Sales have lines, lines have costs, deliveries go on trucks, and payments arrive in parts. Off the shelf systems flatten most of that, and the flattening is exactly where the manual work reappears. The model was written from how the business actually sells, which is why the screens above it are short.</p></div></div><div class="wcard rv"><div class="w-n">03</div><div><h3 class="w-title">Ten years of history, kept rather than replayed</h3><p class="w-win">A decade of orders, customers and payments migrated in as a read only archive.</p><p class="w-detail">Old records are not replayed into a new accounting engine, because that rewrites history and breaks reconciliation. They come in as an archive that stays queryable, so a member of staff can still look up what a customer bought in 2017 while all new work runs forward cleanly. There are dedicated tests for exactly this, because it is the part that would fail silently.</p></div></div><div class="wcard rv"><div class="w-n">04</div><div><h3 class="w-title">Built for someone standing up with a customer waiting</h3><p class="w-win">An admin for the office, and a separate sales screen for the showroom floor.</p><p class="w-detail">The person using this most is not technical, is on their feet, and has a customer in front of them. That single constraint decides the whole interface, and it is the part most custom software gets wrong by handing everyone the same admin panel. The showroom screen does the few things that happen at the point of sale and nothing else.</p></div></div><div class="wcard rv"><div class="w-n">05</div><div><h3 class="w-title">The integrations that removed the retyping</h3><p class="w-win">Accounting, payments, the online store and WhatsApp, all connected to the sale that created the work.</p><p class="w-detail">Bookkeeping entries go to their Dutch accounting system instead of being retyped. Payment links are generated and reconciled. Product and price data stays in step with the online store rather than drifting. Customer email is read and answered inside the CRM, attached to the order it belongs to. Each of these is a job somebody used to do twice.</p></div></div><div class="wcard rv"><div class="w-n">06</div><div><h3 class="w-title">Tests, because it is somebody's livelihood</h3><p class="w-win">28 test suites and 11,756 lines of them, covering bookkeeping, payments, purchasing, deliveries, sync and search.</p><p class="w-detail">Most software built for a small business has no tests at all, which is fine until the first change breaks invoicing and nobody notices for a week. Here the areas where a silent failure would cost real money have tests that run before anything ships. It is the least visible part of this build and the reason the business can keep asking for changes.</p></div></div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Honest notes</h2>
-    <div class="notes">
-      <h3>What this page does not claim</h3>
-      <p>There is no hours-saved figure here. The automation is real and listed above, item by
-      item, but nobody measured the before and after, so any number I printed would be invented.
-      I would rather show you exactly what stopped being typed by hand and let you judge what
-      that is worth in your own business.</p>
-      <p>The counts are from the project directory with the virtual environment and vendor code
-      excluded, so they describe work written rather than libraries installed. The system is
-      still being extended; this is a description of software in use, not a finished monument.</p>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--offwhite);border-top:1px solid var(--line)"><div class="wrap">
-  <div class="fcase rv">
-    <div>
-      <span class="fc-tag">The rest of this account</span>
-      <h3>Three storefronts, three ad accounts and the software around them</h3>
-      <p>The CRM is one part of a larger engagement: three Shopify storefronts, product feeds,
-      Google and Meta advertising, email flows and a certification review.</p>
-      <div class="fc-nums"><span><b>373</b>products migrated</span><span><b>822</b>feed offers</span><span><b>34</b>findings fixed</span></div>
-    </div>
-    <a class="btn" href="/case-studies/ela-wonen/">Read the full case study</a>
-  </div>
-</div></section>
-
-<section class="center" style="background:linear-gradient(135deg,#01152a 0%,#0d3357 85%);color:#fff">
-  <div class="wrap">
-    <h2 style="color:#fff">Something in your business runs on software you do not own?<span class="bar"></span></h2>
-    <p class="sub" style="color:#c7d3e0;max-width:64ch">Tell me what it is and what happens if
-    it disappears. You get an honest answer about whether to rescue it, replace it, or buy
-    something off the shelf instead.</p>
-    <div class="hero-cta" style="justify-content:center">
-      <a class="btn" href="mailto:hello@joharcreativ.com?subject=Custom%20system%20enquiry&amp;body=Hi%20Johar%2C%0A%0AWhat%20runs%20on%20software%20I%20do%20not%20own%3A%20%0A">Email me</a>
-      <a class="btn btn-wa" href="https://wa.me/923320423783?text=Hi%20Johar%2C%20I%20would%20like%20to%20talk%20about%20a%20custom%20system." target="_blank" rel="noopener">WhatsApp me</a>
-    </div>
-    <p style="margin-top:16px;font-size:.88rem;color:#9db3c9">Reply within one working day.</p>
-  </div>
-</section>
-
-<div class="mobile-cta">
-  <a class="btn" href="mailto:hello@joharcreativ.com?subject=Custom%20system%20enquiry">Email me</a>
-  <a class="btn btn-wa" href="https://wa.me/923320423783" target="_blank" rel="noopener">WhatsApp</a>
-</div>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="cols">
-      <div>
-        <span class="logo">Johar Creativ<span class="dot">.</span></span>
-        <p class="contact">
-          Johar Creativ<br>
-          
-          Pakistan<br>
-          hello@joharcreativ.com
-        </p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/services/website-rebuild/">Website rebuilds</a></li><li><a href="/services/shopify-migration/">Store migration</a></li><li><a href="/services/custom-systems/">Custom systems</a></li>
-          <li><a href="/services/seo/">Search rankings</a></li>
-          <li><a href="/services/google-ads-management/">Google Ads</a></li>
-          <li><a href="/resources/">Resources</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/#reviews">Reviews</a></li>
-          <li><a href="/pricing/">Pricing</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="https://www.linkedin.com/in/johar-rehman" target="_blank" rel="noopener">LinkedIn</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/cookie-policy/">Cookie Policy</a></li><li><a href="#" data-consent-reopen>Cookie settings</a></li>
-          <li><a href="/imprint/">Impressum</a></li>
-          <li><a href="/terms/">Terms of Service</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="base">
-      <span>&copy; 2026 Johar Creativ</span>
-      <span>Last updated: Aug 2026</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(reduce){
-  /* Do not animate, but the values must still be correct. Counters ship with a
-     placeholder of 0, so returning early left a reader with reduced motion looking
-     at "0 products migrated", which is worse than no animation: it is wrong. */
-  document.querySelectorAll('.count').forEach(function(el){
-    var t=el.getAttribute('data-target'); if(t!==null){el.textContent=t;}
-  });
-  document.querySelectorAll('.tick').forEach(function(el){
-    var t=el.getAttribute('data-to');
-    if(t!==null){el.textContent=t+(el.getAttribute('data-suffix')||'');}
-  });
-  document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
-  return;
+@media(max-width:820px){
+  .fc-body{grid-template-columns:1fr;gap:20px;padding:24px 22px 20px}
+  body .fcase h3{font-size:1.14rem}
+  body .fcase .fc-tag{font-size:.84rem}
+  .fcase .btn{width:100%;justify-content:center}
+  .fc-nums{grid-auto-flow:row;grid-auto-columns:auto}
+  .fc-nums span{border-left:0;border-top:1px solid var(--line);padding:14px 22px}
+  .fc-nums span:first-child{border-top:0;padding-left:22px}
+  body .fc-nums b{font-size:1.42rem}
 }
-  document.documentElement.classList.add('js-anim');
-
-  /* scroll reveals: works in every browser */
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
-    });
-  },{threshold:.15});
-  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
-
-  /* animated counters */
-  var cio=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(!e.isIntersecting){return;}
-      cio.unobserve(e.target);
-      var el=e.target,target=parseInt(el.getAttribute('data-target'),10),t0=null;
-      function tick(ts){
-        if(!t0){t0=ts;}
-        var p=Math.min((ts-t0)/1200,1);
-        p=1-Math.pow(1-p,3);
-        el.textContent=Math.round(target*p);
-        if(p<1){requestAnimationFrame(tick);}
-      }
-      requestAnimationFrame(tick);
-    });
-  },{threshold:.6});
-  document.querySelectorAll('.count').forEach(function(el){cio.observe(el);});
-
-  /* review carousel */
-  var track=document.getElementById('track');
-  var dots=document.getElementById('dots');
-  if(track&&dots){
-    var cards=track.children.length;
-    function perView(){return window.innerWidth>900?3:1;}
-    var page=0,timer=null;
-    function pages(){return Math.max(1,cards-perView()+1);}
-    function render(){
-      var card=track.children[0];
-      var gap=28;
-      var w=card.getBoundingClientRect().width+gap;
-      track.style.transform='translateX(-'+(page*w)+'px)';
-      Array.prototype.forEach.call(dots.children,function(d,i){
-        d.setAttribute('aria-current',i===page?'true':'false');
-      });
-    }
-    function buildDots(){
-      dots.innerHTML='';
-      for(var i=0;i<pages();i++){
-        (function(i){
-          var b=document.createElement('button');
-          b.setAttribute('aria-label','Go to review page '+(i+1));
-          b.addEventListener('click',function(){page=i;render();restart();});
-          dots.appendChild(b);
-        })(i);
-      }
-      if(page>pages()-1){page=0;}
-      render();
-    }
-    function step(){page=(page+1)%pages();render();}
-    function restart(){if(timer){clearInterval(timer);}timer=setInterval(step,2450);}
-    var car=document.getElementById('carousel');
-    car.addEventListener('mouseenter',function(){if(timer){clearInterval(timer);timer=null;}});
+@media(prefers-reduced-motion:reduce){
+  .fcase,.fcase::before,.fcase::after,.fcase .btn,.fcase .btn svg,.fc-nums span{
+    transition:none}
+  .fcase .fc-tag::before{animation:none}
+  .fcase:hover{transform:none}
+});
     car.addEventListener('mouseleave',restart);
     window.addEventListener('resize',buildDots);
     buildDots();restart();
