@@ -23,7 +23,7 @@ p{margin:0 0 20px;line-height:1.7;color:#4a5c6e}
 a.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;
 border-radius:8px;background:#f5a623;color:#021c36;font-weight:700;
 text-decoration:none}
-/* wcag 1.4.1: prose links must not rely on colour alone */main p a:not(.btn),main li a:not(.btn),.notes a,.gsc a{text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}main p a:not(.btn):hover,main li a:not(.btn):hover{text-decoration-thickness:2px}</style>
+/* wcag 1.4.1: prose links must not rely on colour alone */main p a:not(.btn),main li a:not(.btn),.notes a,.gsc a{text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}main p a:not(.btn):hover,main li a:not(.btn):hover{text-decoration-thickness:2px}/* short viewports: a phone in landscape has ~390px of height, and a 144px header eats 37% of it before any content. Compact the chrome rather than the content. */@media (max-height:520px) and (orientation:landscape){.topbar{display:none}header.nav .wrap{padding-top:6px;padding-bottom:6px}.nav-logo,.logo{font-size:1.05rem}.hero,.page-hero{padding-top:26px;padding-bottom:26px}.hero h1,.page-hero h1{font-size:clamp(1.5rem,4.2vw,2rem);line-height:1.2}.hero .lead,.page-hero .lead{font-size:.95rem}.mobile-cta{padding:6px 10px calc(6px + env(safe-area-inset-bottom))}body{padding-bottom:64px}}</style>
 </head>
 <body>
 <div class="box">
