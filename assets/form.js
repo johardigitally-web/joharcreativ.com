@@ -12,7 +12,9 @@
 (function () {
   'use strict';
 
-  var ENDPOINT = '';                       // <-- Apps Script /exec URL goes here
+  // Apps Script web app: appends to a Google Sheet and emails a copy. Storing and
+  // emailing are independent there, so one failure does not lose the enquiry.
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxtzB2sB5PuXKoSnNaWL3xF9i-6YYBOUOU3HQREr5JS4OL_gK73-m9_WohE_eZd9ojc/exec';
   var TO = 'hello@joharcreativ.com';
   var WA = '923320423783';
 
