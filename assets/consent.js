@@ -68,20 +68,49 @@
   var el = null;
   function hide() { if (el && el.parentNode) { el.parentNode.removeChild(el); } el = null; }
 
+  /* Asking a German visitor for consent in English is the kind of thing the GDPR
+     pages on this site criticise other people for, so the banner follows the
+     language the page declares. */
+  var COPY = {
+    en: {
+      aria: 'Cookie choice',
+      body: 'I use Google Analytics to see which pages get read. It sets cookies and sends ' +
+            'data to Google in the United States. Nothing loads unless you say yes, and the ' +
+            'site works exactly the same either way. ' +
+            '<a href="/cookie-policy/">Cookie policy</a>',
+      yes: 'Allow analytics',
+      no: 'No thanks'
+    },
+    de: {
+      aria: 'Cookie-Auswahl',
+      body: 'Ich nutze Google Analytics, um zu sehen, welche Seiten gelesen werden. Dabei ' +
+            'werden Cookies gesetzt und Daten an Google in die USA übertragen. Ohne Ihre ' +
+            'Einwilligung wird nichts davon geladen, und die Website funktioniert in beiden ' +
+            'Fällen genau gleich. ' +
+            '<a href="/cookie-policy/" hreflang="en" lang="en">Cookie policy (englisch)</a>',
+      yes: 'Analytics erlauben',
+      no: 'Nein, danke'
+    }
+  };
+
+  function copy() {
+    var lang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
+    return COPY[lang.slice(0, 2)] || COPY.en;
+  }
+
   function show() {
     if (el) return;
+    var c = copy();
     el = document.createElement('div');
     el.className = 'cookie-bar';
     el.setAttribute('role', 'dialog');
-    el.setAttribute('aria-label', 'Cookie choice');
+    el.setAttribute('aria-label', c.aria);
     el.innerHTML =
       '<div class="cookie-bar-in">' +
-        '<p>I use Google Analytics to see which pages get read. It sets cookies and sends ' +
-        'data to Google in the United States. Nothing loads unless you say yes, and the site ' +
-        'works exactly the same either way. <a href="/cookie-policy/">Cookie policy</a></p>' +
+        '<p>' + c.body + '</p>' +
         '<div class="cookie-bar-btns">' +
-          '<button type="button" class="btn btn-small" data-consent="yes">Allow analytics</button>' +
-          '<button type="button" class="btn btn-line btn-small" data-consent="no">No thanks</button>' +
+          '<button type="button" class="btn btn-small" data-consent="yes">' + c.yes + '</button>' +
+          '<button type="button" class="btn btn-line btn-small" data-consent="no">' + c.no + '</button>' +
         '</div>' +
       '</div>';
     document.body.appendChild(el);
