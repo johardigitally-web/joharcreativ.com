@@ -92,7 +92,7 @@
         + 'opened.</p><p style="margin:0 0 12px;color:var(--ink-soft)">If it did not, send this to '
         + '<strong>' + TO + '</strong> or message me on '
         + '<a href="https://wa.me/' + WA + '?text=' + encodeURIComponent(subject + '\n\n' + body)
-        + '" target="_blank" rel="noopener">WhatsApp</a>. Reply within one working day.</p>');
+        + '" target="_blank" rel="noopener">WhatsApp</a>. You get a written reply.</p>');
     }
 
     form.addEventListener('submit', function (e) {
@@ -133,8 +133,8 @@
         pot.value = '';
         say('<p style="margin:0 0 8px;font-weight:700;color:var(--navy)">Sent. Thank you.</p>'
           + '<p style="margin:0;color:var(--ink-soft)">Your written 15 point check comes back '
-          + 'within two working days, to the address you gave. If you would rather talk sooner, '
-          + '<a href="https://wa.me/' + WA + '" target="_blank" rel="noopener">message me on '
+          + 'within two working days, to the address you gave. Questions in the meantime? '
+          + '<a href="https://wa.me/' + WA + '" target="_blank" rel="noopener">Message me on '
           + 'WhatsApp</a>.</p>');
       }).catch(function () {
         busy(false);
@@ -143,7 +143,7 @@
           + 'usually a network or extension issue rather than anything you did. Email '
           + '<strong>' + TO + '</strong> or message me on '
           + '<a href="https://wa.me/' + WA + '" target="_blank" rel="noopener">WhatsApp</a> and '
-          + 'you will get the same reply within one working day.</p>');
+          + 'you get the same written reply.</p>');
       });
     });
   });
