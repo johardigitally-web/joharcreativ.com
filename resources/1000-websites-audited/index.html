@@ -407,16 +407,16 @@ main section.center .pain-grid{margin-left:auto;margin-right:auto}
 [data-block="qa"] details{text-align:left}
 main section.center .midcta{text-align:left}
 /* a hero with no card column centres its copy; article heroes with a crumb stay left */
-.page-hero>.wrap:not(.hero-2col):not(:has(.crumb)){text-align:center}
-.page-hero>.wrap:not(.hero-2col):not(:has(.crumb)) .kicker,
-.page-hero>.wrap:not(.hero-2col):not(:has(.crumb)) .lead,
-.page-hero>.wrap:not(.hero-2col):not(:has(.crumb)) .proofline,
-.page-hero>.wrap:not(.hero-2col):not(:has(.crumb)) .hero-note,
-.page-hero>.wrap:not(.hero-2col):not(:has(.crumb)) .meta{margin-left:auto;margin-right:auto}
-.page-hero>.wrap:not(.hero-2col):not(:has(.crumb)) .hero-cta,
-.page-hero>.wrap:not(.hero-2col):not(:has(.crumb)) .hero-actions{justify-content:center}
-.page-hero>.wrap:not(.hero-2col):not(:has(.crumb)) h1{margin-left:auto;margin-right:auto;max-width:16em}
-.page-hero>.wrap:not(.hero-2col):not(:has(.crumb)) .proofline{text-align:left}
+.page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)){text-align:center}
+.page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) .kicker,
+.page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) .lead,
+.page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) .proofline,
+.page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) .hero-note,
+.page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) .meta{margin-left:auto;margin-right:auto}
+.page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) .hero-cta,
+.page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) .hero-actions{justify-content:center}
+.page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) h1{margin-left:auto;margin-right:auto;max-width:16em}
+.page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) .proofline{text-align:left}
 .sec-tint,main section[style*="var(--offwhite)"]{background:var(--tint)!important;
   border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
 
@@ -429,7 +429,7 @@ main section.center .midcta{text-align:left}
   border-bottom:1px solid var(--line)}
 .topbar span b{color:var(--ink)}
 .topbar a,.topbar .tb-mail{color:var(--navy)}
-@media(max-width:640px){.topbar{display:none}}
+@media(max-width:900px){.topbar{display:none}}
 .nav{background:transparent;border-bottom:1px solid transparent;box-shadow:none;
   transition:background .25s var(--ease),border-color .25s var(--ease),transform .3s var(--ease)}
 .nav.scrolled{background:rgba(251,251,249,.86);-webkit-backdrop-filter:blur(10px);
@@ -534,10 +534,10 @@ main section.page-hero,.hero{padding:var(--s-hero-t) 0 var(--s-hero-b)}
 @media(max-width:900px){.page-hero .hero-2col{grid-template-columns:1fr;gap:34px}}
 
 /* the card stack (compose.py wraps the second column). The live price card is
-   taller than the approved page's cards and its height varies by page, so the
-   cards flow as a column with a tilt and a small overlap rather than sitting on
-   fixed pixel offsets. */
-.hero-art{position:relative;min-width:0;display:flex;flex-direction:column;gap:0;padding:14px 0}
+   text-dense, so the cards do not overlap the way the approved page's short
+   cards do: the lead card runs across the column, the two smaller cards sit
+   side by side under it, each with a slight tilt. Nothing covers a word. */
+.hero-art{position:relative;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:8px 0;align-self:center}
 .page-hero .hero-2col{display:grid}
 .page-hero .hero-2col>*{min-width:0}
 .hc-code pre,.hc-code code{max-width:100%}
@@ -547,13 +547,24 @@ main section.page-hero,.hero{padding:var(--s-hero-t) 0 var(--s-hero-b)}
   animation:heroDrift 19s ease-in-out infinite}
 @keyframes heroDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-22px,18px) scale(1.09)}}
 .hero-art .hcard,.hero-art .hero-card{position:relative;background:#fff;border:1px solid var(--line);
-  border-radius:var(--r);box-shadow:var(--shadow-card);padding:22px 24px;margin:0;
-  transform:rotate(var(--rot,0deg))}
-.hero-art>:nth-child(2){width:min(340px,70%);align-self:flex-start;z-index:1;--rot:-2deg}
-.hero-art>:nth-child(3){width:min(300px,62%);align-self:flex-end;z-index:2;--rot:2deg;margin-top:-18px}
-.hero-art>:nth-child(4){width:min(300px,62%);align-self:flex-start;margin-left:6%;z-index:3;--rot:-1.4deg;margin-top:-14px}
-.hero-art[data-cards="1"]>:nth-child(2){width:100%;--rot:0deg;align-self:stretch}
-.hero-art .form-card{width:100%;--rot:0deg;transform:none}
+  border-radius:var(--r);box-shadow:var(--shadow-card);padding:22px 24px;margin:0;width:auto;
+  transform:rotate(var(--rot,0deg));z-index:1}
+.hero-art>:nth-child(2){grid-column:1/-1;--rot:-1deg}
+.hero-art>:nth-child(3){--rot:1.2deg}
+.hero-art>:nth-child(4){--rot:-1deg}
+.hero-art[data-cards="2"]>:nth-child(3){grid-column:1/-1;--rot:1deg}
+.hero-art[data-cards="1"]>:nth-child(2){--rot:0deg}
+.hero-art .form-card{--rot:0deg;transform:none}
+.hero-art[data-cards="1"]{grid-template-columns:1fr}
+/* a tall form beside short copy: start both at the top instead of centring */
+.page-hero .hero-2col:has(.form-card){align-items:start}
+.hero-art .hero-card{padding:20px 22px}
+.hero-art .hero-card h2{font-size:1.1rem}
+.hero-art .hero-card li{padding:9px 0}
+.hero-art .hero-card li span{font-size:.84rem;line-height:1.45}
+.hero-art .hero-card .hc-note{margin-top:10px;line-height:1.45}
+.hero-art .hc-big{font-size:2.3rem}
+.hero-art .hc-msg blockquote{font-size:.9rem}
 .hc-k{font:600 .82rem/1 var(--font);letter-spacing:.08em;white-space:nowrap;text-transform:uppercase;color:var(--body);margin-bottom:10px}
 .hc-big{font:800 2.6rem/1 var(--font-head);color:var(--navy);font-variant-numeric:tabular-nums;margin-bottom:6px}
 .hc-sub2{font:400 .84rem/1.5 var(--font);color:var(--body);margin-bottom:14px}
@@ -566,12 +577,19 @@ main section.page-hero,.hero{padding:var(--s-hero-t) 0 var(--s-hero-b)}
 .hc-msg .av{width:36px;height:36px;border-radius:50%;background:var(--chip);color:var(--navy);
   display:inline-flex;align-items:center;justify-content:center;font:700 .92rem/1.35 var(--font);flex:none}
 .hc-msg .role{display:block;font:400 .82rem/1.35 var(--font);color:var(--body)}
-@media(max-width:900px){
-  .hero-art{gap:16px;max-width:420px;padding:0}
+@media(max-width:1024px){
+  .page-hero .hero-2col{grid-template-columns:1fr;gap:34px}
+  .hero-art{gap:16px;padding:0;align-self:stretch}
   /* the live style sets .hero-card{order:2} here; the stack keeps DOM order */
-  .hero-art .hcard,.hero-art .hero-card{--rot:0deg;order:0}
-  .hero-art>:nth-child(2),.hero-art>:nth-child(3),.hero-art>:nth-child(4){width:100%;align-self:stretch;margin:0;--rot:0deg}
+  .hero-art .hcard,.hero-art .hero-card{--rot:0deg!important;order:0}
+  .hero-art>:nth-child(2){grid-column:auto}
+  .hero-art>:nth-child(4){grid-column:1/-1}
+  .hero-art[data-cards="1"]{grid-template-columns:1fr;max-width:520px}
   .h-blob{display:none}
+}
+@media(max-width:640px){
+  .hero-art{grid-template-columns:1fr;max-width:none}
+  .hero-art>:nth-child(4),.hero-art[data-cards="2"]>:nth-child(3){grid-column:auto}
 }
 /* hero intro: opacity and transform only, so nothing shifts */
 html.js .hero-art .hcard,html.js .hero-art .hero-card{opacity:0;
@@ -589,6 +607,7 @@ html.js .hero-art.in .hcard,html.js .hero-art.in .hero-card{opacity:1;transform:
 .proofline .pl-go{color:var(--navy)}
 .proofline:hover .pl-num{color:var(--navy)}
 .page-hero>.wrap+.wrap{margin-top:32px}
+.hero-2col .proofline{margin-top:26px}
 @media(max-width:560px){.proofline{flex-direction:column;gap:8px;padding:16px 18px}
   .proofline .pl-num{font-size:2rem}}
 
@@ -1326,6 +1345,9 @@ footer .base,footer .base span{color:var(--body);border-top-color:var(--line);fo
   free check rather than the whole of it. The technical faults are simply the ones that are
   provable, common, and cheap to fix, so they are the honest place to begin.</p>
 </div></section>
+
+
+
 
 
 
