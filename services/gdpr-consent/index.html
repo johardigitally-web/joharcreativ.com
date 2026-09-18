@@ -661,7 +661,8 @@ main .tstrip{background:transparent;border:0;box-shadow:none;border-radius:0;pad
 .tstrip .item svg,.tstrip svg{flex:none;width:18px;height:18px;margin-top:2px;color:var(--navy);
   stroke:currentColor}
 @media(max-width:900px){.tstrip .row{grid-template-columns:1fr 1fr}}
-@media(max-width:420px){.tstrip .row{grid-template-columns:1fr;gap:13px}}
+/* two facts side by side leave a 185px column on a phone: one per row instead */
+@media(max-width:560px){.tstrip .row{grid-template-columns:1fr;gap:14px}}
 
 /* ------------------------------------------------------------ components --- */
 /* 20px radius and one soft shadow everywhere a card exists */
@@ -733,13 +734,18 @@ main .tstrip{background:transparent;border:0;box-shadow:none;border-radius:0;pad
 .tl-item:last-child::after,.wcard:last-child::after,.step:last-child .seg{display:none}
 .tl::before{display:none}
 .tl{padding-left:0}
-.wk::before,.mstep::before,.tl-item::before,.wcard::before,.steps .step::before,.step .num{
+/* the marker at the left of each row: a numbered circle where the row carries a
+   number of its own, a dot where it carries a word label like "Week 1" */
+.steps .step::before,.step .num,.w-n,.ms-n{
   content:"";position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;
   background:var(--chip);color:var(--navy);display:flex;align-items:center;justify-content:center;
-  font:700 .95rem/1.35 var(--font-head);border:0;box-shadow:none;transform:none}
+  font:700 .95rem/1 var(--font-head);letter-spacing:0;text-transform:none;border:0;box-shadow:none;
+  transform:none;margin:0}
 .steps .step::before{counter-increment:st;content:counter(st)}
-.tl-item::before{width:12px;height:12px;left:12px;top:12px;background:var(--navy)}
-.wk-n,.ms-n,.w-n,.tl-date,.step .when{position:static;display:block;margin:0 0 8px;
+.wk::before,.mstep::before,.tl-item::before,.wcard::before{content:"";position:absolute;left:12px;top:12px;
+  width:12px;height:12px;border-radius:50%;background:var(--navy);border:0;box-shadow:none;transform:none}
+.mstep::before,.wcard::before{display:none}
+.wk-n,.tl-date,.step .when{position:static;display:block;margin:0 0 8px;
   font:600 .82rem/1 var(--font);letter-spacing:.09em;text-transform:uppercase;color:var(--navy)}
 .wk-n::before{display:none}
 .wk h3,.mstep h3,.steps .step h3,.wcard .w-title,.step h3{color:var(--ink);font-size:1.06rem;margin:0 0 6px}
@@ -901,8 +907,12 @@ main section.band,.band{padding:var(--s-sec) 0}
 .svc-grid,.svc-grid.svc-grid-3{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s-card);margin-top:var(--s-head)}
 .svc-grid>*{flex:1 1 260px;max-width:360px;min-width:0}
 .svc-grid>[data-flag]{flex-basis:100%;max-width:none}
-/* five cards split three and two, never four and one */
-.svc-grid:has(>:nth-child(5):last-child)>*{flex-basis:300px;max-width:calc((100% - 2*var(--s-card))/3)}
+/* five cards split three and two on a wide screen, never four and one */
+@media(min-width:901px){
+  .svc-grid:has(>:nth-child(5):last-child)>*{flex-basis:300px;max-width:calc((100% - 2*var(--s-card))/3)}
+}
+/* one card per row on a phone, whatever the count */
+@media(max-width:640px){.svc-grid>*{flex-basis:100%;max-width:none}}
 /* the live .center rule centres every paragraph; inside a card that reads as an indent */
 main section.center :is(.inc,.pain,.svc,.svc-card,.rcard,.choose,.fit,.lane,.step,.wk,.mstep,.sc,.wcard,.tldr,.qa,
   .stat,.pricebox,.hero-card,.hcard,.form-card,.midcta,.inline-cta,.notes,.faq,.deliver,.fcase) :is(p,h3,h4,ul){
@@ -937,6 +947,7 @@ main section.center :is(.inc,.pain,.svc,.svc-card,.rcard,.choose,.fit,.lane,.ste
 .sc-outcome{font-family:var(--font);color:var(--ink);font-weight:500}
 .deliver{background:var(--tint);border:1px solid var(--line)}
 .deliver h4{color:var(--body);font-size:.82rem}
+@media(max-width:640px){.deliver ul{columns:1}.deliver{padding:20px}}
 .deliver li{color:var(--ink)}
 .deliver li::before{background:var(--navy)}
 /* fit columns as the two lanes */
@@ -1171,6 +1182,24 @@ footer .base,footer .base span{color:var(--body);border-top-color:var(--line);fo
   footer li{margin-bottom:0}
   .cta-pair .btn,.hero-cta .btn,.hero-actions .btn,.midcta .btn,.mc-btns .btn{min-height:48px}
 }
+/* on a narrow phone the page gutter and the card padding together leave a
+   220px column; both come down so the text keeps a readable measure */
+@media(max-width:420px){
+  .wrap{padding-left:16px;padding-right:16px}
+  /* .wcard, .wk, .mstep and .tl-item are timeline rows: their left padding is the
+     gutter the marker sits in, so it stays */
+  .pain,.inc-grid.four .inc,[data-block="notfor"] .inc,.rcard,.svc,.choose,.stat,.pricebox,.lane,
+  .sc,.fit .col,.tldr,.notes,.hero-card,.hcard,.form-card,.price-card,.t-card,.res,
+  .fc-body,.midcta,.inline-cta,.your-time,.slot{padding-left:20px;padding-right:20px}
+  .faq details{padding-left:18px;padding-right:18px}
+  .jstep{grid-template-columns:1fr;gap:8px;padding:14px 18px}
+  .jstep .jn{margin-bottom:2px}
+  .ropo-stat{padding:22px 20px}
+  .sc{padding-top:22px;padding-bottom:20px}
+  /* a card inside a card inside the page gutter: each layer gives room back */
+  .sc-body,.sc-head,.sc-foot{padding-left:18px;padding-right:18px}
+  .deliver{padding-left:16px;padding-right:16px}
+}
 /* nothing under 13px: these were 11 to 12.8px and unreadable on a phone */
 .hero-card .hc-sub,.hero-card li span,.hero-card .hc-note,.page-hero .meta,.tstrip .item span,
 .fc-tag,.tag,.sc-tag,.crumb,.base,.notes,.hero-note,.pl-sub,.hc-note,.slot-note,.consent,
@@ -1340,6 +1369,10 @@ footer .base,footer .base span{color:var(--body);border-top-color:var(--line);fo
   <h2>Fair questions about consent and compliance<span class="bar"></span></h2>
   <div style="max-width:780px;margin:26px auto 0;text-align:left"><details><summary>Do I really need a consent banner?</summary><p>If you load anything that sets a cookie or sends data to a third party, and you have visitors in the EU or UK, yes. If your site loads nothing of the sort, you may not, and that is a better outcome than a banner.</p></details><details><summary>Do I need an Impressum?</summary><p>If you trade into Germany, Austria or Switzerland, yes, with specific fields. There is a guide on the resources page covering exactly what it must contain.</p></details><details><summary>Will this break my analytics?</summary><p>It will reduce the numbers, because you will stop counting people who never agreed to be counted. That is the correct number and it was always the correct number.</p></details><details><summary>Can you use Google Analytics compliantly in the EU?</summary><p>With consent, Consent Mode configured properly, IP handling set correctly and the transfer disclosed, it is what most sites do. Some organisations choose an EU hosted alternative instead and I will set that up if you prefer.</p></details><details><summary>Is this really 290 euro?</summary><p>On a normal business site, yes. A store with many third party scripts takes longer and I will quote it in writing before starting, not after.</p></details><details><summary>What proof do I get that it works?</summary><p>A recording of the network requests before consent, showing nothing fires. This site's own consent gate is tested the same way on every deploy, 15 checks, and it has to pass before anything ships.</p></details></div>
 </div></section>
+
+
+
+
 
 
 

@@ -19,6 +19,10 @@
 
 
 
+
+
+
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Johar Creativ">
 <meta property="og:locale" content="en_GB">
@@ -671,7 +675,8 @@ main .tstrip{background:transparent;border:0;box-shadow:none;border-radius:0;pad
 .tstrip .item svg,.tstrip svg{flex:none;width:18px;height:18px;margin-top:2px;color:var(--navy);
   stroke:currentColor}
 @media(max-width:900px){.tstrip .row{grid-template-columns:1fr 1fr}}
-@media(max-width:420px){.tstrip .row{grid-template-columns:1fr;gap:13px}}
+/* two facts side by side leave a 185px column on a phone: one per row instead */
+@media(max-width:560px){.tstrip .row{grid-template-columns:1fr;gap:14px}}
 
 /* ------------------------------------------------------------ components --- */
 /* 20px radius and one soft shadow everywhere a card exists */
@@ -743,13 +748,18 @@ main .tstrip{background:transparent;border:0;box-shadow:none;border-radius:0;pad
 .tl-item:last-child::after,.wcard:last-child::after,.step:last-child .seg{display:none}
 .tl::before{display:none}
 .tl{padding-left:0}
-.wk::before,.mstep::before,.tl-item::before,.wcard::before,.steps .step::before,.step .num{
+/* the marker at the left of each row: a numbered circle where the row carries a
+   number of its own, a dot where it carries a word label like "Week 1" */
+.steps .step::before,.step .num,.w-n,.ms-n{
   content:"";position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;
   background:var(--chip);color:var(--navy);display:flex;align-items:center;justify-content:center;
-  font:700 .95rem/1.35 var(--font-head);border:0;box-shadow:none;transform:none}
+  font:700 .95rem/1 var(--font-head);letter-spacing:0;text-transform:none;border:0;box-shadow:none;
+  transform:none;margin:0}
 .steps .step::before{counter-increment:st;content:counter(st)}
-.tl-item::before{width:12px;height:12px;left:12px;top:12px;background:var(--navy)}
-.wk-n,.ms-n,.w-n,.tl-date,.step .when{position:static;display:block;margin:0 0 8px;
+.wk::before,.mstep::before,.tl-item::before,.wcard::before{content:"";position:absolute;left:12px;top:12px;
+  width:12px;height:12px;border-radius:50%;background:var(--navy);border:0;box-shadow:none;transform:none}
+.mstep::before,.wcard::before{display:none}
+.wk-n,.tl-date,.step .when{position:static;display:block;margin:0 0 8px;
   font:600 .82rem/1 var(--font);letter-spacing:.09em;text-transform:uppercase;color:var(--navy)}
 .wk-n::before{display:none}
 .wk h3,.mstep h3,.steps .step h3,.wcard .w-title,.step h3{color:var(--ink);font-size:1.06rem;margin:0 0 6px}
@@ -911,8 +921,12 @@ main section.band,.band{padding:var(--s-sec) 0}
 .svc-grid,.svc-grid.svc-grid-3{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s-card);margin-top:var(--s-head)}
 .svc-grid>*{flex:1 1 260px;max-width:360px;min-width:0}
 .svc-grid>[data-flag]{flex-basis:100%;max-width:none}
-/* five cards split three and two, never four and one */
-.svc-grid:has(>:nth-child(5):last-child)>*{flex-basis:300px;max-width:calc((100% - 2*var(--s-card))/3)}
+/* five cards split three and two on a wide screen, never four and one */
+@media(min-width:901px){
+  .svc-grid:has(>:nth-child(5):last-child)>*{flex-basis:300px;max-width:calc((100% - 2*var(--s-card))/3)}
+}
+/* one card per row on a phone, whatever the count */
+@media(max-width:640px){.svc-grid>*{flex-basis:100%;max-width:none}}
 /* the live .center rule centres every paragraph; inside a card that reads as an indent */
 main section.center :is(.inc,.pain,.svc,.svc-card,.rcard,.choose,.fit,.lane,.step,.wk,.mstep,.sc,.wcard,.tldr,.qa,
   .stat,.pricebox,.hero-card,.hcard,.form-card,.midcta,.inline-cta,.notes,.faq,.deliver,.fcase) :is(p,h3,h4,ul){
@@ -947,6 +961,7 @@ main section.center :is(.inc,.pain,.svc,.svc-card,.rcard,.choose,.fit,.lane,.ste
 .sc-outcome{font-family:var(--font);color:var(--ink);font-weight:500}
 .deliver{background:var(--tint);border:1px solid var(--line)}
 .deliver h4{color:var(--body);font-size:.82rem}
+@media(max-width:640px){.deliver ul{columns:1}.deliver{padding:20px}}
 .deliver li{color:var(--ink)}
 .deliver li::before{background:var(--navy)}
 /* fit columns as the two lanes */
@@ -1181,6 +1196,24 @@ footer .base,footer .base span{color:var(--body);border-top-color:var(--line);fo
   footer li{margin-bottom:0}
   .cta-pair .btn,.hero-cta .btn,.hero-actions .btn,.midcta .btn,.mc-btns .btn{min-height:48px}
 }
+/* on a narrow phone the page gutter and the card padding together leave a
+   220px column; both come down so the text keeps a readable measure */
+@media(max-width:420px){
+  .wrap{padding-left:16px;padding-right:16px}
+  /* .wcard, .wk, .mstep and .tl-item are timeline rows: their left padding is the
+     gutter the marker sits in, so it stays */
+  .pain,.inc-grid.four .inc,[data-block="notfor"] .inc,.rcard,.svc,.choose,.stat,.pricebox,.lane,
+  .sc,.fit .col,.tldr,.notes,.hero-card,.hcard,.form-card,.price-card,.t-card,.res,
+  .fc-body,.midcta,.inline-cta,.your-time,.slot{padding-left:20px;padding-right:20px}
+  .faq details{padding-left:18px;padding-right:18px}
+  .jstep{grid-template-columns:1fr;gap:8px;padding:14px 18px}
+  .jstep .jn{margin-bottom:2px}
+  .ropo-stat{padding:22px 20px}
+  .sc{padding-top:22px;padding-bottom:20px}
+  /* a card inside a card inside the page gutter: each layer gives room back */
+  .sc-body,.sc-head,.sc-foot{padding-left:18px;padding-right:18px}
+  .deliver{padding-left:16px;padding-right:16px}
+}
 /* nothing under 13px: these were 11 to 12.8px and unreadable on a phone */
 .hero-card .hc-sub,.hero-card li span,.hero-card .hc-note,.page-hero .meta,.tstrip .item span,
 .fc-tag,.tag,.sc-tag,.crumb,.base,.notes,.hero-note,.pl-sub,.hc-note,.slot-note,.consent,
@@ -1371,6 +1404,14 @@ footer .base,footer .base span{color:var(--body);border-top-color:var(--line);fo
   <h2>Fair questions about moving a store<span class="bar"></span></h2>
   <div style="max-width:780px;margin:26px auto 0;text-align:left"><details><summary>Will I lose my Google rankings when the store moves?</summary><p>That is the risk, and it is an engineering problem rather than a gamble. Rankings are lost when old URLs stop resolving, so every old address gets mapped to its new one before anything goes live. On the last store I moved that meant 739 redirects across 373 products and 68 collections, on the same domain, and the search position held.</p></details><details><summary>What does 895 euro a month actually include?</summary><p>The migration itself with no separate build fee, the product data rebuilt, the product feed and Merchant Center kept free of errors, and the store looked after every month after that: fixes, changes, new products, and a plain English note every week.</p></details><details><summary>How long does the move take?</summary><p>Three to four weeks for a store of a few hundred products, most of which is product data and redirect mapping rather than design. You keep selling on the old store the whole time. The switch itself is one day.</p></details><details><summary>What happens to my old product URLs?</summary><p>Every one of them is redirected to its new page. Links other sites have pointed at you, bookmarks, old ads, printed material, all of it still lands somewhere correct rather than on a 404. This is the single step most migrations get wrong.</p></details><details><summary>Why is there no build fee?</summary><p>Because the store is worth more to both of us running than it is delivered. The migration is included and you commit to three months, which is long enough for the move to be worth doing at this price. After that it is month to month with thirty days notice.</p></details><details><summary>What if I am already on Shopify?</summary><p>Then you skip the move and the same 895 a month runs the store: product data, feeds, Merchant Center, ongoing fixes and improvements. Plenty of stores are on the right platform and still have a feed nobody has looked at in a year.</p></details><details><summary>Who owns the store and the accounts?</summary><p>You do, from day one. The Shopify store, the Merchant Center account, the analytics, all of it created under your own email with me added as a user. If you stop, you remove me and nothing goes with me.</p></details><details><summary>My product feed keeps getting rejected. Can you fix that without a migration?</summary><p>Usually yes, and it is worth checking before you move anything. Send me the store and I will tell you in the free check whether the feed problems are the platform or the data.</p></details></div>
 </div></section>
+
+
+
+
+
+
+
+
 
 
 
