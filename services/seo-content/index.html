@@ -334,79 +334,45 @@ main .faq details:last-of-type{margin-bottom:0}main section.faq{margin-top:0}mai
 }.proofline{transition:opacity .28s ease,transform .28s ease}.fc-nums span{min-height:92px}@media(max-width:820px){.fc-nums span{min-height:0}}/* short viewports: a phone in landscape has ~390px of height, and a 144px header eats 37% of it before any content. Compact the chrome rather than the content. */@media (max-height:520px) and (orientation:landscape){.topbar{display:none}header.nav .wrap{padding-top:6px;padding-bottom:6px}.nav-logo,.logo{font-size:1.05rem}.hero,.page-hero{padding-top:26px;padding-bottom:26px}.hero h1,.page-hero h1{font-size:clamp(1.5rem,4.2vw,2rem);line-height:1.2}.hero .lead,.page-hero .lead{font-size:.95rem}.mobile-cta{padding:6px 10px calc(6px + env(safe-area-inset-bottom))}body{padding-bottom:64px}}.wrap > .fcase:not(:only-child){margin-bottom:52px}.wrap > .fcase + h2{margin-top:0}@media(max-width:820px){.wrap > .fcase:not(:only-child){margin-bottom:34px}}/* narrow screens: two spans in a centred flex row wrap into a ragged block with the second line indented by the gap. Stack them properly and centre both. */@media(max-width:760px){.topbar{padding:7px 0}.topbar .wrap{flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center;line-height:1.45}.topbar span{display:block;width:100%}.topbar .tb-mail{display:none}}@media(max-width:420px){.topbar{font-size:.82rem}.topbar span:last-child{opacity:.85}}@media(max-width:400px){.page-hero .proofline{margin-top:16px}}/* related-pages strip */.lstrip{background:var(--offwhite);border-top:1px solid var(--line)}.lstrip h2{font-size:1.24rem;margin:0 0 6px}.lstrip .sub{margin:0 0 18px}.lstrip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.lstrip li{margin:0}.lstrip li a:not(.btn){text-decoration:none}.lstrip a{display:inline-flex;align-items:center;min-height:44px;padding:9px 16px;background:var(--white);border:1px solid var(--line);border-radius:999px;color:var(--navy);font-size:.92rem;font-weight:600;text-decoration:none;transition:border-color .2s ease,color .2s ease,background .2s ease}.lstrip a:hover{border-color:var(--amber);color:#8a5a06;background:#fffaf0}.lstrip a:focus-visible{outline:3px solid var(--amber);outline-offset:2px}@media(max-width:700px){.lstrip ul{justify-content:flex-start}}@media(prefers-reduced-motion:reduce){.lstrip a{transition:none}}/* long compound words must not set the footer grid's minimum width */footer .cols>div{min-width:0}footer .cols a,footer .cols h4{overflow-wrap:break-word}/* the trust strip's flex layout was built for an icon it never had */.tstrip .item svg{flex:none;width:20px;height:20px;color:var(--amber);margin-top:2px}
 
 /* ==== design refresh: generated from memory/design/system.css, do not edit here ==== */
-/* =============================================================================
-   Johar Creativ, design refresh. Wave 0 of memory/design/OTHER-PAGES-PLAN.md.
-
-   ONE source of truth. memory/tools/apply_design.py appends this to the end of
-   each page's existing <style>, so it wins on source order without touching a
-   single class name. check_page.py, build_lang.py, linkstrip.py and
-   sync_schema.py all read the existing class names, and a rename would break
-   every one of them. New hooks are wrapper elements or data-* attributes only.
-
-   The two approved pages (redesign/index.html, redesign/website-rebuild.html)
-   are the design system. Every rule here is one of their compositions laid over
-   a live class name.
-
-   Fonts are self-hosted. The site never loads the Google Fonts CDN: embedding
-   it sends every visitor's IP to Google, which is what the GDPR pages sell
-   against. apply_design.py deletes the base Roboto faces and rewrites every
-   font-family that named them, so no Roboto file is requested any more.
-   ========================================================================== */
-
-/* Latin first, the extended block only when a page uses those characters. These
-   must be the Latin subsets: an earlier copy was Google's Cyrillic file, reported
-   "loaded", and rendered every heading in Arial. Check glyphs, not status. */
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;
-  src:url(/fonts/inter.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+src:url(/fonts/inter.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;
-  src:url(/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+src:url(/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Inter Tight';font-style:normal;font-weight:700 800;font-display:swap;
-  src:url(/fonts/inter-tight.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+src:url(/fonts/inter-tight.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Inter Tight';font-style:normal;font-weight:700 800;font-display:swap;
-  src:url(/fonts/inter-tight-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-/* Arial sized to the real faces, measured on the built pages: Inter runs 6.7%
-   wider than Arial, Inter Tight 800 runs 1% narrower than Arial Bold. The swap
-   moves no line. */
+src:url(/fonts/inter-tight-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:106.72%;ascent-override:96.9%;descent-override:24.1%;line-gap-override:0%}
 @font-face{font-family:'Inter Tight Fallback';src:local('Arial');size-adjust:99.02%;ascent-override:96.9%;descent-override:24.1%;line-gap-override:0%}
-
 :root{
-  /* the palette, on the names the site already uses so every tokenised base
-     rule follows. --amber is the accent now: the base style uses it in 48
-     places (kicker, carets, topbar, pain border, fc-tag dot, strip hover) and
-     every one of those has to stop being warm. The ONE warm element per page is
-     [data-warm], which is the only rule allowed to use --warm. */
-  --navy:#4F46E5;
-  --navy-deep:#15161C;
-  --amber:#4F46E5;
-  --amber-deep:#4338CA;
-  --amber-ink:#4F46E5;
-  --warm:#FF7A45;
-  --white:#ffffff;
-  --offwhite:#F4F6FB;
-  --tint:#F4F6FB;
-  --ink:#15161C;
-  --ink-soft:#5A5E6B;
-  --body:#5A5E6B;
-  --accent:#4F46E5;
-  --line:rgba(20,22,32,.08);
-  --bg:#FBFBF9;
-  --chip:#EEF0FF;
-  --ease:cubic-bezier(.22,1,.36,1);
-  --r:20px;
-  --w:1180px;
-  --shadow:0 2px 4px rgba(20,22,32,.05),0 24px 40px -18px rgba(20,22,32,.12);
-  --shadow-hover:0 4px 8px rgba(20,22,32,.06),0 34px 60px -20px rgba(20,22,32,.18);
-  --shadow-card:0 1px 2px rgba(20,22,32,.04),0 8px 16px -6px rgba(20,22,32,.08),0 30px 50px -22px rgba(20,22,32,.16);
-  --font:'Inter','Inter Fallback',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-  --font-head:'Inter Tight','Inter Tight Fallback','Inter','Inter Fallback',system-ui,sans-serif;
-  /* one vertical scale: half the between-section gap, so a boundary reads as the number */
-  --s-sec:48px; --s-head:40px; --s-card:24px; --s-hero-t:40px; --s-hero-b:56px;
+--navy:#4F46E5;
+--navy-deep:#15161C;
+--amber:#4F46E5;
+--amber-deep:#4338CA;
+--amber-ink:#4F46E5;
+--warm:#FF7A45;
+--white:#ffffff;
+--offwhite:#F4F6FB;
+--tint:#F4F6FB;
+--ink:#15161C;
+--ink-soft:#5A5E6B;
+--body:#5A5E6B;
+--accent:#4F46E5;
+--line:rgba(20,22,32,.08);
+--bg:#FBFBF9;
+--chip:#EEF0FF;
+--ease:cubic-bezier(.22,1,.36,1);
+--r:20px;
+--w:1180px;
+--shadow:0 2px 4px rgba(20,22,32,.05),0 24px 40px -18px rgba(20,22,32,.12);
+--shadow-hover:0 4px 8px rgba(20,22,32,.06),0 34px 60px -20px rgba(20,22,32,.18);
+--shadow-card:0 1px 2px rgba(20,22,32,.04),0 8px 16px -6px rgba(20,22,32,.08),0 30px 50px -22px rgba(20,22,32,.16);
+--font:'Inter','Inter Fallback',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+--font-head:'Inter Tight','Inter Tight Fallback','Inter','Inter Fallback',system-ui,sans-serif;
+--s-sec:48px; --s-head:40px; --s-card:24px; --s-hero-t:40px; --s-hero-b:56px;
 }
 @media(max-width:860px){:root{--s-sec:36px}}
 @media(max-width:640px){:root{--s-sec:28px;--s-hero-t:26px;--s-hero-b:40px}}
-
-/* ---------------------------------------------------------------- type ---- */
 html{scroll-padding-top:96px}
 body{background:var(--bg);color:var(--body);font-family:var(--font);font-size:17px;line-height:1.65}
 h1,h2,h3,h4{font-family:var(--font-head);color:var(--ink);letter-spacing:-.02em;line-height:1.12;font-weight:800}
@@ -417,25 +383,19 @@ p{max-width:40.37em}
 a{color:var(--navy);text-decoration:none}
 a:hover{color:var(--navy)}
 :focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
-  outline:3px solid var(--navy);outline-offset:2px;border-radius:4px}
+outline:3px solid var(--navy);outline-offset:2px;border-radius:4px}
 .wrap{max-width:var(--w)}
 .sub{color:var(--body);font-size:1.05rem;margin-top:12px}
 h2 .bar,.bar{display:none}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-
-/* the kicker was amber running text. It is the chip on the built pages. */
 .kicker,.hero .kicker,.page-hero .kicker{display:block;width:fit-content;max-width:100%;
-  background:var(--chip);color:var(--navy);
-  font:600 .82rem/1 var(--font);letter-spacing:.12em;text-transform:uppercase;
-  padding:9px 15px;border-radius:99px;margin-bottom:20px}
-
-/* ------------------------------------------------------------- spacing ---- */
+background:var(--chip);color:var(--navy);
+font:600 .82rem/1 var(--font);letter-spacing:.12em;text-transform:uppercase;
+padding:9px 15px;border-radius:99px;margin-bottom:20px}
 main section{padding:var(--s-sec) 0;margin:0}
 main section+section{padding-top:var(--s-sec)}
 main section>.wrap>*:first-child{margin-top:0}
 main section>.wrap>*:last-child{margin-bottom:0}
-/* a .center section centres its heading, its sub and its grid, as the live site
-   always did; every card inside keeps left-aligned text */
 main section.center{text-align:center}
 main section.center .wrap>h2,main section.center .wrap>p,main section.center .wrap>.sub{margin-left:auto;margin-right:auto}
 main section.center .wrap>.kicker{margin-left:auto;margin-right:auto}
@@ -446,7 +406,6 @@ main section.center .pain-grid{margin-left:auto;margin-right:auto}
 .deliver,.hero-card,.hcard,.tldr,.notes,.stat,.pricebox,.midcta,.inline-cta,.qa,.form-card,.fcase,
 [data-block="qa"] details{text-align:left}
 main section.center .midcta{text-align:left}
-/* a hero with no card column centres its copy; article heroes with a crumb stay left */
 .page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)){text-align:center}
 .page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) .kicker,
 .page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) .lead,
@@ -458,28 +417,20 @@ main section.center .midcta{text-align:left}
 .page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) h1{margin-left:auto;margin-right:auto;max-width:16em}
 .page-hero>.wrap:first-child:not(.hero-2col):not(:has(.crumb)) .proofline{text-align:left}
 .sec-tint,main section[style*="var(--offwhite)"]{background:var(--tint)!important;
-  border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
-
-/* --------------------------------------------------------------- header --- */
-/* site-head grammar from the built pages on the live header.nav: transparent
-   until 40px of scroll, then blurred; on a phone it steps out of the way while
-   reading down. design.js toggles .scrolled and .hide. nav.js, mobilenav.js
-   and test_nav_full.py read none of this. */
+border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
 .topbar{background:var(--tint);color:var(--body);font-size:.82rem;padding:8px 0;
-  border-bottom:1px solid var(--line)}
+border-bottom:1px solid var(--line)}
 .topbar span b{color:var(--ink)}
 .topbar a,.topbar .tb-mail{color:var(--navy)}
 @media(max-width:900px){.topbar{display:none}}
 .nav{background:transparent;border-bottom:1px solid transparent;box-shadow:none;
-  transition:background .25s var(--ease),border-color .25s var(--ease),transform .3s var(--ease)}
+transition:background .25s var(--ease),border-color .25s var(--ease),transform .3s var(--ease)}
 .nav.scrolled{background:rgba(251,251,249,.86);-webkit-backdrop-filter:blur(10px);
-  backdrop-filter:blur(10px);border-bottom-color:var(--line)}
-/* below 900px the menu panel is position:fixed inside the header, and a blur or a
-   transform on the header would turn it into the panel's containing block */
+backdrop-filter:blur(10px);border-bottom-color:var(--line)}
 @media(max-width:900px){
-  .nav,.nav.scrolled,.nav.nav-open{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none;
-    border-bottom-color:var(--line)}
-  .nav.nav-open{transform:none!important}
+.nav,.nav.scrolled,.nav.nav-open{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none;
+border-bottom-color:var(--line)}
+.nav.nav-open{transform:none!important}
 }
 @media(max-width:640px){.nav.hide:not(.nav-open){transform:translateY(-100%)}}
 .nav .wrap{height:auto;min-height:72px}
@@ -489,63 +440,54 @@ main section.center .midcta{text-align:left}
 .nav-links a:hover{color:var(--navy)}
 .caret{border-top-color:var(--ink)}
 .mega,.drop{background:#fff;border:1px solid var(--line);border-top:1px solid var(--line);
-  border-radius:0 0 var(--r) var(--r);box-shadow:var(--shadow-card)}
+border-radius:0 0 var(--r) var(--r);box-shadow:var(--shadow-card)}
 .mcol h5{font:700 .82rem/1 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
 .mcol a,.drop a{color:var(--body);min-height:44px;display:flex;align-items:center}
 .mcol a:hover,.drop a:hover{color:var(--navy);background:transparent}
 .mcol svg{stroke:var(--navy)}
 .mega-cta{background:var(--chip);color:var(--navy);letter-spacing:.06em;text-transform:none;
-  font:600 .95rem/1 var(--font);padding:16px}
+font:600 .95rem/1 var(--font);padding:16px}
 .mega-cta:hover{background:var(--chip);color:var(--navy)}
 .nav-toggle span{background:var(--ink)}
 @media(max-width:900px){
-  .nav-links{background:var(--bg)}
-  .mega,.drop{background:var(--tint);border-radius:12px}
+.nav-links{background:var(--bg)}
+.mega,.drop{background:var(--tint);border-radius:12px}
 }
 .skip-link{background:var(--ink);color:#fff}
-
-/* --------------------------------------------------------------- buttons --- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  font:600 1rem/1 var(--font);padding:0 26px;min-height:52px;border-radius:14px;
-  border:1px solid transparent;background:var(--navy);color:#fff;cursor:pointer;
-  box-shadow:0 2px 4px rgba(79,70,229,.18),0 16px 30px -14px rgba(79,70,229,.45);
-  position:relative;overflow:hidden;
-  transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s var(--ease),
-    border-color .2s var(--ease),color .2s var(--ease)}
-/* the sheen moves with transform, never a layout property */
+font:600 1rem/1 var(--font);padding:0 26px;min-height:52px;border-radius:14px;
+border:1px solid transparent;background:var(--navy);color:#fff;cursor:pointer;
+box-shadow:0 2px 4px rgba(79,70,229,.18),0 16px 30px -14px rgba(79,70,229,.45);
+position:relative;overflow:hidden;
+transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s var(--ease),
+border-color .2s var(--ease),color .2s var(--ease)}
 .btn::after{content:"";position:absolute;top:0;left:0;width:45%;height:100%;
-  background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);
-  transform:translateX(-160%) skewX(-20deg);transition:transform .6s var(--ease)}
+background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);
+transform:translateX(-160%) skewX(-20deg);transition:transform .6s var(--ease)}
 .btn-small{min-height:44px;padding:0 18px;font-size:.92rem;border-radius:12px}
-/* every second button is the ghost: WhatsApp keeps its name, not its green */
 .btn-line,.btn-navy,.btn-wa,.fcase .btn,.svc .btn,.svc-card .btn,.choose .btn,
 .cookie-bar .btn-line{background:transparent;color:var(--ink);border:1px solid rgba(20,22,32,.5);
-  box-shadow:none}
+box-shadow:none}
 .btn-line::after,.btn-navy::after,.btn-wa::after,.fcase .btn::after,.svc .btn::after,
 .svc-card .btn::after{display:none}
 .btn:hover{background:var(--navy);color:#fff}
 .btn-line:hover,.btn-navy:hover,.btn-wa:hover,.fcase .btn:hover,.svc .btn:hover,
 .svc-card .btn:hover{background:transparent;color:var(--navy);border-color:var(--navy)}
-/* THE warm element. compose.py stamps data-warm on exactly one element per page.
-   Ink text: white on #FF7A45 is 2.5:1 and fails. */
 [data-warm],.btn[data-warm],.btn[data-warm]:hover{background:var(--warm);color:var(--ink);
-  border-color:transparent;box-shadow:0 2px 4px rgba(255,122,69,.25),0 18px 34px -14px rgba(255,122,69,.45)}
+border-color:transparent;box-shadow:0 2px 4px rgba(255,122,69,.25),0 18px 34px -14px rgba(255,122,69,.45)}
 @media(hover:hover) and (pointer:fine){
-  .btn:hover{transform:translateY(-2px)}
-  .btn:not(.btn-line):not(.btn-navy):not(.btn-wa):hover{box-shadow:0 18px 34px -14px rgba(79,70,229,.5)}
-  .btn:hover::after{transform:translateX(300%) skewX(-20deg)}
-  main p a:not(.btn):hover,main li a:not(.btn):hover{text-decoration-thickness:2px}
+.btn:hover{transform:translateY(-2px)}
+.btn:not(.btn-line):not(.btn-navy):not(.btn-wa):hover{box-shadow:0 18px 34px -14px rgba(79,70,229,.5)}
+.btn:hover::after{transform:translateX(300%) skewX(-20deg)}
+main p a:not(.btn):hover,main li a:not(.btn):hover{text-decoration-thickness:2px}
 }
 .hero-cta,.hero-actions,.cta-pair,.btn-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .hero-cta{margin-top:26px}
 @media(max-width:640px){.hero-cta .btn,.hero-actions .btn{flex:1 1 100%}}
 .pulse{animation:none!important}
-
-/* ------------------------------------------------------------------ hero --- */
-/* light, dotted ground, as on both built pages */
 .hero,.page-hero{background:var(--bg);color:var(--body);position:relative;overflow:hidden;
-  background-image:radial-gradient(rgba(20,22,32,.05) 1px,transparent 1.4px);
-  background-size:26px 26px}
+background-image:radial-gradient(rgba(20,22,32,.05) 1px,transparent 1.4px);
+background-size:26px 26px}
 main section.page-hero,.hero{padding:var(--s-hero-t) 0 var(--s-hero-b)}
 .hero h1,.page-hero h1{color:var(--ink);margin-bottom:20px}
 .hero h1 em{color:var(--navy);font-style:normal}
@@ -559,11 +501,8 @@ main section.page-hero,.hero{padding:var(--s-hero-t) 0 var(--s-hero-b)}
 .crumb a:hover{color:var(--navy)}
 .crumb span{color:var(--body)}
 .page-hero .meta{font-size:.9rem;margin-top:18px}
-
-/* the price card: a real card on the light ground. Inside .hero-art (compose.py)
-   it leads the stack, rotated; below 900px it is a static column. */
 .hero-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);
-  box-shadow:var(--shadow-card);padding:24px 26px}
+box-shadow:var(--shadow-card);padding:24px 26px}
 .hero-card h2{color:var(--ink);font-size:1.2rem;margin:0 0 4px}
 .hero-card .hc-sub{color:var(--navy);font-size:.86rem;margin:0 0 14px}
 .hero-card li{border-top:1px solid var(--line);padding:11px 0}
@@ -572,23 +511,18 @@ main section.page-hero,.hero{padding:var(--s-hero-t) 0 var(--s-hero-b)}
 .hero-card li span{color:var(--body);font-size:.86rem}
 .hero-card .hc-note{color:var(--body);font-size:.82rem;margin-top:14px}
 @media(max-width:900px){.page-hero .hero-2col{grid-template-columns:1fr;gap:34px}}
-
-/* the card stack (compose.py wraps the second column). The live price card is
-   text-dense, so the cards do not overlap the way the approved page's short
-   cards do: the lead card runs across the column, the two smaller cards sit
-   side by side under it, each with a slight tilt. Nothing covers a word. */
 .hero-art{position:relative;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:8px 0;align-self:center}
 .page-hero .hero-2col{display:grid}
 .page-hero .hero-2col>*{min-width:0}
 .hc-code pre,.hc-code code{max-width:100%}
 .h-blob{position:absolute;width:380px;height:380px;border-radius:50%;left:50%;top:50%;
-  margin:-190px 0 0 -190px;filter:blur(34px);pointer-events:none;z-index:0;
-  background:radial-gradient(circle,rgba(79,70,229,.30),rgba(79,70,229,0) 68%);
-  animation:heroDrift 19s ease-in-out infinite}
+margin:-190px 0 0 -190px;filter:blur(34px);pointer-events:none;z-index:0;
+background:radial-gradient(circle,rgba(79,70,229,.30),rgba(79,70,229,0) 68%);
+animation:heroDrift 19s ease-in-out infinite}
 @keyframes heroDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-22px,18px) scale(1.09)}}
 .hero-art .hcard,.hero-art .hero-card{position:relative;background:#fff;border:1px solid var(--line);
-  border-radius:var(--r);box-shadow:var(--shadow-card);padding:22px 24px;margin:0;width:auto;
-  transform:rotate(var(--rot,0deg));z-index:1}
+border-radius:var(--r);box-shadow:var(--shadow-card);padding:22px 24px;margin:0;width:auto;
+transform:rotate(var(--rot,0deg));z-index:1}
 .hero-art>:nth-child(2){grid-column:1/-1;--rot:-1deg}
 .hero-art>:nth-child(3){--rot:1.2deg}
 .hero-art>:nth-child(4){--rot:-1deg}
@@ -596,7 +530,6 @@ main section.page-hero,.hero{padding:var(--s-hero-t) 0 var(--s-hero-b)}
 .hero-art[data-cards="1"]>:nth-child(2){--rot:0deg}
 .hero-art .form-card{--rot:0deg;transform:none}
 .hero-art[data-cards="1"]{grid-template-columns:1fr}
-/* a tall form beside short copy: start both at the top instead of centring */
 .page-hero .hero-2col:has(.form-card){align-items:start}
 .hero-art .hero-card{padding:20px 22px}
 .hero-art .hero-card h2{font-size:1.1rem}
@@ -615,32 +548,28 @@ main section.page-hero,.hero{padding:var(--s-hero-t) 0 var(--s-hero-b)}
 .hc-msg blockquote{font:500 .92rem/1.55 var(--font);color:var(--ink);margin:0 0 14px}
 .hc-msg figcaption{display:flex;align-items:center;gap:11px;font:600 .87rem/1.35 var(--font);color:var(--ink)}
 .hc-msg .av{width:36px;height:36px;border-radius:50%;background:var(--chip);color:var(--navy);
-  display:inline-flex;align-items:center;justify-content:center;font:700 .92rem/1.35 var(--font);flex:none}
+display:inline-flex;align-items:center;justify-content:center;font:700 .92rem/1.35 var(--font);flex:none}
 .hc-msg .role{display:block;font:400 .82rem/1.35 var(--font);color:var(--body)}
 @media(max-width:1024px){
-  .page-hero .hero-2col{grid-template-columns:1fr;gap:34px}
-  .hero-art{gap:16px;padding:0;align-self:stretch}
-  /* the live style sets .hero-card{order:2} here; the stack keeps DOM order */
-  .hero-art .hcard,.hero-art .hero-card{--rot:0deg!important;order:0}
-  .hero-art>:nth-child(2){grid-column:auto}
-  .hero-art>:nth-child(4){grid-column:1/-1}
-  .hero-art[data-cards="1"]{grid-template-columns:1fr;max-width:520px}
-  .h-blob{display:none}
+.page-hero .hero-2col{grid-template-columns:1fr;gap:34px}
+.hero-art{gap:16px;padding:0;align-self:stretch}
+.hero-art .hcard,.hero-art .hero-card{--rot:0deg!important;order:0}
+.hero-art>:nth-child(2){grid-column:auto}
+.hero-art>:nth-child(4){grid-column:1/-1}
+.hero-art[data-cards="1"]{grid-template-columns:1fr;max-width:520px}
+.h-blob{display:none}
 }
 @media(max-width:640px){
-  .hero-art{grid-template-columns:1fr;max-width:none}
-  .hero-art>:nth-child(4),.hero-art[data-cards="2"]>:nth-child(3){grid-column:auto}
+.hero-art{grid-template-columns:1fr;max-width:none}
+.hero-art>:nth-child(4),.hero-art[data-cards="2"]>:nth-child(3){grid-column:auto}
 }
-/* hero intro: opacity and transform only, so nothing shifts */
 html.js .hero-art .hcard,html.js .hero-art .hero-card{opacity:0;
-  transform:translate(0,26px) rotate(var(--rot,0deg)) scale(.97);
-  transition:opacity .6s var(--ease),transform .6s var(--ease)}
+transform:translate(0,26px) rotate(var(--rot,0deg)) scale(.97);
+transition:opacity .6s var(--ease),transform .6s var(--ease)}
 html.js .hero-art.in .hcard,html.js .hero-art.in .hero-card{opacity:1;transform:rotate(var(--rot,0deg))}
-
-/* the proofline: a white card under the hero grid, the number on the left */
 .page-hero .proofline,.proofline{display:flex;gap:18px;align-items:flex-start;margin:26px 0 0;
-  padding:18px 22px;background:#fff;border:1px solid var(--line);border-left:1px solid var(--line);
-  border-radius:var(--r);box-shadow:var(--shadow);max-width:620px;color:var(--body);text-decoration:none}
+padding:18px 22px;background:#fff;border:1px solid var(--line);border-left:1px solid var(--line);
+border-radius:var(--r);box-shadow:var(--shadow);max-width:620px;color:var(--body);text-decoration:none}
 .proofline .pl-num{font:800 2.4rem/1 var(--font-head);color:var(--navy);font-variant-numeric:tabular-nums;flex:none}
 .proofline .pl-lead{color:var(--ink);font-weight:700;font-size:1rem}
 .proofline .pl-sub{color:var(--body);font-size:.88rem}
@@ -649,120 +578,94 @@ html.js .hero-art.in .hcard,html.js .hero-art.in .hero-card{opacity:1;transform:
 .page-hero>.wrap+.wrap{margin-top:32px}
 .hero-2col .proofline{margin-top:26px}
 @media(max-width:560px){.proofline{flex-direction:column;gap:8px;padding:16px 18px}
-  .proofline .pl-num{font-size:2rem}}
-
-/* ------------------------------------------------------------- USP strip --- */
-/* the four facts, bare, as on the built page: no card around them */
+.proofline .pl-num{font-size:2rem}}
 main .tstrip{background:transparent;border:0;box-shadow:none;border-radius:0;padding:0 0 var(--s-sec)}
 .tstrip .row{grid-template-columns:repeat(4,1fr);gap:16px 24px}
 .tstrip .item{display:flex;gap:10px;align-items:flex-start;font:600 .93rem/1.4 var(--font);color:var(--ink)}
 .tstrip .item b{display:block;font:600 .93rem/1.4 var(--font);color:var(--ink)}
 .tstrip .item span{font:400 .82rem/1.45 var(--font);color:var(--body)}
 .tstrip .item svg,.tstrip svg{flex:none;width:18px;height:18px;margin-top:2px;color:var(--navy);
-  stroke:currentColor}
+stroke:currentColor}
 @media(max-width:900px){.tstrip .row{grid-template-columns:1fr 1fr}}
-/* two facts side by side leave a 185px column on a phone: one per row instead */
 @media(max-width:560px){.tstrip .row{grid-template-columns:1fr;gap:14px}}
-
-/* ------------------------------------------------------------ components --- */
-/* 20px radius and one soft shadow everywhere a card exists */
 .rcard,.svc,.svc-card,.form-card,.mcol,.pain,.choose,.pricebox,.stat,.sc,.wcard,.mstep,
 .fcase,.hero-card,.tldr,.faq details,.pt,.deliver{border-radius:var(--r)}
 .rcard,.svc,.svc-card,.form-card,.pain,.choose,.pricebox,.stat,.sc,.wcard,.mstep,.fcase,.tldr{
-  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
-  transition:translate .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+transition:translate .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
 @media(hover:hover) and (pointer:fine){
-  .rcard:hover,.svc:hover,.svc-card:hover,.choose:hover,.sc:hover,.wcard:hover,.mstep:hover{
-    transform:none;translate:0 -6px;box-shadow:var(--shadow-hover);border-color:rgba(79,70,229,.35)}
-  .svc:hover .icon{transform:none}
+.rcard:hover,.svc:hover,.svc-card:hover,.choose:hover,.sc:hover,.wcard:hover,.mstep:hover{
+transform:none;translate:0 -6px;box-shadow:var(--shadow-hover);border-color:rgba(79,70,229,.35)}
+.svc:hover .icon{transform:none}
 }
-
-/* problem cards: white card, accent left border, staggered reveal */
 .pain-grid{gap:var(--s-card);margin-top:var(--s-head);text-align:left}
 .pain{padding:26px 28px;border-left:3px solid var(--navy)}
 .pain h3{color:var(--ink);margin-bottom:8px}
 .pain p{font-size:.96rem;color:var(--body)}
-
-/* the compact contact band inside a page */
 .midcta{background:var(--chip);border:1px solid var(--line);border-left:1px solid var(--line);
-  border-radius:var(--r);padding:20px 26px;box-shadow:none}
+border-radius:var(--r);padding:20px 26px;box-shadow:none}
 .midcta p{color:var(--ink)}
 .midcta p b{color:var(--ink)}
 .inline-cta{background:var(--chip);border:1px solid var(--line);border-radius:12px;padding:14px 20px}
 .inline-cta p{color:var(--ink);font:500 .95rem/1.5 var(--font)}
 .inline-cta a{display:inline-flex;align-items:center;min-height:44px;color:var(--navy);font-weight:700}
 .your-time,.slot{margin-top:var(--s-card);display:inline-block;background:var(--chip);
-  border:0;border-radius:12px;padding:14px 20px;font:500 .95rem/1.35 var(--font);color:var(--ink)}
-
-/* included work: a two column list with a rule under each row, not small cards */
+border:0;border-radius:12px;padding:14px 20px;font:500 .95rem/1.35 var(--font);color:var(--ink)}
 .inc-grid{grid-template-columns:repeat(2,1fr);gap:0 var(--s-card);max-width:980px;
-  margin-top:var(--s-head);text-align:left}
+margin-top:var(--s-head);text-align:left}
 .inc{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;
-  padding:14px 0;box-shadow:none;display:block}
+padding:14px 0;box-shadow:none;display:block}
 .inc:hover{transform:none;translate:none;box-shadow:none;border-color:var(--line)}
 .inc h3{color:var(--ink);font:600 .98rem/1.35 var(--font);margin-bottom:5px}
 .inc p{font-size:.9rem;max-width:none;color:var(--body)}
 .inc svg,.inc-head svg{color:var(--navy)}
 .inc-head{display:flex;gap:10px;align-items:flex-start}
 @media(max-width:760px){.inc-grid,.inc-grid.four{grid-template-columns:1fr}}
-/* "what I will not do": cards with the decorative cross, so refusals look
-   different from the included list. compose.py stamps data-block="notfor";
-   the live .inc-grid.four is the same section on every service page. */
 .inc-grid.four,[data-block="notfor"] .inc-grid{grid-template-columns:repeat(2,1fr);gap:var(--s-card);max-width:none}
 .inc-grid.four .inc,[data-block="notfor"] .inc{background:#fff;border:1px solid var(--line);
-  border-radius:var(--r);padding:24px 26px;box-shadow:var(--shadow)}
+border-radius:var(--r);padding:24px 26px;box-shadow:var(--shadow)}
 .inc-grid.four .inc h3::before,[data-block="notfor"] .inc h3::before{content:"\2715" / "";
-  color:var(--navy);font-weight:700;margin-right:10px}
+color:var(--navy);font-weight:700;margin-right:10px}
 .inc-grid.four .inc h3,[data-block="notfor"] .inc h3{font-family:var(--font-head);font-size:1.06rem;font-weight:800;margin-bottom:8px}
 .inc-grid.four .inc p,[data-block="notfor"] .inc p{font-size:.94rem}
 .inc{min-width:0;overflow-wrap:anywhere}
 @media(max-width:760px){.inc-grid.four,[data-block="notfor"] .inc-grid{grid-template-columns:1fr}}
-
-/* ------------------------------------------------------------- timeline --- */
-/* the vertical timeline with a drawn line, laid over every step-like block the
-   site has: .wk (weeks), .mstep, the /services/ .step cards, .wcard, .tl-item,
-   and the .step rows compose.py builds from the .seq SVG */
 .weeks,.msteps,.steps,.tl,.wcards{display:block;max-width:820px;margin-top:var(--s-head);
-  text-align:left;position:relative;padding:0;counter-reset:st;background:none;border:0}
+text-align:left;position:relative;padding:0;counter-reset:st;background:none;border:0}
 .wk,.mstep,.steps .step,.tl-item,.wcard{display:block;background:none;border:0;border-radius:0;
-  box-shadow:none;position:relative;padding:0 0 var(--s-card) 56px;margin:0;grid-template-columns:none}
+box-shadow:none;position:relative;padding:0 0 var(--s-card) 56px;margin:0;grid-template-columns:none}
 .wk:last-child,.mstep:last-child,.steps .step:last-child,.tl-item:last-child,.wcard:last-child{padding-bottom:0}
 .wk:hover,.mstep:hover,.wcard:hover{translate:none;transform:none;box-shadow:none}
 .wk::after,.mstep::after,.steps .step::after,.tl-item::after,.wcard::after,.step .seg{content:"";
-  position:absolute;left:17px;top:38px;bottom:0;width:2px;background:var(--chip);overflow:hidden}
+position:absolute;left:17px;top:38px;bottom:0;width:2px;background:var(--chip);overflow:hidden}
 .wk:last-child::after,.mstep:last-child::after,.steps .step:last-child::after,
 .tl-item:last-child::after,.wcard:last-child::after,.step:last-child .seg{display:none}
 .tl::before{display:none}
 .tl{padding-left:0}
-/* the marker at the left of each row: a numbered circle where the row carries a
-   number of its own, a dot where it carries a word label like "Week 1" */
 .steps .step::before,.step .num,.w-n,.ms-n{
-  content:"";position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;
-  background:var(--chip);color:var(--navy);display:flex;align-items:center;justify-content:center;
-  font:700 .95rem/1 var(--font-head);letter-spacing:0;text-transform:none;border:0;box-shadow:none;
-  transform:none;margin:0}
+content:"";position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;
+background:var(--chip);color:var(--navy);display:flex;align-items:center;justify-content:center;
+font:700 .95rem/1 var(--font-head);letter-spacing:0;text-transform:none;border:0;box-shadow:none;
+transform:none;margin:0}
 .steps .step::before{counter-increment:st;content:counter(st)}
 .wk::before,.mstep::before,.tl-item::before,.wcard::before{content:"";position:absolute;left:12px;top:12px;
-  width:12px;height:12px;border-radius:50%;background:var(--navy);border:0;box-shadow:none;transform:none}
+width:12px;height:12px;border-radius:50%;background:var(--navy);border:0;box-shadow:none;transform:none}
 .mstep::before,.wcard::before{display:none}
 .wk-n,.tl-date,.step .when{position:static;display:block;margin:0 0 8px;
-  font:600 .82rem/1 var(--font);letter-spacing:.09em;text-transform:uppercase;color:var(--navy)}
+font:600 .82rem/1 var(--font);letter-spacing:.09em;text-transform:uppercase;color:var(--navy)}
 .wk-n::before{display:none}
 .wk h3,.mstep h3,.steps .step h3,.wcard .w-title,.step h3{color:var(--ink);font-size:1.06rem;margin:0 0 6px}
 .wk p,.mstep p,.steps .step p,.tl-body,.w-detail,.step p{font-size:.97rem;color:var(--body);max-width:none;line-height:1.65}
 .mstep>div{display:block}
 .w-win{margin:0 0 12px;padding:12px 18px;background:var(--chip);border-left:3px solid var(--navy);
-  border-radius:0 12px 12px 0;font-size:1rem;color:var(--ink);font-weight:600}
-/* the line draws itself when the row arrives */
+border-radius:0 12px 12px 0;font-size:1rem;color:var(--ink);font-weight:600}
 .wk::after,.mstep::after,.steps .step::after,.tl-item::after,.wcard::after{background:var(--chip)}
 html.js .rv.wk.in::after,html.js .rv.mstep.in::after,html.js .rv.wcard.in::after,
 html.js .step.in .seg::before{background:var(--navy)}
 .step .seg::before{content:"";position:absolute;inset:0;background:var(--navy);transform-origin:top;
-  transition:transform .6s var(--ease) .15s}
+transition:transform .6s var(--ease) .15s}
 html.js .step .seg::before{transform:scaleY(0)}
 html.js .step.in .seg::before{transform:scaleY(1)}
-
-/* the comparison diagrams compose.py builds from the other two .seq SVGs */
 .lanes{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-card);margin-top:var(--s-head)}
 .lanes[data-lanes="3"]{grid-template-columns:repeat(3,1fr)}
 .lane{padding:30px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
@@ -770,28 +673,24 @@ html.js .step.in .seg::before{transform:scaleY(1)}
 .lane .lp{font-size:.95rem;margin-bottom:16px;color:var(--body)}
 .lane ul{list-style:none;margin:0;padding:0}
 .lane li{position:relative;padding:11px 0 11px 17px;border-top:1px solid var(--line);
-  font:500 .96rem/1.55 var(--font);color:var(--ink)}
+font:500 .96rem/1.55 var(--font);color:var(--ink)}
 .lane li::before{content:"";position:absolute;left:0;top:19px;width:7px;height:7px;border-radius:50%;background:var(--navy)}
 .lane li em{font-style:normal;color:var(--body);font-weight:400}
 .lanes-axis{font:600 .82rem/1 var(--font);letter-spacing:.09em;text-transform:uppercase;color:var(--navy);
-  margin-top:var(--s-head);margin-bottom:-24px}
+margin-top:var(--s-head);margin-bottom:-24px}
 .lanes-scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:var(--s-head);
-  font:600 .82rem/1 var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--body)}
+font:600 .82rem/1 var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--body)}
 .lanes-scale+.lanes{margin-top:14px}
 @media(max-width:860px){.lanes,.lanes[data-lanes="3"]{grid-template-columns:1fr}}
 .seq{background:none;border:0;padding:0;margin-top:0}
-
-/* --------------------------------------------------------------- proof ---- */
-/* the case band. On the two approved pages it carries the storefront photo;
-   Johar keeps the image off the other pages, so this is the band form. */
 .fcase{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);
-  margin-top:var(--s-head);overflow:visible}
+margin-top:var(--s-head);overflow:visible}
 .fcase::before,.fcase::after{display:none}
 .fcase:hover,.fcase.rv:hover{transform:none;translate:0 -6px;border-color:rgba(79,70,229,.35);box-shadow:var(--shadow-hover)}
 .fc-body{padding:32px 34px 26px}
 .fcase .fc-tag{display:inline-block;font:700 .82rem/1 var(--font);letter-spacing:.1em;
-  text-transform:uppercase;color:var(--navy);background:var(--chip);padding:7px 12px;
-  border-radius:99px;margin-bottom:14px}
+text-transform:uppercase;color:var(--navy);background:var(--chip);padding:7px 12px;
+border-radius:99px;margin-bottom:14px}
 .fcase .fc-tag::before{display:none}
 .fcase h3{color:var(--ink);font-size:1.4rem;margin:0 0 12px}
 .fcase p{color:var(--body);font-size:.96rem}
@@ -800,52 +699,47 @@ html.js .step.in .seg::before{transform:scaleY(1)}
 .fc-nums span{color:var(--body);font-size:.88rem;border-left-color:var(--line)}
 .fc-nums span:hover{background:transparent}
 .fc-nums b{font:800 1.7rem/1.15 var(--font-head);color:var(--navy);font-variant-numeric:tabular-nums}
-/* the split with the image, used only on pages that already carry the photo */
 .fc-split,.proof-split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:var(--s-head)}
 .fc-media,.media-col{position:relative}
 .media{aspect-ratio:16/10;overflow:hidden;border-radius:var(--r);border:1px solid var(--line);
-  box-shadow:var(--shadow-card);background:var(--tint);margin:0}
+box-shadow:var(--shadow-card);background:var(--tint);margin:0}
 .media img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 .media-badge{position:absolute;left:20px;bottom:-22px;background:var(--chip);
-  border:1px solid rgba(79,70,229,.18);border-radius:16px;padding:14px 18px;display:flex;
-  align-items:baseline;gap:11px;box-shadow:var(--shadow);max-width:290px}
+border:1px solid rgba(79,70,229,.18);border-radius:16px;padding:14px 18px;display:flex;
+align-items:baseline;gap:11px;box-shadow:var(--shadow);max-width:290px}
 .media-badge b{font:800 1.5rem/1 var(--font-head);color:var(--navy);font-variant-numeric:tabular-nums;flex:none}
 .media-badge span{font:500 .82rem/1.4 var(--font);color:var(--ink)}
 @media(max-width:900px){.fc-split,.proof-split{grid-template-columns:1fr;gap:48px}
-  .media-badge{left:0;bottom:-20px}}
+.media-badge{left:0;bottom:-20px}}
 .proof-nums,.flow{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-  gap:var(--s-card);margin:var(--s-head) 0 0;padding:0}
+gap:var(--s-card);margin:var(--s-head) 0 0;padding:0}
 .proof-nums li,.flow div{border-top:2px solid var(--chip);padding:14px 0 0;background:none;border-radius:0;
-  border-left:0;border-right:0;border-bottom:0;text-align:left}
+border-left:0;border-right:0;border-bottom:0;text-align:left}
 .flow div::after{display:none}
 .proof-nums b,.flow div span{display:block;font:800 1.2rem/1.2 var(--font-head);color:var(--navy);
-  letter-spacing:0;text-transform:none;margin-bottom:7px}
+letter-spacing:0;text-transform:none;margin-bottom:7px}
 .proof-nums span,.flow div p{font-size:.88rem;line-height:1.45;display:block;color:var(--body)}
 .flow .flow-on{background:none;border-color:var(--navy)}
 .flow .flow-on span{color:var(--navy)}
 .permission{font:400 .85rem/1.35 var(--font);color:var(--body)}
-
-/* testimonial cards */
 .rev-grid{margin-top:var(--s-head)}
 .rcard{padding:28px 30px;background:#fff}
 .rcard .rtag{font-size:.82rem;color:var(--body);border-color:var(--line)}
 .rcard .avatar{background:var(--chip)!important;color:var(--navy);font-family:var(--font);
-  width:38px;height:38px;font-size:.95rem}
+width:38px;height:38px;font-size:.95rem}
 .rcard .rname{color:var(--ink);font:600 .9rem/1.35 var(--font)}
 .rcard .rsub{color:var(--body);font-size:.82rem}
 .rcard .stars{color:var(--navy);font-size:.9rem}
 .rcard p{color:var(--ink);font-size:1rem}
-
-/* results tiles: .stats bands, the entry price tiles, the audit findings */
 .stats,.priceband{background:transparent;color:var(--body);border:0;padding:var(--s-sec) 0}
 main section.stats,main .priceband{padding:var(--s-sec) 0}
 .stats h2,.priceband h2,.stats p,.priceband p{color:var(--ink)}
 .priceband p{color:var(--body)}
 .stats .grid,.pricebox-row,.priceband.ladder .pricebox-row{display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--s-card);text-align:left}
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--s-card);text-align:left}
 .stat,.pricebox{padding:30px 30px 26px;background:#fff;text-align:left}
 .stat .val,.stats .val,.pricebox .amt{font:800 clamp(2.2rem,4vw,3rem)/1 var(--font-head);
-  color:var(--navy);font-variant-numeric:tabular-nums;margin-bottom:10px}
+color:var(--navy);font-variant-numeric:tabular-nums;margin-bottom:10px}
 .stat .val .unit,.pricebox .amt span{font-size:1.2rem}
 .stat .cap,.stats .cap,.pricebox .lbl{font:500 .95rem/1.5 var(--font);color:var(--body);margin-top:0}
 .stats .stat b,.stats b{color:var(--navy)}
@@ -854,23 +748,17 @@ main section.stats,main .priceband{padding:var(--s-sec) 0}
 .f-pct{font:800 2rem/1.1 var(--font-head);color:var(--navy)}
 .f-body h3{color:var(--ink)}
 .f-note{color:var(--body);border-left-color:var(--chip)}
-
-/* FAQ: white cards, 46px summary, the rotating plus; the only concealment */
 .faq{gap:var(--s-card)}
 .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
-  padding:0 24px;transition:border-color .2s var(--ease)}
+padding:0 24px;transition:border-color .2s var(--ease)}
 .faq details[open]{border-color:rgba(79,70,229,.35)}
 .faq summary{color:var(--ink);font:600 1rem/1.35 var(--font);min-height:46px;padding:16px 0}
 .faq summary::after{content:"+" / "";font:700 1.2rem/1 var(--font-head);color:var(--navy);
-  transition:transform .2s var(--ease);margin-left:16px}
+transition:transform .2s var(--ease);margin-left:16px}
 .faq details[open] summary::after{content:"+" / "";transform:rotate(45deg)}
 .faq details p{padding:0 0 20px;color:var(--body);font-size:.96rem}
-
-/* the link strips: pills on the tint band. The layout lives here because
-   linkstrip.py only injects its own constant when .lstrip{ is absent, and this
-   file makes it absent. */
 .lstrip,.lstrip.center{background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  border-radius:0;text-align:center}
+border-radius:0;text-align:center}
 .lstrip+.lstrip{background:#fff;border-top:0}
 .lstrip h2{font-size:1.24rem;margin:0 0 6px}
 .lstrip .sub{margin:0 0 18px}
@@ -878,45 +766,35 @@ main section.stats,main .priceband{padding:var(--s-sec) 0}
 @media(max-width:700px){.lstrip ul{justify-content:flex-start}}
 .lstrip li{margin:0}
 .lstrip a,.lstrip li a:not(.btn){display:inline-flex;align-items:center;min-height:44px;padding:9px 16px;
-  background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--navy);
-  font:600 .92rem/1.35 var(--font);text-decoration:none;
-  transition:border-color .2s var(--ease),color .2s var(--ease),background .2s var(--ease)}
+background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--navy);
+font:600 .92rem/1.35 var(--font);text-decoration:none;
+transition:border-color .2s var(--ease),color .2s var(--ease),background .2s var(--ease)}
 .lstrip a:hover{border-color:var(--navy);color:var(--navy);background:var(--chip)}
 .lstrip a:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
-
-/* the closing band: chip ground, as on both approved pages. Three live shapes:
-   the inline navy gradient (25 pages), div.band (hubs, legal), and the
-   data-block="close" stamp compose.py adds. */
 .band,[data-block="close"],main section[style*="#01152a"]{background:var(--chip)!important;
-  background-image:none!important;color:var(--body)!important;
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+background-image:none!important;color:var(--body)!important;
+border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
 main section.band,.band{padding:var(--s-sec) 0}
 .band h2,[data-block="close"] h2,[style*="#01152a"] h2{color:var(--ink)!important;
-  font-size:clamp(1.8rem,3.4vw,2.5rem);margin:0 auto 14px;max-width:24ch}
+font-size:clamp(1.8rem,3.4vw,2.5rem);margin:0 auto 14px;max-width:24ch}
 .band p,.band .sub,[data-block="close"] p,[style*="#01152a"] p,[style*="#01152a"] .sub{
-  color:var(--body)!important;margin:0 auto 22px;font-size:1.1rem;max-width:36.59em}
+color:var(--body)!important;margin:0 auto 22px;font-size:1.1rem;max-width:36.59em}
 .band .micro,.cta-note{font:400 .88rem/1.6 var(--font);color:var(--body)!important;margin:16px auto 0;max-width:36.59em}
 .band .cta-pair,[style*="#01152a"] .hero-cta,[data-block="close"] .hero-cta,[data-block="close"] .cta-pair,
 [data-block="close"] .btn-row{justify-content:center;margin:0}
 [data-block="legal"] .band,[data-block="legal"]+.band{padding:var(--s-sec) 0}
 [style*="color:#fff"]{color:var(--ink)!important}
 [style*="color:#c7d3e0"]{color:var(--body)!important}
-
-/* ------------------------------------------------------------- catalogue --- */
-/* service cards, everything in the open */
 .svc-grid,.svc-grid.svc-grid-3{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s-card);margin-top:var(--s-head)}
 .svc-grid>*{flex:1 1 260px;max-width:360px;min-width:0}
 .svc-grid>[data-flag]{flex-basis:100%;max-width:none}
-/* five cards split three and two on a wide screen, never four and one */
 @media(min-width:901px){
-  .svc-grid:has(>:nth-child(5):last-child)>*{flex-basis:300px;max-width:calc((100% - 2*var(--s-card))/3)}
+.svc-grid:has(>:nth-child(5):last-child)>*{flex-basis:300px;max-width:calc((100% - 2*var(--s-card))/3)}
 }
-/* one card per row on a phone, whatever the count */
 @media(max-width:640px){.svc-grid>*{flex-basis:100%;max-width:none}}
-/* the live .center rule centres every paragraph; inside a card that reads as an indent */
 main section.center :is(.inc,.pain,.svc,.svc-card,.rcard,.choose,.fit,.lane,.step,.wk,.mstep,.sc,.wcard,.tldr,.qa,
-  .stat,.pricebox,.hero-card,.hcard,.form-card,.midcta,.inline-cta,.notes,.faq,.deliver,.fcase) :is(p,h3,h4,ul){
-  margin-left:0;margin-right:0;align-self:stretch}
+.stat,.pricebox,.hero-card,.hcard,.form-card,.midcta,.inline-cta,.notes,.faq,.deliver,.fcase) :is(p,h3,h4,ul){
+margin-left:0;margin-right:0;align-self:stretch}
 @media(max-width:640px){.svc-grid>*{max-width:none}}
 .svc{padding:24px 26px;box-shadow:var(--shadow)}
 .svc .icon,.svc:nth-child(even) .icon{background:var(--chip);width:48px;height:48px;margin-bottom:16px}
@@ -926,7 +804,7 @@ main section.center :is(.inc,.pain,.svc,.svc-card,.rcard,.choose,.fit,.lane,.ste
 .svc p{color:var(--body);font-size:.94rem}
 .svc .btn{min-height:44px;padding:0 18px;font-size:.92rem;border-radius:12px}
 .svc-grid [data-flag]{grid-column:1/-1;border:2px solid var(--navy);
-  background:linear-gradient(135deg,#fff 55%,var(--chip))}
+background:linear-gradient(135deg,#fff 55%,var(--chip))}
 .chooser{gap:var(--s-card)}
 .choose{padding:20px 22px}
 .choose .ci,.choose:nth-child(2) .ci,.choose:nth-child(3) .ci{background:var(--chip);border-radius:12px}
@@ -950,35 +828,28 @@ main section.center :is(.inc,.pain,.svc,.svc-card,.rcard,.choose,.fit,.lane,.ste
 @media(max-width:640px){.deliver ul{columns:1}.deliver{padding:20px}}
 .deliver li{color:var(--ink)}
 .deliver li::before{background:var(--navy)}
-/* fit columns as the two lanes */
 .fit{gap:var(--s-card);margin-top:var(--s-head)}
 .fit .col,.fit .col.no,.fit .col.alt,main .fit .col.alt{background:#fff;border:1px solid var(--line);
-  border-radius:var(--r);padding:30px;box-shadow:var(--shadow)}
+border-radius:var(--r);padding:30px;box-shadow:var(--shadow)}
 .fit h3{color:var(--ink);font-size:1.25rem}
 .fit li{color:var(--ink);font:500 .96rem/1.55 var(--font);border-top:1px solid var(--line);padding:11px 0}
 .fit .col.yes li::before{color:var(--navy)}
 .fit .col.no li::before{color:var(--body)}
-
-/* pricing ladder: the eight rungs as price cards once compose.py stamps the
-   section; until then they are rule-topped rows */
 [data-block="ladder"] .qa{border:1px solid var(--line);border-top:1px solid var(--line);border-radius:var(--r);
-  background:#fff;box-shadow:var(--shadow);padding:30px 32px}
+background:#fff;box-shadow:var(--shadow);padding:30px 32px}
 [data-block="ladder"] .qa:first-of-type{border-top:1px solid var(--line)}
 [data-block="ladder"] .qa[data-feat]{border:2px solid var(--navy)}
 [data-block="ladder"] .qa h3{font:800 1.5rem/1.2 var(--font-head);color:var(--ink);margin-bottom:10px}
 [data-block="ladder"] .qa p{font-size:.95rem}
 [data-block="ladder"] .qa p>a:only-child{display:inline-flex;align-items:center;justify-content:center;
-  min-height:48px;padding:0 22px;border-radius:12px;border:1px solid rgba(20,22,32,.5);color:var(--ink);
-  font:600 .95rem/1 var(--font);text-decoration:none;margin-top:6px}
+min-height:48px;padding:0 22px;border-radius:12px;border:1px solid rgba(20,22,32,.5);color:var(--ink);
+font:600 .95rem/1 var(--font);text-decoration:none;margin-top:6px}
 [data-block="ladder"] .qa p>a[data-warm]{background:var(--warm);border-color:transparent}
 [data-block="ladder"] .qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-card);margin-top:var(--s-head)}
 @media(max-width:760px){[data-block="ladder"] .qa-grid{grid-template-columns:1fr}}
 .tag{font:700 .82rem/1 var(--font);letter-spacing:.06em;padding:5px 10px;border-radius:99px}
 .tag.good{background:var(--chip);color:var(--navy)}
 .tag.bad{background:#FDECEC;color:#A02020}
-
-/* ------------------------------------------------------------ reading ---- */
-/* one reading width for every run of prose: the built pages' own measure */
 .prose{max-width:40.37em}
 .prose h2{color:var(--ink);font-size:clamp(1.5rem,2.6vw,1.9rem);margin:var(--s-sec) 0 14px;scroll-margin-top:96px}
 .prose h3{color:var(--ink)}
@@ -986,14 +857,14 @@ main section.center :is(.inc,.pain,.svc,.svc-card,.rcard,.choose,.fit,.lane,.ste
 .prose a{color:var(--navy)}
 .prose a:hover{color:var(--navy)}
 .tldr{background:#fff;border:1px solid var(--line);border-left:1px solid var(--line);border-radius:var(--r);
-  padding:24px 28px;box-shadow:var(--shadow-card);margin:0 0 30px}
+padding:24px 28px;box-shadow:var(--shadow-card);margin:0 0 30px}
 .tldr>p:first-child{margin-bottom:14px}
 .tldr>p:first-child strong{display:inline-block;background:var(--chip);color:var(--navy);
-  font:600 .82rem/1 var(--font);letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border-radius:99px}
+font:600 .82rem/1 var(--font);letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border-radius:99px}
 .tldr p{color:var(--ink)}
 .tldr ul{list-style:none;margin:0;padding:0}
 .tldr li{position:relative;padding:10px 0 10px 17px;border-top:1px solid var(--line);
-  font:500 .96rem/1.55 var(--font);color:var(--ink);margin:0}
+font:500 .96rem/1.55 var(--font);color:var(--ink);margin:0}
 .tldr li::before{content:"";position:absolute;left:0;top:18px;width:7px;height:7px;border-radius:50%;background:var(--navy)}
 .qa{border-top:1px solid var(--line);padding:24px 0}
 .qa h3{color:var(--ink);margin-bottom:8px}
@@ -1002,25 +873,23 @@ nav.toc{margin:0 0 var(--s-card)}
 nav.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 nav.toc li{margin:0}
 nav.toc a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--line);
-  border-radius:999px;background:#fff;font:600 .86rem/1.35 var(--font);color:var(--body)}
+border-radius:999px;background:#fff;font:600 .86rem/1.35 var(--font);color:var(--body)}
 nav.toc a:hover{color:var(--navy);border-color:var(--navy)}
 @media(min-width:1100px){
-  .prose[data-toc]{max-width:none;display:grid;grid-template-columns:minmax(0,40.37em) 240px;gap:56px;align-items:start}
-  .prose[data-toc]>*{grid-column:1}
-  .prose[data-toc]>nav.toc{grid-column:2;grid-row:1/span 60;position:sticky;top:96px;margin:0}
-  nav.toc ol{flex-direction:column;gap:0}
-  nav.toc a{border:0;background:none;padding:0;min-height:40px;border-radius:0}
+.prose[data-toc]{max-width:none;display:grid;grid-template-columns:minmax(0,40.37em) 240px;gap:56px;align-items:start}
+.prose[data-toc]>*{grid-column:1}
+.prose[data-toc]>nav.toc{grid-column:2;grid-row:1/span 60;position:sticky;top:96px;margin:0}
+nav.toc ol{flex-direction:column;gap:0}
+nav.toc a{border:0;background:none;padding:0;min-height:40px;border-radius:0}
 }
 @media(max-height:500px){.prose[data-toc]>nav.toc{position:static}}
 [data-block="legal"] main>section>.wrap,main[data-block="legal"] section>.wrap>*{max-width:40.37em}
 main[data-block="legal"] h2[style*="margin-top:44px"]{margin-top:var(--s-sec)!important}
 main[data-block="legal"] p,main[data-block="legal"] li{color:var(--body);line-height:1.7}
 main[data-block="legal"] h1{max-width:none}
-
-/* ---------------------------------------------------------- case study ---- */
 .cs-meta{border-top:0;gap:10px;margin-top:22px;padding-top:0}
 .cs-meta div{padding:8px 14px;background:#fff;border:1px solid var(--line);border-radius:999px;
-  display:flex;gap:8px;align-items:baseline;min-height:44px}
+display:flex;gap:8px;align-items:baseline;min-height:44px}
 .cs-meta dt{color:var(--body);font:700 .82rem/1 var(--font);letter-spacing:.08em;margin:0}
 .cs-meta dd{color:var(--ink);font-size:.9rem}
 .ba{border:0;background:none;border-radius:0;overflow:visible}
@@ -1035,12 +904,12 @@ main[data-block="legal"] h1{max-width:none}
 .ba-x svg{color:var(--navy)}
 .ba-row:not(.ba-head):hover .ba-a{background:var(--chip)}
 @media(max-width:760px){
-  .ba-row{grid-template-columns:1fr;gap:0}
-  .ba-b{border-radius:12px 12px 0 0}
-  .ba-a{border-radius:0 0 12px 12px;border-top:0}
-  .ba-b::before,.ba-a::before{font:700 .82rem/1 var(--font);letter-spacing:.08em;color:var(--body)}
-  .ba-a::before{color:var(--navy)}
-  .ba-row:not(.ba-head){border-bottom:0}
+.ba-row{grid-template-columns:1fr;gap:0}
+.ba-b{border-radius:12px 12px 0 0}
+.ba-a{border-radius:0 0 12px 12px;border-top:0}
+.ba-b::before,.ba-a::before{font:700 .82rem/1 var(--font);letter-spacing:.08em;color:var(--body)}
+.ba-a::before{color:var(--navy)}
+.ba-row:not(.ba-head){border-bottom:0}
 }
 .jump a{border-color:var(--line);color:var(--body);background:#fff;font:600 .86rem/1.35 var(--font)}
 .jump a:hover,.jump a:focus-visible{border-color:var(--navy);color:var(--navy);background:var(--chip)}
@@ -1054,35 +923,59 @@ main[data-block="legal"] h1{max-width:none}
 .sc li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--navy);top:19px;font-size:0}
 .sc li b{color:var(--ink)}
 .notes{background:#fff;border:1px solid var(--line);border-left:3px solid var(--navy);border-radius:var(--r);
-  padding:24px 28px;box-shadow:var(--shadow)}
+padding:24px 28px;box-shadow:var(--shadow)}
 .notes h3{display:inline-block;background:var(--chip);color:var(--navy);font:600 .82rem/1 var(--font);
-  letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border-radius:99px;margin-bottom:14px}
+letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border-radius:99px;margin-bottom:14px}
 .notes p{color:var(--body);font-size:.96rem}
-
-/* --------------------------------------------------------------- person ---- */
+.dbar{list-style:none;margin:var(--s-head) 0 0;padding:0;display:grid;gap:18px;max-width:760px}
+.dbar li{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:baseline}
+.dbar .dl{font:600 .98rem/1.35 var(--font);color:var(--ink)}
+.dbar .dv{font:800 1.05rem/1.2 var(--font-head);color:var(--navy);font-variant-numeric:tabular-nums}
+.dbar .dt{grid-column:1/-1;height:10px;border-radius:5px;background:var(--chip);overflow:hidden}
+.dbar .dt i{display:block;height:100%;border-radius:5px;background:var(--navy)}
+.dbar .dn{grid-column:1/-1;font:400 .86rem/1.4 var(--font);color:var(--body);font-variant-numeric:tabular-nums}
+.dtable-wrap{margin-top:var(--s-head);max-width:820px}
+.dtable{width:100%;border-collapse:separate;border-spacing:0;font-variant-numeric:tabular-nums;
+background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+.dtable{position:relative}
+.dtable caption{caption-side:top;text-align:left;font:600 .82rem/1.4 var(--font);letter-spacing:.09em;
+text-transform:uppercase;color:var(--body);padding:0 0 12px;width:100%}
+.dtable th,.dtable td{padding:14px 18px;text-align:left;font-size:.95rem;border-top:1px solid var(--line)}
+.dtable thead th{background:var(--chip);border-top:0;color:var(--ink);
+font:700 .82rem/1.3 var(--font);letter-spacing:.06em;text-transform:uppercase}
+.dtable tbody th{font:600 .95rem/1.4 var(--font);color:var(--ink)}
+.dtable td{color:var(--body)}
+.dtable tbody tr:first-child th,.dtable tbody tr:first-child td{border-top:0}
+@media(max-width:700px){
+.dtable,.dtable tbody,.dtable tr,.dtable th,.dtable td{display:block}
+.dtable thead{position:absolute;left:-9999px}
+.dtable tbody tr{border-top:1px solid var(--line);padding:14px 18px}
+.dtable tbody tr:first-child{border-top:0}
+.dtable tbody th{padding:0 0 8px;border:0;font-size:1rem}
+.dtable td{padding:3px 0;border:0;display:flex;justify-content:space-between;gap:16px}
+.dtable td::before{content:attr(data-l);color:var(--body);font-weight:600}
+}
 .person{background:transparent;border:0}
 .person .wrap{grid-template-columns:.8fr 1.2fr;gap:44px}
 .person .photo{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-card);
-  padding:0;overflow:hidden}
+padding:0;overflow:hidden}
 .headshot{border-radius:0;display:block}
 .person figcaption{color:var(--body);font-size:.85rem;margin-top:10px}
 .person h2{color:var(--ink)}
 .person p{color:var(--body);font-size:1.02rem}
 .person>.wrap>div>p:first-of-type{color:var(--ink);font-weight:500}
 .fact{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 18px;min-height:44px;
-  display:inline-flex;align-items:center;gap:6px;box-shadow:none;font:500 .9rem/1.35 var(--font);color:var(--body)}
+display:inline-flex;align-items:center;gap:6px;box-shadow:none;font:500 .9rem/1.35 var(--font);color:var(--body)}
 .fact b{color:var(--ink)}
 @media(max-width:900px){.person .wrap{grid-template-columns:1fr}
-  .person figure{max-width:380px}}
-
-/* ------------------------------------------------------------ conversion --- */
+.person figure{max-width:380px}}
 .form-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-card);
-  padding:30px;color:var(--ink);animation:none}
+padding:30px;color:var(--ink);animation:none}
 .form-card h3{color:var(--ink);font-size:1.25rem}
 .form-card .fnote{color:var(--body);font-size:.9rem}
 .form-card label{color:var(--ink);font:600 .9rem/1.35 var(--font);margin:16px 0 6px}
 .form-card input,.form-card select{min-height:48px;font-size:16px;font-family:var(--font);
-  background:#fff;border:1px solid rgba(20,22,32,.2);border-radius:10px;color:var(--ink)}
+background:#fff;border:1px solid rgba(20,22,32,.2);border-radius:10px;color:var(--ink)}
 .form-card input:hover,.form-card select:hover{border-color:var(--navy)}
 .form-card input:focus-visible,.form-card select:focus-visible{border-color:var(--navy)}
 .form-card .btn{width:100%;min-height:48px;margin-top:20px}
@@ -1097,34 +990,24 @@ main[data-block="legal"] h1{max-width:none}
 .pt-h{color:var(--ink)}
 .pt summary::after,.pt[open] summary::after{border-color:var(--navy)}
 .pt-d p{color:var(--body)}
-/* fifteen points opened as rows (compose.py, wave 4) */
 .pts-2col[data-open] .pt{border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;margin:0;padding:14px 0 14px 50px;position:relative}
 .pts-2col[data-open] .pt .pt-n{position:absolute;left:0;top:14px;width:36px;height:36px;font:700 .95rem/1.35 var(--font-head)}
 .pts-2col[data-open] .pt h3{color:var(--ink);font:600 .98rem/1.35 var(--font);margin-bottom:5px}
 .pts-2col[data-open] .pt p{font-size:.9rem;color:var(--body)}
 .pts-bar[hidden],.pts-2col[data-open]+.pts-bar{display:none}
-
-
-/* contact: the four numbered paragraphs already carry their digits, so the
-   timeline draws a dot instead of a number circle */
 .steps[data-nonum] .step{padding-left:40px}
 .steps[data-nonum] .step::before{content:"";width:12px;height:12px;left:12px;top:10px;background:var(--navy)}
 .steps[data-nonum] .step .seg{top:30px}
 .steps[data-nonum] .step p{max-width:none}
-/* the two questions on the case-studies hub, outside any faq section */
 [data-block="qa"] details{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:0 24px;margin-bottom:var(--s-card)}
 [data-block="qa"] summary{color:var(--ink);font:600 1rem/1.35 var(--font);min-height:46px;padding:16px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
 [data-block="qa"] summary::-webkit-details-marker{display:none}
 [data-block="qa"] summary::after{content:"+" / "";font:700 1.2rem/1 var(--font-head);color:var(--navy);margin-left:16px}
 [data-block="qa"] details[open] summary::after{transform:rotate(45deg)}
 [data-block="qa"] details p{padding:0 0 20px;color:var(--body);font-size:.96rem}
-/* a four line headline on a phone: the lead drops a size so the button stays near */
 @media(max-width:400px){.page-hero[data-long-h1] .lead{font-size:1rem}}
-/* the contact hero: the form is the card */
 .hero-art .form-card{position:static;width:auto;--rot:0deg}
 .hero-art[data-cards="1"] .form-card{transform:none}
-
-/* --------------------------------------------------------------- footer --- */
 footer{background:#fff;color:var(--body);border-top:1px solid var(--line);padding:48px 0 32px}
 footer .logo{color:var(--ink)}
 footer .logo .dot,footer .logo em{color:var(--navy)}
@@ -1133,87 +1016,65 @@ footer a,footer p,footer li,footer span,footer small,footer .contact{color:var(-
 footer a{font-size:.94rem}
 footer a:hover{color:var(--navy)}
 footer .base,footer .base span{color:var(--body);border-top-color:var(--line);font-size:.85rem}
-
-/* the consent bar, a white card on the light tokens. Logic untouched. On a
-   phone it sits flush at the bottom (the live 70px offset cleared the old
-   two-button bar); the mobile bar stays away while it is on screen. */
 .cookie-bar{background:#fff;color:var(--body);border-top:1px solid var(--line);
-  box-shadow:0 -6px 24px rgba(20,22,32,.10)}
+box-shadow:0 -6px 24px rgba(20,22,32,.10)}
 .cookie-bar p{color:var(--body)}
 .cookie-bar a{color:var(--navy)}
 .cookie-bar p a{display:inline-flex;align-items:center;min-height:44px;margin:-10px 0;padding:0}
 .cookie-bar .btn{min-height:44px}
 .cookie-bar .btn-line,.cookie-bar .btn-line:hover{color:var(--ink);border-color:rgba(20,22,32,.5);background:transparent}
 @media(max-width:640px){.cookie-bar{bottom:0}}
-
-/* ---------------------------------------------------------- mobile bar ---- */
-/* the built pages' contract: a price line and ONE button, away while a
-   [data-cta-anchor] group or the consent bar is on screen. Shown under 640px,
-   which is where the live style already shows it. */
 .mobile-cta{background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  border-top:1px solid var(--line);box-shadow:none;transition:transform .35s var(--ease)}
+border-top:1px solid var(--line);box-shadow:none;transition:transform .35s var(--ease)}
 @media(max-width:640px){
-  html{scroll-padding-bottom:100px}
-  body{padding-bottom:80px}
-  .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:150;gap:12px;align-items:center;
-    padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}
-  html.js .mobile-cta.away{transform:translateY(110%)}
-  .mobile-cta .mc-price{flex:1 1 auto;min-width:0;font:700 .95rem/1.2 var(--font);color:var(--ink);margin:0;
-    overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .mobile-cta .mc-price span{display:block;font:400 .82rem/1.35 var(--font);color:var(--body);
-    overflow:hidden;text-overflow:ellipsis}
-  .mobile-cta .btn{flex:1 1 auto;min-height:48px;padding:0 16px;font-size:.95rem;white-space:nowrap}
-  .mobile-cta .mc-price+.btn{flex:0 0 auto}
+html{scroll-padding-bottom:100px}
+body{padding-bottom:80px}
+.mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:150;gap:12px;align-items:center;
+padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}
+html.js .mobile-cta.away{transform:translateY(110%)}
+.mobile-cta .mc-price{flex:1 1 auto;min-width:0;font:700 .95rem/1.2 var(--font);color:var(--ink);margin:0;
+overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mobile-cta .mc-price span{display:block;font:400 .82rem/1.35 var(--font);color:var(--body);
+overflow:hidden;text-overflow:ellipsis}
+.mobile-cta .btn{flex:1 1 auto;min-height:48px;padding:0 16px;font-size:.95rem;white-space:nowrap}
+.mobile-cta .mc-price+.btn{flex:0 0 auto}
 }
-/* a short viewport, such as 400% zoom or a phone on its side: nothing stays pinned */
 @media(max-height:500px){
-  .nav{position:static}
-  .mobile-cta{position:static;transform:none!important}
-  body{padding-bottom:0}
+.nav{position:static}
+.mobile-cta{position:static;transform:none!important}
+body{padding-bottom:0}
 }
 @media(max-height:520px) and (orientation:landscape){body{padding-bottom:0}}
-
-/* ------------------------------------------------------ touch and type --- */
 @media(max-width:900px){
-  .logo,.nav-logo{display:inline-flex;align-items:center;min-height:44px}
-  .nav-toggle{min-height:44px;min-width:44px}
-  footer li a,footer a,.tb-mail{display:inline-flex;align-items:center;min-height:44px}
-  .faq summary,.qa summary{min-height:46px;display:flex;align-items:center}
-  footer li{margin-bottom:0}
-  .cta-pair .btn,.hero-cta .btn,.hero-actions .btn,.midcta .btn,.mc-btns .btn{min-height:48px}
+.logo,.nav-logo{display:inline-flex;align-items:center;min-height:44px}
+.nav-toggle{min-height:44px;min-width:44px}
+footer li a,footer a,.tb-mail{display:inline-flex;align-items:center;min-height:44px}
+.faq summary,.qa summary{min-height:46px;display:flex;align-items:center}
+footer li{margin-bottom:0}
+.cta-pair .btn,.hero-cta .btn,.hero-actions .btn,.midcta .btn,.mc-btns .btn{min-height:48px}
 }
-/* on a narrow phone the page gutter and the card padding together leave a
-   220px column; both come down so the text keeps a readable measure */
 @media(max-width:420px){
-  .wrap{padding-left:16px;padding-right:16px}
-  /* .wcard, .wk, .mstep and .tl-item are timeline rows: their left padding is the
-     gutter the marker sits in, so it stays */
-  .pain,.inc-grid.four .inc,[data-block="notfor"] .inc,.rcard,.svc,.choose,.stat,.pricebox,.lane,
-  .sc,.fit .col,.tldr,.notes,.hero-card,.hcard,.form-card,.price-card,.t-card,.res,
-  .fc-body,.midcta,.inline-cta,.your-time,.slot{padding-left:20px;padding-right:20px}
-  .faq details{padding-left:18px;padding-right:18px}
-  .jstep{grid-template-columns:1fr;gap:8px;padding:14px 18px}
-  .jstep .jn{margin-bottom:2px}
-  .ropo-stat{padding:22px 20px}
-  .sc{padding-top:22px;padding-bottom:20px}
-  /* a card inside a card inside the page gutter: each layer gives room back */
-  .sc-body,.sc-head,.sc-foot{padding-left:18px;padding-right:18px}
-  .deliver{padding-left:16px;padding-right:16px}
+.wrap{padding-left:16px;padding-right:16px}
+.pain,.inc-grid.four .inc,[data-block="notfor"] .inc,.rcard,.svc,.choose,.stat,.pricebox,.lane,
+.sc,.fit .col,.tldr,.notes,.hero-card,.hcard,.form-card,.price-card,.t-card,.res,
+.fc-body,.midcta,.inline-cta,.your-time,.slot{padding-left:20px;padding-right:20px}
+.faq details{padding-left:18px;padding-right:18px}
+.jstep{grid-template-columns:1fr;gap:8px;padding:14px 18px}
+.jstep .jn{margin-bottom:2px}
+.ropo-stat{padding:22px 20px}
+.sc{padding-top:22px;padding-bottom:20px}
+.sc-body,.sc-head,.sc-foot{padding-left:18px;padding-right:18px}
+.deliver{padding-left:16px;padding-right:16px}
 }
-/* nothing under 13px: these were 11 to 12.8px and unreadable on a phone */
 .hero-card .hc-sub,.hero-card li span,.hero-card .hc-note,.page-hero .meta,.tstrip .item span,
 .fc-tag,.tag,.sc-tag,.crumb,.base,.notes,.hero-note,.pl-sub,.hc-note,.slot-note,.consent,
 .cs-meta dt,.rcard .rtag,.rcard .rsub,.deliver h4,.pts-grp span,.form-card .consent,figcaption,
 .topbar,.micro,.jump a b,.tl-date,.wk-n,.ms-n,.w-n,.cta-note{font-size:.82rem}
 .hero-card li span,.tstrip .item span,.rcard .rsub,.cs-meta dd{font-size:.86rem}
 .seq svg text{font-family:var(--font)}
-/* the old amber baked into SVG attributes on the timeline diagrams */
 .seq svg [fill="#ffb03a"],.seq svg [fill="#ffb03a"]{fill:var(--navy)}
 .seq svg [stroke="#ffb03a"]{stroke:var(--navy)}
 .seq svg [fill="#a8721a"]{fill:var(--navy)}
-
-/* --------------------------------------------------------------- motion --- */
-/* the live reveal (.rv + .in, armed by .js-anim) on the built pages' timing */
 .js-anim .rv{transform:translateY(20px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
 .js-anim .rv.d1{transition-delay:.06s}
 .js-anim .rv.d2{transition-delay:.12s}
@@ -1222,14 +1083,14 @@ footer .base,footer .base span{color:var(--body);border-top-color:var(--line);fo
 .js-anim .rv.d5{transition-delay:.3s}
 .hero .kicker,.hero h1,.hero .lead,.hero .hero-actions,.hero .price-tag{animation:none}
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .btn::after{display:none}
-  .btn:hover,.rcard:hover,.svc:hover,.svc-card:hover,.choose:hover,.sc:hover,.wcard:hover,
-  .mstep:hover,.fcase:hover{transform:none;translate:none}
-  html.js .hero-art .hcard,html.js .hero-art .hero-card{opacity:1!important;transform:rotate(var(--rot,0deg))!important}
-  html.js .step .seg::before{transform:scaleY(1)!important}
-  .nav.hide{transform:none}
-  .h-blob{animation:none}
+*,*::before,*::after{animation:none!important;transition:none!important}
+.btn::after{display:none}
+.btn:hover,.rcard:hover,.svc:hover,.svc-card:hover,.choose:hover,.sc:hover,.wcard:hover,
+.mstep:hover,.fcase:hover{transform:none;translate:none}
+html.js .hero-art .hcard,html.js .hero-art .hero-card{opacity:1!important;transform:rotate(var(--rot,0deg))!important}
+html.js .step .seg::before{transform:scaleY(1)!important}
+.nav.hide{transform:none}
+.h-blob{animation:none}
 }
 /* ==== end design refresh ==== */
 </style>
@@ -1369,6 +1230,14 @@ footer .base,footer .base span{color:var(--body);border-top-color:var(--line);fo
   <h2>Fair questions about SEO copywriting<span class="bar"></span></h2>
   <div style="max-width:780px;margin:26px auto 0;text-align:left"><details><summary>How long until content ranks?</summary><p>A new page on an established site can move in weeks. On a new domain, expect months, and expect the first movement on the specific low competition questions rather than the obvious head terms.</p></details><details><summary>Who actually writes it?</summary><p>I do, from interviews with you. Nothing is generated and published unread. That is the whole reason it can say something your competitors' pages do not.</p></details><details><summary>How much of my time does this take?</summary><p>About an hour a month on a call, plus reading a draft. The interview is the part that cannot be skipped, because it is where the material comes from.</p></details><details><summary>Can you write in Dutch or German?</summary><p>Yes. You and I work in English, and a native speaker writes the Dutch or German itself, because a market page that reads as translated does not convert.</p></details><details><summary>What if I already have a blog full of posts?</summary><p>Then the first job is usually improving and consolidating what is there. Pages that nearly rank are much cheaper to fix than new ones are to write.</p></details><details><summary>Do you do link building too?</summary><p>On the 950 tier, yes, earned rather than bought. Bought links are how sites get penalised and a penalty costs far more than patience does.</p></details></div>
 </div></section>
+
+
+
+
+
+
+
+
 
 
 
