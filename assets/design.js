@@ -5,16 +5,14 @@
    What it does, all of it behind prefers-reduced-motion where it moves anything:
    1. header.nav gets .scrolled past 40px, and on a phone .hide while reading
       down, back on scroll-up. The open mobile menu cancels the hide.
-   2. The phone CTA bar (.mobile-cta) steps aside (.away) while any
-      [data-cta-anchor] group is at least a fifth on screen, and while the
-      consent bar is present. consent.js inserts that bar at runtime, so this
+   2. The floating contact pair (.qcontact) rises above the consent bar while
+      that bar is on screen. consent.js writes it in at runtime, so this
       watches the body for it rather than looking once.
    3. The hero card stack (.hero-art, built by compose.py) fades in once.
    4. Elements carrying data-to with no existing count script count up once
       when they arrive. The three count-ups the site already has (.tick,
       .count, .fc-nums b) keep their own scripts; nothing here touches them.
-   No class the checker matches is written here except .away, which is the
-   bar's JS-only state. */
+   No class the checker matches is written here. */
 (function () {
   'use strict';
   var doc = document.documentElement;
@@ -39,33 +37,21 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---- the phone bar ---- */
-  var bar = document.querySelector('.mobile-cta');
-  if (bar) {
-    var anchors = document.querySelectorAll('[data-cta-anchor]');
-    var seen = [];
-    var consentShown = !!document.querySelector('.cookie-bar');
-    function setBar() {
-      var any = consentShown;
-      for (var i = 0; i < seen.length; i++) if (seen[i]) any = true;
-      bar.classList.toggle('away', any);
-    }
-    if (anchors.length && 'IntersectionObserver' in window) {
-      var barIO = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          seen[Array.prototype.indexOf.call(anchors, en.target)] = en.isIntersecting;
-        });
-        setBar();
-      }, { threshold: .2 });
-      anchors.forEach(function (a) { barIO.observe(a); });
-    }
+  /* ---- floating contact: stay clear of the consent bar ---- */
+  var qc = document.querySelector('.qcontact');
+  if (qc) {
+    var lift = function () {
+      var cb = document.querySelector('.cookie-bar');
+      var up = !!cb && getComputedStyle(cb).display !== 'none';
+      /* one decision at a time: the pair waits while the consent bar is asking */
+      qc.classList.toggle('qc-off', up);
+    };
+    lift();
+    /* consent.js writes the bar in after load and takes it away again */
     if ('MutationObserver' in window) {
-      new MutationObserver(function () {
-        var now = !!document.querySelector('.cookie-bar');
-        if (now !== consentShown) { consentShown = now; setBar(); }
-      }).observe(document.body, { childList: true });
+      new MutationObserver(lift).observe(document.body, { childList: true });
     }
-    setBar();
+    window.addEventListener('resize', lift);
   }
 
   /* ---- hero card stack ---- */
