@@ -1062,6 +1062,10 @@ body{padding-bottom:0}
 }
 .ropo-stat b{color:#fff}
 .cookie-bar a{color:var(--navy)}
+.proof-split:not(:has(.media-col)){grid-template-columns:1fr}
+.case:not(:has(.case-img)){grid-template-columns:1fr;max-width:72ch}
+.proof-split:not(:has(.media-col)) .media-badge{position:static;display:inline-flex;
+align-items:baseline;gap:10px;margin:0 0 18px;transform:none}
 footer{padding-bottom:104px}
 @media print{.qcontact{display:none}}
 @media(max-width:900px){
@@ -1196,11 +1200,11 @@ html.js .step .seg::before{transform:scaleY(1)!important}
         <a class="btn btn-wa" href="https://wa.me/923320423783?text=Hi%20Johar%2C%20I%20would%20like%20to%20talk%20about%20a%20custom%20CRM%20or%20internal%20system%2E" target="_blank" rel="noopener">WhatsApp me</a>
       </div>
       <p class="hero-note">From 2,950 euro to build.</p>
-    <a class="proofline rv d2" href="/case-studies/ela-wonen-crm/">
+    <a class="proofline rv d2" href="/case-studies/furniture-retailer-crm/">
   <span class="pl-num">10</span>
   <span class="pl-txt">
     <span class="pl-lead">years of orders, customers and payments running in software I built from scratch</span>
-    <span class="pl-sub">22 data models, 28 test suites, in daily use by a Dutch furniture retailer. Published with their written permission. <span class="pl-go">Read how it was built &#10148;</span></span>
+    <span class="pl-sub">22 data models, 28 test suites, in daily use by a Dutch furniture retailer. <span class="pl-go">Read how it was built &#10148;</span></span>
   </span>
 </a></div>
     <div class="hero-art" data-cards="2"><span class="h-blob" aria-hidden="true"></span><aside class="hero-card" aria-label="What this costs">
@@ -1238,13 +1242,14 @@ html.js .step .seg::before{transform:scaleY(1)!important}
 <section style="background:var(--offwhite);border-top:1px solid var(--line)"><div class="wrap">
   <div class="fcase rv"><div class="fc-body"><div><span class="fc-tag">Featured case study</span>
       <h3>A furniture retailer: three storefronts, three ad accounts and a CRM</h3>
-      <p>The CRM described on this page, plus three storefronts, product feeds and the advertising, for a Dutch furniture retailer on a ten to twelve week order cycle.</p></div><a class="btn" href="/case-studies/ela-wonen/">Read the case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a></div><div class="fc-nums"><span><b>373</b>products migrated</span><span><b>822</b>feed offers</span><span><b>34</b>findings fixed</span></div></div>
+      <p>The CRM described on this page, plus three storefronts, product feeds and the advertising, for a Dutch furniture retailer on a ten to twelve week order cycle.</p></div><a class="btn" href="/case-studies/furniture-retailer/">Read the case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a></div><div class="fc-nums"><span><b>373</b>products migrated</span><span><b>822</b>feed offers</span><span><b>34</b>findings fixed</span></div></div>
 </div></section>
 
 <section class="faq center"><div class="wrap">
   <h2>Fair questions about custom software<span class="bar"></span></h2>
   <div style="max-width:780px;margin:26px auto 0;text-align:left"><details><summary>You say any language or framework. Really?</summary><p>The stack follows the job rather than my preferences. What I have shipped and run in production is Python and Django, JavaScript, PHP, SQL and a good deal of automation tooling; where a project genuinely calls for something else, I work in it. If a job needs something I would be learning on your money, I will tell you that rather than bill you for the education.</p></details><details><summary>How long does a build take?</summary><p>A first working version in four to eight weeks for most internal systems, then changes monthly. The scope is written down before anything starts, so the timeline is a commitment rather than an estimate that drifts.</p></details><details><summary>What if I already have a system?</summary><p>Then the first job is usually rescuing and extending it, not replacing it. That is exactly what happened with the client on this page: rescue first, which removed the deadline, then a calm decision about what to build.</p></details><details><summary>What happens if you disappear?</summary><p>You keep the code, the repository, the database and the hosting, because they were never in my name. That is the whole point of the arrangement and it is the first thing I set up.</p></details><details><summary>Can you build a POS?</summary><p>Yes, and I will be straight with you: the system I have shipped and run is a CRM with order tracking, invoicing and messaging, not a till. A point of sale is the same problem shape, and the parts I have already built cover most of it, but if you want somebody with five POS deployments behind them, that is a fair thing to want and it is not me yet.</p></details><details><summary>Is 2,950 euro realistic for custom software?</summary><p>For a focused internal system replacing a spreadsheet or a tool nobody owns, yes. For something with many users, complex permissions or heavy integration, it is the starting point and the real figure goes in writing after scoping. I would rather publish the floor than hide behind a quote form.</p></details></div>
 </div></section>
+
 
 
 

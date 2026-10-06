@@ -1004,6 +1004,10 @@ body{padding-bottom:0}
 }
 .ropo-stat b{color:#fff}
 .cookie-bar a{color:var(--navy)}
+.proof-split:not(:has(.media-col)){grid-template-columns:1fr}
+.case:not(:has(.case-img)){grid-template-columns:1fr;max-width:72ch}
+.proof-split:not(:has(.media-col)) .media-badge{position:static;display:inline-flex;
+align-items:baseline;gap:10px;margin:0 0 18px;transform:none}
 footer{padding-bottom:104px}
 @media print{.qcontact{display:none}}
 @media(max-width:900px){
@@ -1442,36 +1446,6 @@ loadGA4(); <span class="c">// only then</span></pre>
   </div>
 </section>
 
-<!-- 3. LOGO MARQUEE -->
-<div class="mq-sec">
-  <div class="mq-head">
-    <p class="mq-lab">Client work includes</p>
-    <button class="mq-pause" id="mqPause" aria-pressed="false" aria-controls="mqTrack">Pause</button>
-  </div>
-  <div class="mq" id="mq">
-    <div class="mq-track" id="mqTrack">
-      <img src="/assets/img/furniture-retailer-logo.png" alt="Client logo, a Dutch furniture retailer" width="129" height="30" loading="lazy">
-      <img src="/assets/img/enza-home.svg" alt="Enza Home" width="271" height="30" loading="lazy">
-      <img src="/assets/img/yatas-bedding.png" alt="Yatas Bedding" width="203" height="30" loading="lazy">
-      <img src="/assets/img/furniture-retailer-logo.png" alt="" aria-hidden="true" width="129" height="30" loading="lazy">
-      <img src="/assets/img/enza-home.svg" alt="" aria-hidden="true" width="271" height="30" loading="lazy">
-      <img src="/assets/img/yatas-bedding.png" alt="" aria-hidden="true" width="203" height="30" loading="lazy">
-      <img src="/assets/img/furniture-retailer-logo.png" alt="" aria-hidden="true" width="129" height="30" loading="lazy">
-      <img src="/assets/img/enza-home.svg" alt="" aria-hidden="true" width="271" height="30" loading="lazy">
-      <img src="/assets/img/yatas-bedding.png" alt="" aria-hidden="true" width="203" height="30" loading="lazy">
-      <img src="/assets/img/furniture-retailer-logo.png" alt="" aria-hidden="true" width="129" height="30" loading="lazy">
-      <img src="/assets/img/enza-home.svg" alt="" aria-hidden="true" width="271" height="30" loading="lazy">
-      <img src="/assets/img/yatas-bedding.png" alt="" aria-hidden="true" width="203" height="30" loading="lazy">
-      <img src="/assets/img/furniture-retailer-logo.png" alt="" aria-hidden="true" width="129" height="30" loading="lazy">
-      <img src="/assets/img/enza-home.svg" alt="" aria-hidden="true" width="271" height="30" loading="lazy">
-      <img src="/assets/img/yatas-bedding.png" alt="" aria-hidden="true" width="203" height="30" loading="lazy">
-      <img src="/assets/img/furniture-retailer-logo.png" alt="" aria-hidden="true" width="129" height="30" loading="lazy">
-      <img src="/assets/img/enza-home.svg" alt="" aria-hidden="true" width="271" height="30" loading="lazy">
-      <img src="/assets/img/yatas-bedding.png" alt="" aria-hidden="true" width="203" height="30" loading="lazy">
-    </div>
-  </div>
-</div>
-
 <!-- 4. RESULTS -->
 <section id="results">
   <div class="wrap">
@@ -1560,10 +1534,9 @@ loadGA4(); <span class="c">// only then</span></pre>
   <div class="wrap">
     <span class="kicker" data-r>Case studies</span>
     <h2 data-r>Work you can check.</h2>
-    <p class="lede" data-r>Published with the client's written permission, with the numbers left in.</p>
+    <p class="lede" data-r>Figures taken from dashboards the client owns.</p>
 
     <article class="case">
-      <div class="case-img filled" data-r><img src="/assets/img/furniture-store-1100.webp" srcset="/assets/img/furniture-store-640.webp 640w, /assets/img/furniture-store-1100.webp 1100w, /assets/img/furniture-store-1600.webp 1600w" sizes="(max-width:860px) calc(100vw - 48px), 544px" alt="The rebuilt furniture storefront after the Shopify migration, with Enza Home and Yatas Bedding in the navigation" loading="lazy" decoding="async" width="1600" height="1200"></div>
       <div data-r>
         <span class="tag">Replatform</span>
         <h3>The move that usually kills rankings</h3>
@@ -1661,9 +1634,6 @@ loadGA4(); <span class="c">// only then</span></pre>
 </section>
 
 <!-- 11. FINAL CTA -->
-
-
-
 <!-- linkstrip:services:start --><section class="lstrip center"><div class="wrap"><h2>Everything I do</h2><ul><li><a href="/services/website-rebuild/">Website redesign</a></li><li><a href="/services/seo/">Search rankings</a></li><li><a href="/services/technical-seo/">Technical SEO</a></li><li><a href="/services/seo-content/">SEO content</a></li><li><a href="/services/google-ads-management/">Google Ads</a></li><li><a href="/services/meta-ads-management/">Meta Ads</a></li><li><a href="/services/landing-pages/">Landing pages</a></li><li><a href="/services/shopify-migration/">Shopify migration</a></li><li><a href="/services/gdpr-consent/">GDPR and consent</a></li><li><a href="/services/custom-systems/">Custom systems</a></li><li><a href="/services/">All services</a></li></ul></div></section><!-- linkstrip:services:end -->
 <!-- linkstrip:industries:start --><section class="lstrip center"><div class="wrap"><h2>Built for these kinds of company</h2><ul><li><a href="/industries/it-managed-services/">IT and managed services</a></li><li><a href="/industries/engineering-manufacturing/">Engineering and manufacturing</a></li><li><a href="/industries/logistics-fulfilment/">Logistics and fulfilment</a></li><li><a href="/industries/consultancies/">Consultancies</a></li><li><a href="/industries/saas/">SaaS companies</a></li><li><a href="/industries/specialist-trades/">Specialist trades</a></li><li><a href="/industries/">All industries</a></li></ul></div></section><!-- linkstrip:industries:end -->
 <!-- linkstrip:more:start --><section class="lstrip center"><div class="wrap"><h2>Where to next</h2><ul><li><a href="/site-check/">Free site check</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/case-studies/">Case studies</a></li><li><a href="/case-studies/this-site/">This site, measured</a></li><li><a href="/resources/">Guides</a></li><li><a href="/about/">About</a></li><li><a href="/markets/">Where I work</a></li><li><a href="/contact/">Contact</a></li></ul></div></section><!-- linkstrip:more:end -->

@@ -30,6 +30,7 @@
 
 
 
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Johar Creativ">
 <meta property="og:locale" content="en_GB">
@@ -1088,6 +1089,10 @@ body{padding-bottom:0}
 }
 .ropo-stat b{color:#fff}
 .cookie-bar a{color:var(--navy)}
+.proof-split:not(:has(.media-col)){grid-template-columns:1fr}
+.case:not(:has(.case-img)){grid-template-columns:1fr;max-width:72ch}
+.proof-split:not(:has(.media-col)) .media-badge{position:static;display:inline-flex;
+align-items:baseline;gap:10px;margin:0 0 18px;transform:none}
 footer{padding-bottom:104px}
 @media print{.qcontact{display:none}}
 @media(max-width:900px){
@@ -1615,20 +1620,15 @@ html.js .step .seg::before{transform:scaleY(1)!important}
     <span class="kicker" data-r>Proof</span>
     <h2 data-r>One build, with the numbers left in.</h2>
     <div class="proof-split">
-      <div class="media-col" data-r>
-        <figure class="media">
-          <img src="/assets/img/furniture-store-16x10-1100.webp" srcset="/assets/img/furniture-store-16x10-640.webp 640w, /assets/img/furniture-store-16x10-1100.webp 1100w, /assets/img/furniture-store-16x10-1600.webp 1600w" sizes="(max-width:900px) calc(100vw - 48px), 540px" alt="The rebuilt furniture storefront, with Enza Home and Yatas Bedding in the navigation" width="1600" height="1000" loading="lazy" decoding="async">
-        </figure>
-        <div class="media-badge"><b><span data-count data-to="835" data-fmt="int">835</span></b><span>product variants rebuilt on the same domain</span></div>
-      </div>
       <div class="proof-text" data-r>
         <span class="tag">Case study</span>
         <h3>A furniture store, rebuilt without losing what mattered</h3>
+        <div class="media-badge"><b><span data-count data-to="835" data-fmt="int">835</span></b><span>product variants rebuilt on the same domain</span></div>
         <div class="ba">
           <div><b>Before</b><p>A Dutch furniture retailer on WooCommerce. The official Google app could not build a working product feed, the ad account showed thousands of add-to-carts and zero recorded purchases, and certification findings sat open.</p></div>
           <div><b>After</b><p>A Shopify store on the same domain with every old address redirected, a hand-built feed running error-free, server-side tracking the client can verify, and the certification review closed out finding by finding.</p></div>
         </div>
-        <p class="permission">Published with the client's written permission.</p>
+        
       </div>
     </div>
     <ul class="proof-nums" data-rg>
@@ -1709,8 +1709,6 @@ html.js .step .seg::before{transform:scaleY(1)!important}
 </section>
 
 <!-- 9. FINAL CTA -->
-
-
 <!-- linkstrip:industries:start --><section class="lstrip center"><div class="wrap"><h2>Built for these kinds of company</h2><p class="sub">The same service, written for what each of them has to prove.</p><ul><li><a href="/industries/it-managed-services/">IT and managed services</a></li><li><a href="/industries/engineering-manufacturing/">Engineering and manufacturing</a></li><li><a href="/industries/logistics-fulfilment/">Logistics and fulfilment</a></li><li><a href="/industries/consultancies/">Consultancies</a></li><li><a href="/industries/saas/">SaaS companies</a></li><li><a href="/industries/specialist-trades/">Specialist trades</a></li><li><a href="/industries/">All industries</a></li></ul></div></section><!-- linkstrip:industries:end -->
 <!-- linkstrip:lang:start --><section class="lstrip center"><div class="wrap"><h2>Website redesign in Germany, Austria and Switzerland</h2><p class="sub">Website erstellen lassen: the same fixed price build, written in German for the DACH market.</p><ul><li><a href="/de/website-erstellen-lassen/">Website erstellen lassen</a></li></ul></div></section><!-- linkstrip:lang:end -->
 <section class="cta-band" id="contact">
