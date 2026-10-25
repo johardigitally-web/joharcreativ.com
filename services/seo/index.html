@@ -32,6 +32,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Johar Creativ">
 <meta property="og:locale" content="en_GB">
@@ -528,10 +538,11 @@ main section.page-hero,.hero{padding:var(--s-hero-t) 0 var(--s-hero-b)}
 box-shadow:var(--shadow-card);padding:24px 26px}
 .hero-card h2{color:var(--ink);font-size:1.2rem;margin:0 0 4px}
 .hero-card .hc-sub{color:var(--navy);font-size:.86rem;margin:0 0 14px}
+.hero-card ul{list-style:none;margin:0;padding:0}
 .hero-card li{border-top:1px solid var(--line);padding:11px 0}
 .hero-card li:first-child{border-top:0;padding-top:0}
-.hero-card li b{color:var(--ink);font-size:.95rem}
-.hero-card li span{color:var(--body);font-size:.86rem}
+.hero-card li b{display:block;margin-bottom:2px;color:var(--ink);font-size:.95rem}
+.hero-card li span{display:block;line-height:1.5;color:var(--body);font-size:.86rem}
 .hero-card .hc-note{color:var(--body);font-size:.82rem;margin-top:14px}
 @media(max-width:900px){.page-hero .hero-2col{grid-template-columns:1fr;gap:34px}}
 .hero-art{position:relative;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:8px 0;align-self:center}
@@ -603,7 +614,7 @@ border-radius:var(--r);box-shadow:var(--shadow);max-width:620px;color:var(--body
 @media(max-width:560px){.proofline{flex-direction:column;gap:8px;padding:16px 18px}
 .proofline .pl-num{font-size:2rem}}
 main .tstrip{background:transparent;border:0;box-shadow:none;border-radius:0;padding:0 0 var(--s-sec)}
-.tstrip .row{grid-template-columns:repeat(4,1fr);gap:16px 24px}
+.tstrip .row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 24px}
 .tstrip .item{display:flex;gap:10px;align-items:flex-start;font:600 .93rem/1.4 var(--font);color:var(--ink)}
 .tstrip .item b{display:block;font:600 .93rem/1.4 var(--font);color:var(--ink)}
 .tstrip .item span{font:400 .82rem/1.45 var(--font);color:var(--body)}
@@ -621,7 +632,8 @@ transition:translate .2s var(--ease),box-shadow .2s var(--ease),border-color .2s
 transform:none;translate:0 -6px;box-shadow:var(--shadow-hover);border-color:rgba(79,70,229,.35)}
 .svc:hover .icon{transform:none}
 }
-.pain-grid{gap:var(--s-card);margin-top:var(--s-head);text-align:left}
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s-card);margin-top:var(--s-head);text-align:left}
+@media(max-width:640px){.pain-grid{grid-template-columns:1fr}}
 .pain{padding:26px 28px;border-left:3px solid var(--navy)}
 .pain h3{color:var(--ink);margin-bottom:8px}
 .pain p{font-size:.96rem;color:var(--body)}
@@ -634,7 +646,7 @@ border-radius:var(--r);padding:20px 26px;box-shadow:none}
 .inline-cta a{display:inline-flex;align-items:center;min-height:44px;color:var(--navy);font-weight:700}
 .your-time,.slot{margin-top:var(--s-card);display:inline-block;background:var(--chip);
 border:0;border-radius:12px;padding:14px 20px;font:500 .95rem/1.35 var(--font);color:var(--ink)}
-.inc-grid{grid-template-columns:repeat(2,1fr);gap:0 var(--s-card);max-width:980px;
+.inc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--s-card);max-width:980px;
 margin-top:var(--s-head);text-align:left}
 .inc{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;
 padding:14px 0;box-shadow:none;display:block}
@@ -644,6 +656,14 @@ padding:14px 0;box-shadow:none;display:block}
 .inc svg,.inc-head svg{color:var(--navy)}
 .inc-head{display:flex;gap:10px;align-items:flex-start}
 @media(max-width:760px){.inc-grid,.inc-grid.four{grid-template-columns:1fr}}
+.mkt-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--s-card);
+max-width:980px;margin-top:var(--s-head);text-align:left}
+main section.center .mkt-facts{margin-left:auto;margin-right:auto}
+.mkt-fact{text-align:left;background:none;border:0;border-bottom:1px solid var(--line);
+border-radius:0;padding:14px 0;box-shadow:none;display:block;min-width:0;overflow-wrap:anywhere}
+.mkt-fact h3{color:var(--ink);font:600 .98rem/1.35 var(--font);margin:0 0 5px}
+.mkt-fact p{font-size:.9rem;max-width:none;color:var(--body);margin:0}
+@media(max-width:760px){.mkt-facts{grid-template-columns:1fr}}
 .inc-grid.four,[data-block="notfor"] .inc-grid{grid-template-columns:repeat(2,1fr);gap:var(--s-card);max-width:none}
 .inc-grid.four .inc,[data-block="notfor"] .inc{background:#fff;border:1px solid var(--line);
 border-radius:var(--r);padding:24px 26px;box-shadow:var(--shadow)}
@@ -806,6 +826,14 @@ font:600 .92rem/1.35 var(--font);text-decoration:none;
 transition:border-color .2s var(--ease),color .2s var(--ease),background .2s var(--ease)}
 .lstrip a:hover{border-color:var(--navy);color:var(--navy);background:var(--chip)}
 .lstrip a:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.lstrip ul:has(.lstrip-kids){display:block}
+.lstrip li:has(.lstrip-kids){display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+justify-content:center;margin:0 0 12px}
+.lstrip-kids{display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.lstrip-kids a{min-height:36px;padding:6px 12px;font-size:.85rem;font-weight:500;
+background:var(--tint);color:var(--ink-soft)}
+.lstrip-kids a:hover{background:var(--chip);color:var(--navy)}
+@media(max-width:700px){.lstrip li:has(.lstrip-kids),.lstrip-kids{justify-content:flex-start}}
 .band,[data-block="close"],main section[style*="#01152a"]{background:var(--chip)!important;
 background-image:none!important;color:var(--body)!important;
 border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
@@ -1089,44 +1117,44 @@ body{padding-bottom:0}
 .case:not(:has(.case-img)){grid-template-columns:1fr;max-width:72ch}
 .proof-split:not(:has(.media-col)) .media-badge{position:static;display:inline-flex;
 align-items:baseline;gap:10px;margin:0 0 18px;transform:none}
-.sc-sec{background:var(--chip);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.sc-form{max-width:620px;margin:22px 0 0}
-.sc-form label{display:block;font:700 .9rem/1.4 var(--font);color:var(--ink);margin-bottom:8px}
-.sc-in{display:flex;gap:10px;flex-wrap:wrap}
-.sc-in input{flex:1 1 280px;min-width:0;min-height:52px;padding:0 16px;font:400 1rem var(--font);
+.wck-sec{background:var(--chip);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wck-form{max-width:620px;margin:22px 0 0}
+.wck-form label{display:block;font:700 .9rem/1.4 var(--font);color:var(--ink);margin-bottom:8px}
+.wck-in{display:flex;gap:10px;flex-wrap:wrap}
+.wck-in input{flex:1 1 280px;min-width:0;min-height:52px;padding:0 16px;font:400 1rem var(--font);
 color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px}
-.sc-in input:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
-.sc-in .btn{flex:0 0 auto;min-height:52px}
-.sc-note{margin:10px 0 0;font:400 .85rem/1.5 var(--font);color:var(--body)}
-.sc-out{margin-top:26px}
-.sc-msg{margin:0;font:400 .98rem/1.6 var(--font);color:var(--body)}
-.sc-head h3{margin:0 0 4px;font:800 1.15rem/1.3 var(--font-head);color:var(--ink);overflow-wrap:anywhere}
-.sc-head p{margin:0 0 16px;font:400 .92rem var(--font);color:var(--body)}
-.sc-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.sc-row{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+.wck-in input:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wck-in .btn{flex:0 0 auto;min-height:52px}
+.wck-note{margin:10px 0 0;font:400 .85rem/1.5 var(--font);color:var(--body)}
+.wck-out{margin-top:26px}
+.wck-msg{margin:0;font:400 .98rem/1.6 var(--font);color:var(--body)}
+.wck-head h3{margin:0 0 4px;font:800 1.15rem/1.3 var(--font-head);color:var(--ink);overflow-wrap:anywhere}
+.wck-head p{margin:0 0 16px;font:400 .92rem var(--font);color:var(--body)}
+.wck-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.wck-row{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
 border-left:4px solid var(--line);border-radius:12px;padding:14px 16px}
-.sc-row.sc-pass{border-left-color:#1E9E5A}
-.sc-row.sc-warn{border-left-color:#B8860B}
-.sc-row.sc-fail{border-left-color:#C0392B}
-.sc-pill{flex:0 0 auto;font:700 .74rem/1 var(--font);letter-spacing:.04em;text-transform:uppercase;
+.wck-row.wck-pass{border-left-color:#1E9E5A}
+.wck-row.wck-warn{border-left-color:#B8860B}
+.wck-row.wck-fail{border-left-color:#C0392B}
+.wck-pill{flex:0 0 auto;font:700 .74rem/1 var(--font);letter-spacing:.04em;text-transform:uppercase;
 padding:7px 10px;border-radius:99px;white-space:nowrap}
-.sc-pass .sc-pill{background:#E6F4EC;color:#14683B}
-.sc-warn .sc-pill{background:#FBF1DA;color:#7A5B06}
-.sc-fail .sc-pill{background:#FBE9E7;color:#8E2A1E}
-.sc-body{min-width:0}
-.sc-body b{display:block;font:700 .95rem/1.4 var(--font);color:var(--ink)}
-.sc-body span{display:block;font:400 .9rem/1.55 var(--font);color:var(--body);margin-top:2px;
+.wck-pass .wck-pill{background:#E6F4EC;color:#14683B}
+.wck-warn .wck-pill{background:#FBF1DA;color:#7A5B06}
+.wck-fail .wck-pill{background:#FBE9E7;color:#8E2A1E}
+.wck-body{min-width:0}
+.wck-body b{display:block;font:700 .95rem/1.4 var(--font);color:var(--ink)}
+.wck-body span{display:block;font:400 .9rem/1.55 var(--font);color:var(--body);margin-top:2px;
 overflow-wrap:anywhere}
-.sc-rest{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
-.sc-rest h3{margin:0 0 8px;font:800 1.05rem/1.3 var(--font-head);color:var(--ink)}
-.sc-rest p{margin:0 0 12px;font:400 .94rem/1.6 var(--font);color:var(--body)}
-.sc-rest ul{margin:0 0 16px;padding-left:20px}
-.sc-rest li{font:400 .94rem/1.65 var(--font);color:var(--body)}
-.sc-cta{display:flex;gap:12px;flex-wrap:wrap;margin:0}
+.wck-rest{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.wck-rest h3{margin:0 0 8px;font:800 1.05rem/1.3 var(--font-head);color:var(--ink)}
+.wck-rest p{margin:0 0 12px;font:400 .94rem/1.6 var(--font);color:var(--body)}
+.wck-rest ul{margin:0 0 16px;padding-left:20px}
+.wck-rest li{font:400 .94rem/1.65 var(--font);color:var(--body)}
+.wck-cta{display:flex;gap:12px;flex-wrap:wrap;margin:0}
 @media(max-width:640px){
-.sc-in .btn{flex:1 1 100%}
-.sc-row{flex-direction:column;gap:8px}
-.sc-cta .btn{flex:1 1 100%}
+.wck-in .btn{flex:1 1 100%}
+.wck-row{flex-direction:column;gap:8px}
+.wck-cta .btn{flex:1 1 100%}
 }
 footer{padding-bottom:104px}
 @media print{.qcontact{display:none}}
@@ -1437,7 +1465,56 @@ html.js .step .seg::before{transform:scaleY(1)!important}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- linkstrip:industries:start --><section class="lstrip center"><div class="wrap"><h2>Built for these kinds of company</h2><p class="sub">The same service, written for what each of them has to prove.</p><ul><li><a href="/industries/it-managed-services/">IT and managed services</a></li><li><a href="/industries/engineering-manufacturing/">Engineering and manufacturing</a></li><li><a href="/industries/logistics-fulfilment/">Logistics and fulfilment</a></li><li><a href="/industries/consultancies/">Consultancies</a></li><li><a href="/industries/saas/">SaaS companies</a></li><li><a href="/industries/specialist-trades/">Specialist trades</a></li><li><a href="/industries/">All industries</a></li></ul></div></section><!-- linkstrip:industries:end -->
+<!-- linkstrip:markets:start --><section class="lstrip center"><div class="wrap"><h2>Where I work</h2><p class="sub">Each market page carries its own regulator, the statute its imprint has to satisfy, the language its buyers search in and the payment rail they expect.</p><ul><li><a href="/markets/austria/">SEO and websites in Austria</a></li><li><a href="/markets/belgium/">SEO and websites in Belgium</a></li><li><a href="/markets/bulgaria/">SEO and websites in Bulgaria</a></li><li><a href="/markets/croatia/">SEO and websites in Croatia</a></li><li><a href="/markets/cyprus/">SEO and websites in Cyprus</a></li><li><a href="/markets/czechia/">SEO and websites in Czechia</a></li><li><a href="/markets/denmark/">SEO and websites in Denmark</a></li><li><a href="/markets/estonia/">SEO and websites in Estonia</a></li><li><a href="/markets/finland/">SEO and websites in Finland</a></li><li><a href="/markets/france/">SEO and websites in France</a></li><li><a href="/markets/germany/">SEO and websites in Germany</a></li><li><a href="/markets/greece/">SEO and websites in Greece</a></li><li><a href="/markets/hungary/">SEO and websites in Hungary</a></li><li><a href="/markets/iceland/">SEO and websites in Iceland</a></li><li><a href="/markets/ireland/">SEO and websites in Ireland</a></li><li><a href="/markets/italy/">SEO and websites in Italy</a></li><li><a href="/markets/latvia/">SEO and websites in Latvia</a></li><li><a href="/markets/lithuania/">SEO and websites in Lithuania</a></li><li><a href="/markets/luxembourg/">SEO and websites in Luxembourg</a></li><li><a href="/markets/malta/">SEO and websites in Malta</a></li><li><a href="/markets/norway/">SEO and websites in Norway</a></li><li><a href="/markets/poland/">SEO and websites in Poland</a></li><li><a href="/markets/portugal/">SEO and websites in Portugal</a></li><li><a href="/markets/romania/">SEO and websites in Romania</a></li><li><a href="/markets/slovakia/">SEO and websites in Slovakia</a></li><li><a href="/markets/slovenia/">SEO and websites in Slovenia</a></li><li><a href="/markets/spain/">SEO and websites in Spain</a></li><li><a href="/markets/sweden/">SEO and websites in Sweden</a></li><li><a href="/markets/switzerland/">SEO and websites in Switzerland</a></li><li><a href="/markets/netherlands/">SEO and websites in the Netherlands</a></li><li><a href="/markets/united-kingdom/">SEO and websites in the UK</a></li><li><a href="/markets/">Every market I work in</a></li></ul></div></section><!-- linkstrip:markets:end -->
 <!-- linkstrip:lang:start --><section class="lstrip center"><div class="wrap"><h2>Search rankings for companies in Germany, Austria and Switzerland</h2><p class="sub">SEO Berater: the same monthly ranking work, written in German for the DACH market.</p><ul><li><a href="/de/seo-berater/">SEO Berater</a></li></ul></div></section><!-- linkstrip:lang:end -->
 <section class="center" data-block="close">
   <div class="wrap">
