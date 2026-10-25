@@ -6,7 +6,7 @@
 <!-- design refresh head -->
 <script>document.documentElement.className += " js";</script>
 <!-- end design refresh head -->
-<title>Where I Work | Johar Creativ</title>
+<title>Websites and SEO Across Europe and the UK | Johar Creativ</title>
 <meta name="description" content="Working remotely in English with companies and online stores across DACH, Benelux, the Nordics, Ireland and the UK. Distance is not the problem.">
 <link rel="canonical" href="https://joharcreativ.com/markets/">
 <meta property="og:type" content="website">
@@ -416,10 +416,11 @@ main section.page-hero,.hero{padding:var(--s-hero-t) 0 var(--s-hero-b)}
 box-shadow:var(--shadow-card);padding:24px 26px}
 .hero-card h2{color:var(--ink);font-size:1.2rem;margin:0 0 4px}
 .hero-card .hc-sub{color:var(--navy);font-size:.86rem;margin:0 0 14px}
+.hero-card ul{list-style:none;margin:0;padding:0}
 .hero-card li{border-top:1px solid var(--line);padding:11px 0}
 .hero-card li:first-child{border-top:0;padding-top:0}
-.hero-card li b{color:var(--ink);font-size:.95rem}
-.hero-card li span{color:var(--body);font-size:.86rem}
+.hero-card li b{display:block;margin-bottom:2px;color:var(--ink);font-size:.95rem}
+.hero-card li span{display:block;line-height:1.5;color:var(--body);font-size:.86rem}
 .hero-card .hc-note{color:var(--body);font-size:.82rem;margin-top:14px}
 @media(max-width:900px){.page-hero .hero-2col{grid-template-columns:1fr;gap:34px}}
 .hero-art{position:relative;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:8px 0;align-self:center}
@@ -491,7 +492,7 @@ border-radius:var(--r);box-shadow:var(--shadow);max-width:620px;color:var(--body
 @media(max-width:560px){.proofline{flex-direction:column;gap:8px;padding:16px 18px}
 .proofline .pl-num{font-size:2rem}}
 main .tstrip{background:transparent;border:0;box-shadow:none;border-radius:0;padding:0 0 var(--s-sec)}
-.tstrip .row{grid-template-columns:repeat(4,1fr);gap:16px 24px}
+.tstrip .row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 24px}
 .tstrip .item{display:flex;gap:10px;align-items:flex-start;font:600 .93rem/1.4 var(--font);color:var(--ink)}
 .tstrip .item b{display:block;font:600 .93rem/1.4 var(--font);color:var(--ink)}
 .tstrip .item span{font:400 .82rem/1.45 var(--font);color:var(--body)}
@@ -509,7 +510,8 @@ transition:translate .2s var(--ease),box-shadow .2s var(--ease),border-color .2s
 transform:none;translate:0 -6px;box-shadow:var(--shadow-hover);border-color:rgba(79,70,229,.35)}
 .svc:hover .icon{transform:none}
 }
-.pain-grid{gap:var(--s-card);margin-top:var(--s-head);text-align:left}
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s-card);margin-top:var(--s-head);text-align:left}
+@media(max-width:640px){.pain-grid{grid-template-columns:1fr}}
 .pain{padding:26px 28px;border-left:3px solid var(--navy)}
 .pain h3{color:var(--ink);margin-bottom:8px}
 .pain p{font-size:.96rem;color:var(--body)}
@@ -522,7 +524,7 @@ border-radius:var(--r);padding:20px 26px;box-shadow:none}
 .inline-cta a{display:inline-flex;align-items:center;min-height:44px;color:var(--navy);font-weight:700}
 .your-time,.slot{margin-top:var(--s-card);display:inline-block;background:var(--chip);
 border:0;border-radius:12px;padding:14px 20px;font:500 .95rem/1.35 var(--font);color:var(--ink)}
-.inc-grid{grid-template-columns:repeat(2,1fr);gap:0 var(--s-card);max-width:980px;
+.inc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--s-card);max-width:980px;
 margin-top:var(--s-head);text-align:left}
 .inc{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;
 padding:14px 0;box-shadow:none;display:block}
@@ -532,6 +534,14 @@ padding:14px 0;box-shadow:none;display:block}
 .inc svg,.inc-head svg{color:var(--navy)}
 .inc-head{display:flex;gap:10px;align-items:flex-start}
 @media(max-width:760px){.inc-grid,.inc-grid.four{grid-template-columns:1fr}}
+.mkt-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--s-card);
+max-width:980px;margin-top:var(--s-head);text-align:left}
+main section.center .mkt-facts{margin-left:auto;margin-right:auto}
+.mkt-fact{text-align:left;background:none;border:0;border-bottom:1px solid var(--line);
+border-radius:0;padding:14px 0;box-shadow:none;display:block;min-width:0;overflow-wrap:anywhere}
+.mkt-fact h3{color:var(--ink);font:600 .98rem/1.35 var(--font);margin:0 0 5px}
+.mkt-fact p{font-size:.9rem;max-width:none;color:var(--body);margin:0}
+@media(max-width:760px){.mkt-facts{grid-template-columns:1fr}}
 .inc-grid.four,[data-block="notfor"] .inc-grid{grid-template-columns:repeat(2,1fr);gap:var(--s-card);max-width:none}
 .inc-grid.four .inc,[data-block="notfor"] .inc{background:#fff;border:1px solid var(--line);
 border-radius:var(--r);padding:24px 26px;box-shadow:var(--shadow)}
@@ -694,6 +704,14 @@ font:600 .92rem/1.35 var(--font);text-decoration:none;
 transition:border-color .2s var(--ease),color .2s var(--ease),background .2s var(--ease)}
 .lstrip a:hover{border-color:var(--navy);color:var(--navy);background:var(--chip)}
 .lstrip a:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.lstrip ul:has(.lstrip-kids){display:block}
+.lstrip li:has(.lstrip-kids){display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+justify-content:center;margin:0 0 12px}
+.lstrip-kids{display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.lstrip-kids a{min-height:36px;padding:6px 12px;font-size:.85rem;font-weight:500;
+background:var(--tint);color:var(--ink-soft)}
+.lstrip-kids a:hover{background:var(--chip);color:var(--navy)}
+@media(max-width:700px){.lstrip li:has(.lstrip-kids),.lstrip-kids{justify-content:flex-start}}
 .band,[data-block="close"],main section[style*="#01152a"]{background:var(--chip)!important;
 background-image:none!important;color:var(--body)!important;
 border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
@@ -977,44 +995,44 @@ body{padding-bottom:0}
 .case:not(:has(.case-img)){grid-template-columns:1fr;max-width:72ch}
 .proof-split:not(:has(.media-col)) .media-badge{position:static;display:inline-flex;
 align-items:baseline;gap:10px;margin:0 0 18px;transform:none}
-.sc-sec{background:var(--chip);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.sc-form{max-width:620px;margin:22px 0 0}
-.sc-form label{display:block;font:700 .9rem/1.4 var(--font);color:var(--ink);margin-bottom:8px}
-.sc-in{display:flex;gap:10px;flex-wrap:wrap}
-.sc-in input{flex:1 1 280px;min-width:0;min-height:52px;padding:0 16px;font:400 1rem var(--font);
+.wck-sec{background:var(--chip);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wck-form{max-width:620px;margin:22px 0 0}
+.wck-form label{display:block;font:700 .9rem/1.4 var(--font);color:var(--ink);margin-bottom:8px}
+.wck-in{display:flex;gap:10px;flex-wrap:wrap}
+.wck-in input{flex:1 1 280px;min-width:0;min-height:52px;padding:0 16px;font:400 1rem var(--font);
 color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px}
-.sc-in input:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
-.sc-in .btn{flex:0 0 auto;min-height:52px}
-.sc-note{margin:10px 0 0;font:400 .85rem/1.5 var(--font);color:var(--body)}
-.sc-out{margin-top:26px}
-.sc-msg{margin:0;font:400 .98rem/1.6 var(--font);color:var(--body)}
-.sc-head h3{margin:0 0 4px;font:800 1.15rem/1.3 var(--font-head);color:var(--ink);overflow-wrap:anywhere}
-.sc-head p{margin:0 0 16px;font:400 .92rem var(--font);color:var(--body)}
-.sc-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.sc-row{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+.wck-in input:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wck-in .btn{flex:0 0 auto;min-height:52px}
+.wck-note{margin:10px 0 0;font:400 .85rem/1.5 var(--font);color:var(--body)}
+.wck-out{margin-top:26px}
+.wck-msg{margin:0;font:400 .98rem/1.6 var(--font);color:var(--body)}
+.wck-head h3{margin:0 0 4px;font:800 1.15rem/1.3 var(--font-head);color:var(--ink);overflow-wrap:anywhere}
+.wck-head p{margin:0 0 16px;font:400 .92rem var(--font);color:var(--body)}
+.wck-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.wck-row{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
 border-left:4px solid var(--line);border-radius:12px;padding:14px 16px}
-.sc-row.sc-pass{border-left-color:#1E9E5A}
-.sc-row.sc-warn{border-left-color:#B8860B}
-.sc-row.sc-fail{border-left-color:#C0392B}
-.sc-pill{flex:0 0 auto;font:700 .74rem/1 var(--font);letter-spacing:.04em;text-transform:uppercase;
+.wck-row.wck-pass{border-left-color:#1E9E5A}
+.wck-row.wck-warn{border-left-color:#B8860B}
+.wck-row.wck-fail{border-left-color:#C0392B}
+.wck-pill{flex:0 0 auto;font:700 .74rem/1 var(--font);letter-spacing:.04em;text-transform:uppercase;
 padding:7px 10px;border-radius:99px;white-space:nowrap}
-.sc-pass .sc-pill{background:#E6F4EC;color:#14683B}
-.sc-warn .sc-pill{background:#FBF1DA;color:#7A5B06}
-.sc-fail .sc-pill{background:#FBE9E7;color:#8E2A1E}
-.sc-body{min-width:0}
-.sc-body b{display:block;font:700 .95rem/1.4 var(--font);color:var(--ink)}
-.sc-body span{display:block;font:400 .9rem/1.55 var(--font);color:var(--body);margin-top:2px;
+.wck-pass .wck-pill{background:#E6F4EC;color:#14683B}
+.wck-warn .wck-pill{background:#FBF1DA;color:#7A5B06}
+.wck-fail .wck-pill{background:#FBE9E7;color:#8E2A1E}
+.wck-body{min-width:0}
+.wck-body b{display:block;font:700 .95rem/1.4 var(--font);color:var(--ink)}
+.wck-body span{display:block;font:400 .9rem/1.55 var(--font);color:var(--body);margin-top:2px;
 overflow-wrap:anywhere}
-.sc-rest{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
-.sc-rest h3{margin:0 0 8px;font:800 1.05rem/1.3 var(--font-head);color:var(--ink)}
-.sc-rest p{margin:0 0 12px;font:400 .94rem/1.6 var(--font);color:var(--body)}
-.sc-rest ul{margin:0 0 16px;padding-left:20px}
-.sc-rest li{font:400 .94rem/1.65 var(--font);color:var(--body)}
-.sc-cta{display:flex;gap:12px;flex-wrap:wrap;margin:0}
+.wck-rest{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.wck-rest h3{margin:0 0 8px;font:800 1.05rem/1.3 var(--font-head);color:var(--ink)}
+.wck-rest p{margin:0 0 12px;font:400 .94rem/1.6 var(--font);color:var(--body)}
+.wck-rest ul{margin:0 0 16px;padding-left:20px}
+.wck-rest li{font:400 .94rem/1.65 var(--font);color:var(--body)}
+.wck-cta{display:flex;gap:12px;flex-wrap:wrap;margin:0}
 @media(max-width:640px){
-.sc-in .btn{flex:1 1 100%}
-.sc-row{flex-direction:column;gap:8px}
-.sc-cta .btn{flex:1 1 100%}
+.wck-in .btn{flex:1 1 100%}
+.wck-row{flex-direction:column;gap:8px}
+.wck-cta .btn{flex:1 1 100%}
 }
 footer{padding-bottom:104px}
 @media print{.qcontact{display:none}}
@@ -1070,7 +1088,7 @@ html.js .step .seg::before{transform:scaleY(1)!important}
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://joharcreativ.com/#org","logo":"https://joharcreativ.com/apple-touch-icon.png","name":"Johar Creativ","url":"https://joharcreativ.com/","image":"https://joharcreativ.com/og-image.png","description":"Website redesign, SEO and paid ads for companies and online stores across Europe and the UK.","email":"hello@joharcreativ.com","founder":{"@type":"Person","name":"Johar Rehman"},"address":{"@type":"PostalAddress","addressCountry":"PK"},"priceRange":"EUR 290 - EUR 2950","areaServed":[{"@type":"Place","name":"Germany"},{"@type":"Place","name":"Austria"},{"@type":"Place","name":"Switzerland"},{"@type":"Place","name":"Netherlands"},{"@type":"Place","name":"Belgium"},{"@type":"Place","name":"Sweden"},{"@type":"Place","name":"Denmark"},{"@type":"Place","name":"Finland"},{"@type":"Place","name":"Ireland"},{"@type":"Place","name":"United Kingdom"}],"sameAs":["https://www.linkedin.com/in/johar-rehman"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://joharcreativ.com/"},{"@type":"ListItem","position":2,"name":"Markets"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Do we ever need to meet in person?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs over calls and email, and it works because decisions are confirmed in writing and you can see the build through a shared live link at any time. I am based in Pakistan and my clients are across Europe and the UK, and no project has ever depended on a meeting in person."}},{"@type":"Question","name":"What about time zones?","acceptedAnswer":{"@type":"Answer","text":"Pakistan runs three to four hours ahead of central Europe and four to five ahead of the UK. Your morning is the middle of my working day, so calls are easy to schedule and you get answers the same day, not the next one."}},{"@type":"Question","name":"My company is outside these markets. Can we still work together?","acceptedAnswer":{"@type":"Answer","text":"Possibly. The five markets above are where the odds are best, but the practice covers the whole of Europe and the UK. If you are a company or an online store selling into these markets, send an enquiry and I will give you a straight answer."}},{"@type":"Question","name":"Are invoices and contracts a problem across borders?","acceptedAnswer":{"@type":"Answer","text":"No. I invoice in euros, ex VAT, with the reverse charge rules applied where they should be, and the one page scope you and I both sign works the same in every market. You get it all in writing before anything starts."}}]}</script><!-- og:7def60d2a3 --></head>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Do we ever need to meet in person?","acceptedAnswer":{"@type":"Answer","text":"No, and no call is needed either. Everything runs in writing over email and WhatsApp, which works because decisions end up on the record rather than in somebody's memory, and you can see the build through a shared live link at any time. I am based in Pakistan and my clients are across Europe and the UK, and no project has ever depended on a meeting in person."}},{"@type":"Question","name":"What about time zones?","acceptedAnswer":{"@type":"Answer","text":"Pakistan runs three to four hours ahead of central Europe and four to five ahead of the UK. Your morning is the middle of my working day, so a question sent before lunch is usually answered the same day rather than the next one."}},{"@type":"Question","name":"My company is outside these markets. Can we still work together?","acceptedAnswer":{"@type":"Answer","text":"Possibly. The clusters above are where the odds are best, but the practice covers the whole of Europe and the UK. If you are a company or an online store selling into these markets, send an enquiry and I will give you a straight answer."}},{"@type":"Question","name":"Are invoices and contracts a problem across borders?","acceptedAnswer":{"@type":"Answer","text":"No. I invoice in euros, ex VAT, with the reverse charge rules applied where they should be, and the one page scope you and I both sign works the same in every market. You get it all in writing before anything starts."}},{"@type":"Question","name":"Which countries do you actually work in?","acceptedAnswer":{"@type":"Answer","text":"Anywhere in Europe and the UK. The countries listed above are the ones with a page of their own, because I can say something specific about the regulator, the language and the checkout. More are being written. If yours is not there yet, ask and you get the same answer by email rather than a page."}},{"@type":"Question","name":"Does a smaller market cost more to work in?","acceptedAnswer":{"@type":"Answer","text":"No. The prices are the same everywhere and they are on the page. A smaller market is usually cheaper to win rather than dearer, because the results pages have had less attention, which is the whole argument for doing the work in Danish or Flemish rather than only in English."}}]}</script><!-- og:7def60d2a3 --></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="topbar">
@@ -1142,10 +1160,11 @@ html.js .step .seg::before{transform:scaleY(1)!important}
 <main id="main">
 
 <section class="page-hero">
-  <div class="wrap">
+  <div class="wrap hero-2col">
+    <div>
     <span class="kicker">Based in Pakistan. Working remotely across Europe and the UK.</span>
     <h1>Where I work</h1>
-    <p class="lead">I work with companies and online stores across Europe and the UK. All of it remotely, over calls and email. Distance has never been the reason a project went wrong, and it will not be the reason yours does.</p>
+    <p class="lead">I work with companies and online stores across Europe and the UK. All of it remotely, and all of it in writing. Distance has never been the reason a project went wrong, and it will not be the reason yours does.</p>
     <div class="hero-cta">
         <a class="btn" href="mailto:hello@joharcreativ.com?subject=Website%20enquiry&amp;body=Hi%20Johar%2C%0A%0AMy%20website%3A%20%0AWhat%20I%20need%3A%20%0A">Email me</a>
         <a class="btn btn-wa" href="https://wa.me/923320423783?text=Hi%20Johar%2C%20I%20would%20like%20the%20free%2015%20point%20site%20check%2E" target="_blank" rel="noopener">WhatsApp me</a>
@@ -1158,37 +1177,40 @@ html.js .step .seg::before{transform:scaleY(1)!important}
   </span>
 </a>
   </div>
+<aside class="hero-card" aria-label="What this costs"><h2>Where to start</h2><p class="hc-sub">Every price is published. You can stop at any rung.</p><ul><li><b>Free 15 point check, 0 euro</b><span>A written report in two working days</span></li><li><b>Audit and 90 day plan, 290 euro</b><span>Comes off whatever you buy next</span></li><li><b>Monthly search work from 490 euro</b><span>Or a fixed price rebuild from 1,450 euro</span></li></ul><p class="hc-note">No call required at any step. Written replies only.</p></aside>
+</div>
 </section>
+<section class="tstrip"><div class="wrap"><div class="row"><div class="item"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/></svg><span><b>Prices on a public page</b>No quote form, no discovery call</span></div><div class="item"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 7l10 6 10-6"/></svg><span><b>Written, not spoken</b>Email and WhatsApp, never a phone pitch</span></div><div class="item"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg><span><b>Accounts in your name</b>From the first day, not on request</span></div><div class="item"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span><b>One person start to finish</b>The person who plans it writes the code</span></div></div></div></section>
 
 <section class="center">
   <div class="wrap">
-    <h2 class="rv">Five markets where the odds are best<span class="bar"></span></h2>
-    <p class="sub rv d1">My practice covers the whole of Europe and the UK. These five markets are where my outreach starts. The process is the same everywhere, but here is what I pay attention to in yours.</p>
+    <h2 class="rv">The markets where the odds are best<span class="bar"></span></h2>
+    <p class="sub rv d1">My practice covers the whole of Europe and the UK. These clusters are where my outreach starts. The process is the same everywhere, and what changes is the regulator, the language your buyers search in and the way they expect to pay.</p>
     <div class="svc-grid" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
       <div class="svc rv">
         <span class="icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/><path d="M4 21h16"/></svg></span>
         <h3>DACH</h3>
-        <p>Germany, Austria and Switzerland. The buying culture is formal and thorough, so your site needs substance a careful buyer can verify, not slogans. An <a href="/resources/impressum-english-website/">Impressum</a> is a legal requirement and I build one in as standard. Cold email law here is strict, which makes a website that brings enquiries in worth far more than any outreach list.</p>
+        <p>Germany, Austria and Switzerland. The buying culture is formal and thorough, so your site needs substance a careful buyer can verify, not slogans. An <a href="/resources/impressum-english-website/">Impressum</a> is a legal requirement and I build one in as standard, and the statute differs in each: <a href="/markets/germany/">SEO and websites in Germany</a>, <a href="/markets/austria/">SEO and websites in Austria</a> and <a href="/markets/switzerland/">SEO and websites in Switzerland</a> set out which list binds you. Cold email law here is strict, which makes a website that brings enquiries in worth far more than any outreach list.</p>
       </div>
       <div class="svc rv d1">
         <span class="icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 12h18"/><path d="M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/><circle cx="12" cy="12" r="9"/></svg></span>
         <h3>Benelux</h3>
-        <p>Belgium, the Netherlands and Luxembourg. Business here runs comfortably in English and communication is refreshingly direct, which suits how I work. The search markets are competitive, especially in the Netherlands, so rankings are earned with proper content and technical work rather than tricks.</p>
+        <p>Belgium, the Netherlands and Luxembourg. Correspondence runs comfortably in English. The searching does not: Dutch buyers search in Dutch, and a Belgian site needs Dutch for Flanders and French for Wallonia. The Dutch regulator has also been checking consent banners since April 2025, which is why <a href="/markets/netherlands/">SEO and websites in the Netherlands</a> starts with that, while <a href="/markets/belgium/">SEO and websites in Belgium</a> starts with the language split.</p>
       </div>
       <div class="svc rv d2">
         <span class="icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3"/></svg></span>
         <h3>The Nordics</h3>
-        <p>Denmark, Sweden, Norway and Finland. English proficiency is the highest in Europe, so an English-language site is normal here, not a compromise. Buyers are digitally mature and do most of their research before they ever contact you, which means the website has to do most of the selling.</p>
+        <p>Denmark, Sweden, Norway and Finland. English proficiency is the highest in Europe, which is exactly why so many sites here never get translated properly. Buyers read English comfortably and still search in their own language, so the pages that bring them in have to be in it. <a href="/markets/sweden/">SEO and websites in Sweden</a> and <a href="/markets/denmark/">SEO and websites in Denmark</a> cover the currency and the payment rails as well, which is where Nordic checkouts lose sales.</p>
       </div>
       <div class="svc rv d3">
         <span class="icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span>
         <h3>Ireland</h3>
-        <p>A native English market and a common gateway into the EU for companies selling internationally. EU rules on privacy and consent apply in full, and I build for them by default. If you sell from Ireland into the continent, one well-built English site can carry the whole job.</p>
+        <p>A native English market and a common gateway into the EU for companies selling internationally. EU rules on privacy and consent apply in full, and I build for them by default. Most Irish companies also sell into Britain, which puts two legal regimes on one website: <a href="/markets/ireland/">SEO and websites in Ireland</a> sets out how that is handled once rather than twice.</p>
       </div>
       <div class="svc rv d4">
         <span class="icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 22V6l3-4 3 4v16"/><circle cx="12" cy="11" r="2"/><path d="M6 22h12"/></svg></span>
         <h3>The United Kingdom</h3>
-        <p>The biggest English-speaking market in Europe, and the most competitive. Generic terms here belong to companies with very large budgets, so I do not chase them. I win UK rankings and ads through specific niches, specific pages and proof a buyer can check. If your offer is well defined, the UK rewards that more than any other market.</p>
+        <p>The biggest English-speaking market in Europe, and the most competitive. Generic terms here belong to companies with very large budgets, so I do not chase them. I win UK rankings and ads through specific niches, specific pages and proof a buyer can check. The UK also has its own data protection regime and its own cookie rules now, which most English-language advice still gets wrong: <a href="/markets/united-kingdom/">SEO and websites in the UK</a> covers what actually differs. If your offer is well defined, the UK rewards that more than any other market.</p>
       </div>
     </div>
     <p class="sub rv" style="margin-top:36px">Not sure your market is on this list? Ask. If I am not the right fit for it, I will say so in my first reply.</p>
@@ -1214,8 +1236,8 @@ html.js .step .seg::before{transform:scaleY(1)!important}
     <div class="svc-grid" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
       <div class="svc rv">
         <span class="icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2A19.8 19.8 0 012 5.2 2 2 0 014 3h3l2 5-2.5 1.5a16 16 0 006 6L14 13l5 2z"/></svg></span>
-        <h3>Calls and email, nothing exotic</h3>
-        <p>You and I talk on scheduled calls and everything else runs over email. Decisions get confirmed in writing, and during ongoing work you get a short plain English note every week on what was done and why.</p>
+        <h3>Email and WhatsApp, nothing exotic</h3>
+        <p>Everything runs over email and WhatsApp, which means every decision is already on the record instead of in somebody's memory of a conversation. During ongoing work you get a short plain English note every week on what was done and why.</p>
       </div>
       <div class="svc rv d1">
         <span class="icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M13 9h5M13 13h5"/></svg></span>
@@ -1251,27 +1273,32 @@ html.js .step .seg::before{transform:scaleY(1)!important}
 
 <section style="padding-top:0"><div class="wrap"><div class="midcta rv"><p><b>Ready when you are.</b> No form to fill in, and no call required to get started.</p><div class="mc-btns" data-cta-anchor><a class="btn" href="mailto:hello@joharcreativ.com?subject=Website%20enquiry&amp;body=Hi%20Johar%2C%0A%0AMy%20website%3A%20%0AWhat%20I%20need%3A%20%0A">Email me</a><a class="btn btn-wa" href="https://wa.me/923320423783?text=Hi%20Johar%2C%20I%20would%20like%20the%20free%2015%20point%20site%20check%2E" target="_blank" rel="noopener">WhatsApp me</a></div></div></div></section>
 
-<!-- linkstrip:cities:start --><section class="lstrip center"><div class="wrap"><h2>Cities and areas</h2><p class="sub">The same work and the same published prices, written for each place.</p><ul><li><a href="/markets/manchester/">Manchester</a></li><li><a href="/markets/birmingham/">Birmingham</a></li><li><a href="/markets/leeds/">Leeds</a></li><li><a href="/markets/liverpool/">Liverpool</a></li><li><a href="/markets/bristol/">Bristol</a></li><li><a href="/markets/dublin/">Dublin</a></li></ul></div></section><!-- linkstrip:cities:end -->
+
+<section><div class="wrap"><h2>What usually goes wrong when you hire across a border</h2><div class="pain-grid"><div class="pain"><h3>A supplier you cannot check</h3><p>No price on the site, no named person, no work you can look at. Distance makes every one of those harder to forgive, which is why everything here is published before you ask.</p></div><div class="pain"><h3>Advice written for the wrong country</h3><p>A consent banner built for the strictest reading in Europe on a site that never needed it, or a German template on an Austrian site that owes a second disclosure duty. The rules are national and the advice usually is not.</p></div><div class="pain"><h3>Accounts held by the agency</h3><p>Analytics, Search Console and the ad accounts registered to the supplier, so leaving means starting again. Across a border that is harder to unpick, not easier.</p></div><div class="pain"><h3>A time zone treated as an excuse</h3><p>Answers that take three days because somebody is waiting for a slot in a diary. Written replies remove the problem: Pakistan is three to five hours ahead, so your morning is the middle of my day.</p></div></div></div></section>
+<section class="center" style="background:var(--offwhite);border-top:1px solid var(--line)"><div class="wrap"><h2>What the work actually is</h2><p class="sub">The same list wherever you are. What changes by country is the regulator, the language and the checkout, not the work.</p><div class="inc-grid"><div class="inc"><h3>The 15 point technical check</h3><p>Speed, indexing, structured data, redirects, consent and the rest, written out in the order worth fixing rather than the order a crawler found them.</p></div><div class="inc"><h3>Pages for what buyers search</h3><p>Built from real search data in the language your buyers type, not translated from an English page and hoped over.</p></div><div class="inc"><h3>A redirect map before anything moves</h3><p>Every old address mapped to a new one and tested before launch, because this is the step that loses rankings when it is skipped.</p></div><div class="inc"><h3>Tracking that waits for consent</h3><p>Nothing loads before a choice is made, and the banner says what it does. This is the part regulators are actually acting on.</p></div><div class="inc"><h3>Google Ads on a flat fee</h3><p>A fixed monthly amount whatever the spend, so the advice does not get more expensive when the budget does.</p></div><div class="inc"><h3>Shopify and WooCommerce moves</h3><p>Products, variants, media and URLs moved with the search positions held, on the same domain where that is possible.</p></div><div class="inc"><h3>Custom systems when software is the problem</h3><p>Order flows, stock feeds and internal tools, when the honest answer is that no amount of marketing fixes the process underneath.</p></div><div class="inc"><h3>Plain monthly notes</h3><p>What was done, what it changed and what is next, in a page you can read without a glossary.</p></div></div></div></section>
+<section><div class="wrap"><div class="fcase rv"><div class="fc-body"><div><span class="fc-tag">Featured case study</span><h3>A furniture retailer: three storefronts, three ad accounts and a CRM</h3><p>A Dutch furniture retailer with three brands and a ten to twelve week order cycle, where the online numbers alone made a busy business look like a failing one until the measurement was fixed.</p></div><a class="btn" href="/case-studies/furniture-retailer/">Read the case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a></div><div class="fc-nums"><span><b>373</b>products migrated</span><span><b>822</b>feed offers, zero errors</span><span><b>4.3%</b>conversion rate across all campaigns, Jul to Aug 2026</span></div></div></div></section>
+<section class="center" style="background:var(--offwhite);border-top:1px solid var(--line)"><div class="wrap"><h2>What I will not do</h2><p class="sub">Said before you ask, because it is usually the deciding part.</p><div class="inc-grid"><div class="inc"><h3>Promise a position</h3><p>Nobody controls Google's results, and anyone who promises a ranking is either guessing or lying. I will tell you what is winnable and what is not, with the search data in front of you.</p></div><div class="inc"><h3>Hold your accounts</h3><p>Analytics, Search Console and every ad account are registered in your name from day one. If you stop working with me you lose nothing but me.</p></div><div class="inc"><h3>Bill a percentage of ad spend</h3><p>A percentage pays me more when you spend more, which is the wrong incentive. Advertising is a flat monthly fee whatever the budget.</p></div><div class="inc"><h3>Take the work if it is the wrong spend</h3><p>If the free check says your problem is not a website problem, the report says so and I tell you what would actually move the number.</p></div></div></div></section>
+<!-- place:countries:start --><section class="lstrip center"><div class="wrap"><h2>Every market, and what differs in each</h2><p class="sub">Each country page carries its own regulator, the statute its imprint has to satisfy, the language its buyers search in and the payment rail they expect. The cities sit under their country.</p><h3 style="margin:26px 0 10px">Central Europe</h3><ul><li><a href="/markets/czechia/">SEO and websites in Czechia</a></li><li><a href="/markets/hungary/">SEO and websites in Hungary</a></li><li><a href="/markets/poland/">SEO and websites in Poland</a></li><li><a href="/markets/slovakia/">SEO and websites in Slovakia</a></li><li><a href="/markets/slovenia/">SEO and websites in Slovenia</a></li></ul><h3 style="margin:26px 0 10px">The Nordics</h3><ul><li><a href="/markets/denmark/">SEO and websites in Denmark</a></li><li><a href="/markets/finland/">SEO and websites in Finland</a></li><li><a href="/markets/iceland/">SEO and websites in Iceland</a></li><li><a href="/markets/norway/">SEO and websites in Norway</a></li><li><a href="/markets/sweden/">SEO and websites in Sweden</a></li></ul><h3 style="margin:26px 0 10px">South East Europe</h3><ul><li><a href="/markets/bulgaria/">SEO and websites in Bulgaria</a></li><li><a href="/markets/croatia/">SEO and websites in Croatia</a></li><li><a href="/markets/greece/">SEO and websites in Greece</a></li><li><a href="/markets/romania/">SEO and websites in Romania</a></li></ul><h3 style="margin:26px 0 10px">Western Europe</h3><ul><li><a href="/markets/france/">SEO and websites in France</a></li><li><a href="/markets/italy/">SEO and websites in Italy</a></li><li><a href="/markets/portugal/">SEO and websites in Portugal</a></li><li><a href="/markets/spain/">SEO and websites in Spain</a></li></ul><h3 style="margin:26px 0 10px">Benelux</h3><ul><li><a href="/markets/belgium/">SEO and websites in Belgium</a></li><li><a href="/markets/luxembourg/">SEO and websites in Luxembourg</a></li><li><a href="/markets/netherlands/">SEO and websites in the Netherlands</a></li></ul><h3 style="margin:26px 0 10px">DACH</h3><ul><li><a href="/markets/austria/">SEO and websites in Austria</a></li><li><a href="/markets/germany/">SEO and websites in Germany</a></li><li><a href="/markets/switzerland/">SEO and websites in Switzerland</a></li></ul><h3 style="margin:26px 0 10px">The Baltics</h3><ul><li><a href="/markets/estonia/">SEO and websites in Estonia</a></li><li><a href="/markets/latvia/">SEO and websites in Latvia</a></li><li><a href="/markets/lithuania/">SEO and websites in Lithuania</a></li></ul><h3 style="margin:26px 0 10px">British Isles</h3><ul><li><a href="/markets/ireland/">SEO and websites in Ireland</a><span class="lstrip-kids"><a href="/markets/ireland/dublin/">Dublin</a></span></li><li><a href="/markets/united-kingdom/">SEO and websites in the UK</a><span class="lstrip-kids"><a href="/markets/united-kingdom/birmingham/">Birmingham</a><a href="/markets/united-kingdom/bristol/">Bristol</a><a href="/markets/united-kingdom/leeds/">Leeds</a><a href="/markets/united-kingdom/liverpool/">Liverpool</a><a href="/markets/united-kingdom/manchester/">Manchester</a></span></li></ul><h3 style="margin:26px 0 10px">The Mediterranean islands</h3><ul><li><a href="/markets/cyprus/">SEO and websites in Cyprus</a></li><li><a href="/markets/malta/">SEO and websites in Malta</a></li></ul></div></section><!-- place:countries:end -->
 <section class="faq-sec center">
   <div class="wrap">
     <h2 class="rv">Fair questions about location<span class="bar"></span></h2>
     <div class="faq">
       <details class="rv">
         <summary>Do we ever need to meet in person?</summary>
-        <p>No. Everything runs over calls and email, and it works because decisions are confirmed in writing and you can see the build through a shared live link at any time. I am based in Pakistan and my clients are across Europe and the UK, and no project has ever depended on a meeting in person.</p>
+        <p>No, and no call is needed either. Everything runs in writing over email and WhatsApp, which works because decisions end up on the record rather than in somebody's memory, and you can see the build through a shared live link at any time. I am based in Pakistan and my clients are across Europe and the UK, and no project has ever depended on a meeting in person.</p>
       </details>
       <details class="rv d1">
         <summary>What about time zones?</summary>
-        <p>Pakistan runs three to four hours ahead of central Europe and four to five ahead of the UK. Your morning is the middle of my working day, so calls are easy to schedule and you get answers the same day, not the next one.</p>
+        <p>Pakistan runs three to four hours ahead of central Europe and four to five ahead of the UK. Your morning is the middle of my working day, so a question sent before lunch is usually answered the same day rather than the next one.</p>
       </details>
       <details class="rv d2">
         <summary>My company is outside these markets. Can we still work together?</summary>
-        <p>Possibly. The five markets above are where the odds are best, but the practice covers the whole of Europe and the UK. If you are a company or an online store selling into these markets, send an enquiry and I will give you a straight answer.</p>
+        <p>Possibly. The clusters above are where the odds are best, but the practice covers the whole of Europe and the UK. If you are a company or an online store selling into these markets, send an enquiry and I will give you a straight answer.</p>
       </details>
       <details class="rv d3">
         <summary>Are invoices and contracts a problem across borders?</summary>
         <p>No. I invoice in euros, ex VAT, with the reverse charge rules applied where they should be, and the one page scope you and I both sign works the same in every market. You get it all in writing before anything starts.</p>
-      </details>
+      </details><details class="rv"><summary>Which countries do you actually work in?</summary><p>Anywhere in Europe and the UK. The countries listed above are the ones with a page of their own, because I can say something specific about the regulator, the language and the checkout. More are being written. If yours is not there yet, ask and you get the same answer by email rather than a page.</p></details><details class="rv"><summary>Does a smaller market cost more to work in?</summary><p>No. The prices are the same everywhere and they are on the page. A smaller market is usually cheaper to win rather than dearer, because the results pages have had less attention, which is the whole argument for doing the work in Danish or Flemish rather than only in English.</p></details>
     </div>
   </div>
 </section>
